@@ -26,4 +26,9 @@ jQuery(document).ready(function(){
       $(".home-center").css('margin-left','100%')
       $(".home").css({ display: 'flex' })
   }
+	$('.menu-toggle').on('click',function(){
+		$('.menu-toggle').toggleClass('active');
+    $(".top-menu").css('display','flex')
+    $(".top-menu").css('animation','topMenu 1s')
+	});
 })
