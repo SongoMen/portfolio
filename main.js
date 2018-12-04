@@ -27,8 +27,16 @@ jQuery(document).ready(function(){
       $(".home").css({ display: 'flex' })
   }
 	$('.menu-toggle').on('click',function(){
-		$('.menu-toggle').toggleClass('active');
-    $(".top-menu").css('display','flex')
-    $(".top-menu").css('animation','topMenu 1s')
+    if($('.menu-toggle').hasClass('active')){
+      $(".top-menu").css('margin-top','-100%')
+      setTimeout(function(){
+        $(".top-menu").css('display','none')
+      },2500)
+    }
+    else{
+      $(".top-menu").css('display','flex')
+      $(".top-menu").css('animation','topMenu 1s')
+    }
+    		$('.menu-toggle').toggleClass('active');
 	});
 })
