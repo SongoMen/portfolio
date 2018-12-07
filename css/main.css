@@ -10,8 +10,8 @@
 
 html,body{
     background-color:#13141A;
-    width:100%;
-    height: 100%;
+    width:100vw;
+    height: 100vh;
     margin:0px;
     overflow: hidden;
 }
@@ -20,7 +20,7 @@ html,body{
     box-sizing: border-box;
     font-family: 'NexaBold';
     color:white;
-    transition: all 2s;
+    transition: all 1.5s;
 }
 
 h1{
@@ -100,6 +100,15 @@ p{
  }
 }
 
+@keyframes line{
+ 0% {
+   height: 0;
+}
+ 100% {
+   height: 25px;
+ }
+}
+
 /*#########################
           HEADER
  #########################*/
@@ -117,7 +126,7 @@ header{
 
 header h3{
     text-align: center;
-    letter-spacing: 20px;
+    letter-spacing: 15px;
     font-family: Raleway;
 }
 
@@ -208,6 +217,9 @@ header .hamburger h3{
  #########################*/
 
  .top-menu{
+   display: flex;
+   align-items: center;
+   justify-content: center;
    width:100%;
    height: 100%;
    background-color:#171921;
@@ -216,6 +228,98 @@ header .hamburger h3{
    position: fixed;
    transition: all 1s;
  }
+
+ ul{
+   list-style-type: none;
+   font-size: 30px;
+   text-transform: uppercase;
+   text-align: center;
+ }
+li{
+     padding:10px 20px;
+     cursor:pointer;
+     transition: all 1s;
+     margin:10px 0;
+     display: flex;
+     align-items: center;
+}
+li:hover{
+  color:#FF8C38 !important;
+}
+
+li p{
+  visibility: hidden;
+  opacity: 0;
+  font-size:12px;
+  margin-left:45px;
+  transition: all 1s;
+}
+
+li.active{
+  color:#FF8C38;
+}
+
+li.active:hover{
+  color:white!important;
+}
+
+li span{
+  visibility: hidden;
+  opacity: 0;
+  border-left: 2px solid #FF8C38;
+  height: 25px;
+  position: absolute;
+  right:50%;
+}
+
+#menu-home:hover .home-p{
+  visibility: visible;
+  opacity: 1;
+  animation: show2 .5s;
+}
+
+#menu-home:hover .menu-line{
+  visibility: visible;
+  opacity: 1;
+  animation: line .5s;
+}
+
+#menu-about:hover .about-p{
+  visibility: visible;
+  opacity: 1;
+  animation: show2 .5s;
+}
+
+#menu-about:hover .menu-line{
+  visibility: visible;
+  opacity: 1;
+  animation: line .5s;
+}
+
+#menu-portfolio:hover .portfolio-p{
+  visibility: visible;
+  opacity: 1;
+  animation: show2 .5s;
+}
+
+#menu-portfolio:hover .menu-line{
+  visibility: visible;
+  opacity: 1;
+  animation: line .5s;
+}
+
+#menu-contact:hover .contact-p{
+  visibility: visible;
+  opacity: 1;
+  animation: show2 .5s;
+}
+
+#menu-contact:hover .menu-line{
+  visibility: visible;
+  opacity: 1;
+  animation: line .5s;
+}
+
 
 /*#########################
           HOME
@@ -234,7 +338,10 @@ header .hamburger h3{
     justify-content: center;
     width:100%;
     position: absolute;
-    top:150px;
+    top: 50%;
+    left: 50%;
+    transition: 1s all;
+    transform: translate(-50%, -50%);
 }
 
 .home-left{
@@ -285,7 +392,7 @@ h2,h3,h4{
  .about{
    display: none;
    width:100%;
-   height: 80%;
+   height: 100%;
    top:300px;
    flex-direction: column;
    position: absolute;
@@ -295,3 +402,11 @@ h2,h3,h4{
  .about h3{
    font-family: NexaLight
  }
+
+ /*#########################
+           PORTFOLIO
+  #########################*/
+.portfolio{
+  width:100%;
+  height: 100%;
+}
