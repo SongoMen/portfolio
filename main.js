@@ -3,6 +3,7 @@ menuStatus = false;
 function closeMenu(){
   $(".top-menu").css('margin-top','-100%')
   menuStatus = false
+  $('.menu-toggle').toggleClass('active');
 }
 
 function openMenu(){
@@ -10,6 +11,7 @@ function openMenu(){
   $(".top-menu").css('animation','topMenu 1s')
   $(".top-menu").css('margin-top','0%')
   menuStatus = true
+  $('.menu-toggle').toggleClass('active');
 }
 
 function  about(){
@@ -19,6 +21,7 @@ function  about(){
   $(".home-center").css('margin-left','100%')
   $(".home").css({ display: 'flex' })
   $("#menu-about").toggleClass('active');
+  window.location.hash="about"
 }
 
 function home(){
@@ -68,10 +71,16 @@ jQuery(document).ready(function(){
     else{
       openMenu();
     }
-    $('.menu-toggle').toggleClass('active');
 	});
   $('#menu-home').on('click',function(){
     home();
+    setTimeout(function(){
+      closeMenu();
+    },300)
+  })
+
+  $('#menu-about').on('click',function(){
+    about();
     setTimeout(function(){
       closeMenu();
     },300)
