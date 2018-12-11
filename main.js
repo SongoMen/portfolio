@@ -1,10 +1,14 @@
 var menuStatus = false;
 var preloaderStatus;
+var scroller=0;
 
 function closeMenu(){
   $(".top-menu").css('margin-top','-100%')
   menuStatus = false
   $('.menu-toggle').toggleClass('active');
+  if(window.location.hash==='#about'){
+    $("html").css('overflow-y','auto')
+  }
 }
 
 function openMenu(){
@@ -13,6 +17,7 @@ function openMenu(){
   $(".top-menu").css('margin-top','0%')
   menuStatus = true
   $('.menu-toggle').toggleClass('active');
+  $("html").css('overflow','hidden')
 }
 
 function  about(){
@@ -22,32 +27,57 @@ function  about(){
   $(".home-center").css('margin-left','100%')
   $(".home").css({ display: 'flex' })
   $("#menu-about").toggleClass('active');
+  $("html").css('overflow-y','auto')
   window.location.hash="about"
 }
 
 function home(){
-  $(".about").fadeOut("slow");
+  $(".about").hide("slow");
   $(".home-left").css('width','50%')
   $(".home-center").css('margin-left','0%')
+  $("html").css('overflow','hidden')
+  scroller=1;
   window.location.hash=""
 }
 
 setTimeout(function(){
   window.addEventListener('wheel', function(e) {
-    if (e.deltaY < 0 && window.location.hash=="#about" && menuStatus == false) {
+    if (e.deltaY < 0 && window.location.hash=="#about" && menuStatus == false && scroller === 0) {
       home();
+      $("html").css('overflow','hidden')
     }
-    if (e.deltaY > 0 && window.location.hash=="" && menuStatus == false && preloaderStatus == false) {
+    else if (e.deltaY > 0 && window.location.hash=="" && menuStatus == false && preloaderStatus == false) {
       $(".home-left").css('width','100%')
       $(".home-center").css('margin-left','100%')
       $(".about").css('display','flex')
       window.location.hash="#about"
+      console.log("XD")
+    }
+    else if (e.deltaY > 0 && window.location.hash=="#about" && menuStatus == false){
+      scroller+=1;
+      $("html").css('overflow-y','auto')
+    }
+    else if (e.deltaY < 0 && window.location.hash=="#about" && menuStatus == false){
+      if(scroller!==0){
+        scroller-=1;
+      }
     }
   });
 },1500)
 
+$(window).on('beforeunload', function() {
+    $(window).scrollTop(0);
+});
 
 jQuery(document).ready(function(){
+  $(window).scroll(function() {
+  	var $height = $(window).scrollTop();
+    if($height > 250) {
+  		$('header').addClass('active');
+  	} else {
+  		$('header').removeClass('active');
+  	}
+  });
   var height = $(window).scrollTop();
   if (window.location.hash === "") {
       $(".preloader").css({display:'flex'})
