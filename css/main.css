@@ -39,6 +39,15 @@ p{
           KEYFRAMES
  #########################*/
 
+ @keyframes line2 {
+   0% {
+     width: 0;
+   }
+   100% {
+     width: 100px;
+   }
+ }
+
  @keyframes leftSide {
      0%   {
        width: 0;
@@ -109,6 +118,51 @@ p{
  }
 }
 
+@keyframes preloader {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100vw;
+    display: none;
+  }
+}
+
+/*#########################
+          PRELOADER
+ #########################*/
+
+ .preloader{
+   display: none;
+   justify-content: center;
+   align-items: center;
+   width:100%;
+   height: 100%;
+   position: absolute;
+   z-index: 550;
+   background-color: #13141A;
+ }
+
+ .preloader__text{
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+     animation: typewriter 1s steps(6) .5s 1 normal both,
+                blinkTextCursor 500ms steps(20) infinite normal;
+ }
+ @keyframes typewriter{
+   from{width: 0;}
+   to{width: 3.7em;}
+ }
+ @keyframes blinkTextCursor{
+   from{border-right-color: rgba(255,255,255,.75);}
+   to{border-right-color: transparent;}
+ }
 /*#########################
           HEADER
  #########################*/
@@ -352,13 +406,9 @@ li span{
     height: 100%;
     padding:20px;
     transition: all 1s;
+    background-color: #FF8C38;
+    animation: leftSide 1s;
 }
-
-.home-left{
-      background-color: #FF8C38;
-      animation: leftSide 1s;
-}
-
 .home-right{
   display: flex;
   align-items: center;
@@ -391,19 +441,44 @@ h2,h3,h4{
 
  .about{
    display: none;
+   justify-content: center;
    width:100%;
    height: 100%;
-   top:300px;
-   flex-direction: column;
+   top:0;
+   flex-direction: row;
    position: absolute;
-   margin:100px;
+   padding:80px;
    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.29);
+ }
+
+ .about h2, .about h3, .about p, .about__line{
+   animation: show 1s;
+   z-index: 10;
  }
 
 
  .about h3{
    font-family: NexaLight
  }
+
+  .about__line{
+    height: 2px;
+    background: white;
+    margin-top:-20px;
+    left: 0;
+    width:50px;
+    animation: line2 1.2s forwards cubic-bezier(1,-0.17,.68,.84);
+  }
+
+  .about__name{
+    flex-direction: column;
+  }
+
+  .about__name,  .about__skills{
+    width:50%;
+    display: flex;
+    justify-content: center;
+  }
 
  /*#########################
            PORTFOLIO
