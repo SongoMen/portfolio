@@ -27,7 +27,9 @@ function  about(){
   $(".home-center").css('margin-left','100%')
   $(".home").css({ display: 'flex' })
   $("#menu-about").toggleClass('active');
-  $("html").css('overflow-y','auto')
+  setTimeout(()=>{
+    $("html").css('overflow-y','auto')
+  },1000)
   window.location.hash="about"
 }
 
@@ -40,44 +42,27 @@ function home(){
   window.location.hash=""
 }
 
-setTimeout(function(){
-  window.addEventListener('wheel', function(e) {
-    if (e.deltaY < 0 && window.location.hash=="#about" && menuStatus == false && scroller === 0) {
-      home();
-      $("html").css('overflow','hidden')
-    }
-    else if (e.deltaY > 0 && window.location.hash=="" && menuStatus == false && preloaderStatus == false) {
-      $(".home-left").css('width','100%')
-      $(".home-center").css('margin-left','100%')
-      $(".about").css('display','flex')
-      window.location.hash="#about"
-      console.log("XD")
-    }
-    else if (e.deltaY > 0 && window.location.hash=="#about" && menuStatus == false){
-      scroller+=1;
-      $("html").css('overflow-y','auto')
-    }
-    else if (e.deltaY < 0 && window.location.hash=="#about" && menuStatus == false){
-      if(scroller!==0){
-        scroller-=1;
-      }
-    }
-  });
-},1500)
-
-$(window).on('beforeunload', function() {
-    $(window).scrollTop(0);
-});
-
 jQuery(document).ready(function(){
   $(window).scroll(function() {
   	var $height = $(window).scrollTop();
-    if($height > 250) {
-  		$('header').addClass('active');
-  	} else {
-  		$('header').removeClass('active');
-  	}
+    console.log($height)
+    if($height===0)scroller = 0;
+    else if($height!==0) scroller = 1
+    else if($height > 250){ $('header').addClass('active')}
+  	else $('header').removeClass('active');
   });
+  setTimeout(function(){
+    window.addEventListener('wheel', function(e) {
+      if (e.deltaY < 0 && window.location.hash==="#about" && menuStatus === false && scroller === 0) {
+        home();
+        scroller = 0;
+        $("html").css('overflow','hidden')
+      }
+      else if (e.deltaY > 0 && window.location.hash==="" && menuStatus === false && preloaderStatus === false) {
+        about();
+      }
+    });
+  },1500)
   var height = $(window).scrollTop();
   if (window.location.hash === "") {
       $(".preloader").css({display:'flex'})

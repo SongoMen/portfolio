@@ -39,7 +39,7 @@ html,body{
     box-sizing: border-box;
     font-family: 'NexaBold';
     color:white;
-    transition: all 1.5s;
+    transition: all 1s;
 }
 
 h1{
@@ -199,7 +199,7 @@ header{
 }
 
 header.active{
-  background-color:#13141A;
+  background-color:#171921;
 }
 
 header h3{
@@ -507,8 +507,73 @@ h2,h3,h4{
  /*#########################
            PORTFOLIO
   #########################*/
+
 .portfolio{
   width:100%;
   position: absolute;
   height: 100%;
+}
+
+/*#########################
+          FOOTER
+ #########################*/
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  right: 30px;
+  bottom:-30px;
+  transition: 1s all;
+  transform: translate(-50%, -50%);
+  z-index: 510;
+}
+
+footer svg{
+  width:15px;
+  height: 15px;
+  fill:white;
+  cursor: pointer;
+  margin-bottom:20px;
+  transition: all 1s;
+  display: block;
+  z-index: 10;
+}
+
+.twitter__circle,.github__circle{
+  opacity: 0;
+  position: absolute;
+  border-radius: 50px;
+  background-color:white;
+  width:35px;
+  height: 35px;
+  z-index: 5;
+  bottom:11px;
+  transition: .5s all;
+}
+
+footer a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.github__circle{
+  bottom:44px;
+}
+
+.footer__twitter:hover svg path, .footer__github:hover svg path{
+  fill:#FF8C38;
+}
+
+.footer__github:hover .github__circle {
+    opacity: 1;
+    fill:black;
+}
+
+.footer__twitter:hover .twitter__circle {
+    opacity: 1;
+    fill:black;
 }
