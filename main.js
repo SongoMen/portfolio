@@ -20,9 +20,8 @@ function openMenu(){
   $("html").css('overflow','hidden')
 }
 
-function  about(){
+function about(){
   $(".about").css({display: 'flex'})
-  $(".home-left").css('animation','leftSide2 1s')
   $(".home-left").css('width','100%')
   $(".home-center").css('margin-left','100%')
   $(".home").css({ display: 'flex' })
@@ -63,7 +62,6 @@ jQuery(document).ready(function(){
       }
     });
   },1500)
-  var height = $(window).scrollTop();
   if (window.location.hash === "") {
       $(".preloader").css({display:'flex'})
       preloaderStatus=true;
@@ -75,6 +73,7 @@ jQuery(document).ready(function(){
       $(".home").css({ display: 'flex' })
       $("#menu-home").toggleClass('active');
   } else if (window.location.hash === '#about') {
+      $(".home-left").css('animation','leftSide2 1s')
       about();
   }
   $(window).on('hashchange', function() {
