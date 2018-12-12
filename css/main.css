@@ -43,11 +43,16 @@ html,body{
 }
 
 h1{
-  font-size:230px;
+  animation: show 2s cubic-bezier(1,-0.17,.68,.84);
+  font-size: calc(190px + (26 - 14) * ((100vw - 300px) / (1920 - 300)));
 }
 
 h2{
-  font-size: 50px
+  font-size: calc(30px + (50 - 30) * ((100vw - 300px) / (1920 - 300)));
+}
+
+h2,h3,h4{
+  animation: show2 1.2s cubic-bezier(1,-0.17,.68,.84);
 }
 
 p{
@@ -449,14 +454,6 @@ li span{
 
 .scroll h5{
   margin-left:10px
-}
-
-h1{
-  animation: show 2s cubic-bezier(1,-0.17,.68,.84)
-}
-
-h2,h3,h4{
-  animation: show2 1.2s cubic-bezier(1,-0.17,.68,.84);
 }
 
 /*#########################
