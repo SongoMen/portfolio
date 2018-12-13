@@ -43,7 +43,7 @@ html,body{
 }
 
 h1{
-  animation: show 2s cubic-bezier(1,-0.17,.68,.84);
+  animation: show 1.3s cubic-bezier(1,-0.17,.68,.84);
   font-size: calc(100px + (160 - 14) * ((100vw - 300px) / (1920 - 300)));
 }
 
@@ -308,8 +308,8 @@ header .hamburger h3{
    background-color:#171921;
    display: none;
    z-index: 100;
-   position: fixed;
-   transition: all 2s;
+   position: absolute;
+   transition: all 1.3s;
    white-space: nowrap;
  }
 
