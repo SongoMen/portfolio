@@ -3,7 +3,7 @@ var preloaderStatus;
 var scroller=0;
 
 function closeMenu(){
-  $(".top-menu").css('margin-top','-100%')
+  $(".top-menu").css('margin-top','-270%')
   menuStatus = false
   $('.menu-toggle').toggleClass('active');
   if(window.location.hash==='#about'){
@@ -21,15 +21,15 @@ function openMenu(){
 }
 
 function about(){
-  $(".about").css({display: 'flex'})
-  $(".home-left").css('width','100%')
-  $(".home-center").css('margin-left','100%')
-  $(".home").css({ display: 'flex' })
-  $("#menu-about").toggleClass('active');
+  $(".about").css({display: 'flex'});
+  $(".home-left").css('width','100%');
+  $(".home-center").css('margin-left','100%');
+  $(".home").css({ display: 'flex' });
+  $("#menu-about").addClass('active');
   setTimeout(()=>{
-    $("html").css('overflow-y','auto')
+    $("html").css('overflow-y','auto');
   },1000)
-  window.location.hash="about"
+  window.location.hash="about";
 }
 
 function home(){
@@ -45,10 +45,12 @@ jQuery(document).ready(function(){
   $(window).scroll(function() {
   	var $height = $(window).scrollTop();
     console.log($height)
-    if($height===0)scroller = 0;
-    else if($height!==0) scroller = 1
-    else if($height > 250){ $('header').addClass('active')}
-  	else $('header').removeClass('active');
+    if($height===0) scroller = 0;
+    if($height!==0) scroller = 1;
+    if($height >= 250) $('header').addClass('active');
+    if($height<250) $('header').removeClass('active');
+    if($height < 700) window.location.hash="about";
+    if($height >= 720) window.location.hash="portfolio";
   });
   setTimeout(function(){
     window.addEventListener('wheel', function(e) {
@@ -76,6 +78,11 @@ jQuery(document).ready(function(){
       $(".home-left").css('animation','leftSide2 1s')
       about();
   }
+    else if (window.location.hash === '#portfolio') {
+      $(".home-left").css('animation','leftSide2 1s')
+      about();
+      $(window).scrollTop(720);
+    }
   $(window).on('hashchange', function() {
     if (window.location.hash === "") {
         $("#menu-home").toggleClass('active');
@@ -83,7 +90,7 @@ jQuery(document).ready(function(){
         //$("body").css('overflow','hidden')
     } else if (window.location.hash === '#about') {
         $('#menu-home, #menu-portfolio, #menu-contact').removeClass('active')
-        $("#menu-about").toggleClass('active');
+        $("#menu-about").addClass('active');
         //$("body").css('overflow','auto')
     }
   })

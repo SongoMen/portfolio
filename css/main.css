@@ -44,7 +44,7 @@ html,body{
 
 h1{
   animation: show 2s cubic-bezier(1,-0.17,.68,.84);
-  font-size: calc(190px + (26 - 14) * ((100vw - 300px) / (1920 - 300)));
+  font-size: calc(100px + (160 - 14) * ((100vw - 300px) / (1920 - 300)));
 }
 
 h2{
@@ -193,7 +193,7 @@ p{
  #########################*/
 
 header{
-    padding:25px;
+    padding:10px 25px;
     display: flex;
     justify-content: space-between;
     width:100%;
@@ -309,7 +309,8 @@ header .hamburger h3{
    display: none;
    z-index: 100;
    position: fixed;
-   transition: all 1s;
+   transition: all 2s;
+   white-space: nowrap;
  }
 
  ul{
@@ -447,7 +448,7 @@ li span{
 }
 
 .scroll{
-  margin-left: 30px;
+  margin-left: 20px;
   animation:arrow 1.3s infinite;
   position: absolute;
 }
@@ -533,7 +534,7 @@ footer svg{
   height: 15px;
   fill:white;
   cursor: pointer;
-  margin-bottom:20px;
+  margin-bottom:30px;
   transition: all 1s;
   display: block;
   z-index: 10;
@@ -558,7 +559,11 @@ footer a{
 }
 
 .github__circle{
-  bottom:44px;
+  bottom:54px;
+}
+
+.footer__twitter{
+  margin-bottom:-10px;
 }
 
 .footer__twitter:hover svg path, .footer__github:hover svg path{
@@ -573,4 +578,101 @@ footer a{
 .footer__twitter:hover .twitter__circle {
     opacity: 1;
     fill:black;
+}
+
+ /*#########################
+        Media Queries
+  #########################*/
+
+@media only screen and (max-width: 600px) {
+  header h3 {
+    letter-spacing: 10px;
+  }
+  #menu-home .menu-line{
+    right:53%!important;
+  }
+  #menu-portfolio .menu-line{
+    right:39%!important;
+  }
+  #menu-contact .menu-line{
+    right:44%!important;
+  }
+}
+
+
+@media only screen and (max-width: 400px){
+  header{
+    padding:10px;
+  }
+  header h3 {
+    letter-spacing: 5px;
+    font-size:15px;
+  }
+  #menu-home .menu-line{
+    right:54%!important;
+  }
+  #menu-portfolio .menu-line{
+    right:33%!important;
+  }
+  #menu-contact .menu-line{
+    right:42%!important;
+  }
+}
+
+
+@media only screen and (max-width: 800px)  {
+
+  .about{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .about__name{
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 400px) {
+
+  .about{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .about__name{
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  #menu-home .menu-line{
+    right:53%!important;
+  }
+  #menu-portfolio .menu-line{
+    right:40%!important;
+  }
+  #menu-contact .menu-line{
+    right:45%!important;
+  }
+}
+
+@media only screen and (max-width: 1000px)  and (min-width: 800px) {
+
+  #menu-home .menu-line{
+    right:51%!important;
+  }
+  #menu-portfolio .menu-line{
+    right:43%!important;
+  }
+  #menu-contact .menu-line{
+    right:46%!important;
+  }
+}
+
+@media only screen and (max-width: 1200px)  and (min-width: 1000px) {
+  #menu-portfolio .menu-line{
+    right:44%!important;
+  }
 }
