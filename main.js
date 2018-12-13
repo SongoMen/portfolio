@@ -11,6 +11,7 @@ function closeMenu(){
   }
   setTimeout(()=>{
     $("header").css('position','fixed')
+    $("footer").css('position','fixed')
   },800)
 }
 
@@ -22,6 +23,7 @@ function openMenu(){
   $('.menu-toggle').toggleClass('active');
   $("html").css('overflow','hidden')
   $("header").css('position','absolute')
+  $("footer").css('position','absolute')
 }
 
 function about(){
