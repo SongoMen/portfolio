@@ -6,11 +6,10 @@ function closeMenu(){
   $(".top-menu").css('margin-top','-270%')
   menuStatus = false
   $('.menu-toggle').toggleClass('active');
-  if(window.location.hash==='#about'){
+  if(window.location.hash==='#about' || window.location.hash==="#portfolio"){
     $("html").css('overflow-y','auto')
   }
   setTimeout(()=>{
-    $("header").css('position','fixed')
     $("footer").css('position','fixed')
   },800)
 }
@@ -22,11 +21,11 @@ function openMenu(){
   menuStatus = true
   $('.menu-toggle').toggleClass('active');
   $("html").css('overflow','hidden')
-  $("header").css('position','absolute')
   $("footer").css('position','absolute')
 }
 
 function about(){
+  preloaderStatus = false;
   $(".about").css({display: 'flex'});
   $(".home-left").css('width','100%');
   $(".home-center").css('margin-left','100%');
@@ -59,7 +58,7 @@ jQuery(document).ready(function(){
     if($height!==0) scroller = 1;
     if($height >= 250) $('header').addClass('active');
     if($height<250) $('header').removeClass('active');
-    if($height < 700) window.location.hash="about";
+    if($height < 700 && $height>1) window.location.hash="about";
     if($height >= 720) window.location.hash="portfolio";
   });
   setTimeout(function(){
@@ -89,7 +88,7 @@ jQuery(document).ready(function(){
       about();
   }
     else if (window.location.hash === '#portfolio') {
-      $(".home-left").css('animation','leftSide2 1s')
+      $(".home-left").css('animation','leftSide2 .5s')
       about();
       $(window).scrollTop(720);
     }
