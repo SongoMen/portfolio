@@ -57,9 +57,14 @@ jQuery(document).ready(function(){
         '|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$'
     );
 
-    $('.email input').on('keyup', function(e) {
+    $('.form__input.email input').on('keyup', function(e) {
         $(this).parent().toggleClass('success', regex.test($(this).val()));
     });
+
+    $('.form__input.name input').on('keyup', function(e) {
+        $(this).parent().toggleClass('success', $(this).val().length > 2);
+    });
+
   $(window).scroll(function() {
   	var $height = $(window).scrollTop();
     if($height===0) scroller = 0;
