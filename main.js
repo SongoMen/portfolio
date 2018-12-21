@@ -1,5 +1,4 @@
 var menuStatus = false;
-var preloaderStatus;
 var scroller=0;
 
 function closeMenu(){
@@ -25,7 +24,6 @@ function openMenu(){
 }
 
 function about(){
-  preloaderStatus = false;
   $(".about").css({display: 'flex'});
   $(".home-left").css('width','100%');
   $(".home-center").css('margin-left','100%');
@@ -87,19 +85,12 @@ jQuery(document).ready(function(){
         home();
         scroller = 0;
       }
-      else if (e.deltaY > 0 && window.location.hash==="" && menuStatus === false && preloaderStatus === false) {
+      else if (e.deltaY > 0 && window.location.hash==="" && menuStatus === false) {
         about();
       }
     },{passive: true});
   },1500)
   if (window.location.hash === "") {
-      $(".preloader").css({display:'flex'})
-      preloaderStatus=true;
-      setTimeout(()=>{
-        $(".preloader").css({animation:'preloader 1s forwards'})
-        preloaderStatus=false;
-      },2500)
-
       $(".home").css({ display: 'flex' })
       $("#menu-home").toggleClass('active');
   } else if (window.location.hash === '#about') {
