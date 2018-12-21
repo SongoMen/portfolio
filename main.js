@@ -6,7 +6,7 @@ function closeMenu(){
   menuStatus = false
   $('.menu-toggle').toggleClass('active');
   if(window.location.hash==='#about' || window.location.hash==="#portfolio"){
-    $("html").css('overflow-y','auto')
+    $("body").css('overflow-y','auto')
   }
   setTimeout(()=>{
     $("footer").css('position','fixed')
@@ -19,7 +19,7 @@ function openMenu(){
   $(".top-menu").css('margin-top','0%')
   menuStatus = true
   $('.menu-toggle').toggleClass('active');
-  $("html").css('overflow','hidden')
+  $("body").css('overflow','hidden')
   $("footer").css('position','absolute')
 }
 
@@ -34,7 +34,7 @@ function about(){
   scrollabout = setTimeout(()=>{
       $(".home-center").css('display','none')
       $(".scroll").css('display','none')
-      $("html").css('overflow-y','auto');
+      $("body").css('overflow-y','auto');
   },1000)
   window.location.hash="about";
 }
@@ -42,7 +42,7 @@ function about(){
 function home(){
   $(".home-left").css('width','50%')
   $(".home-center").css('margin-left','0%')
-  $("html").css('overflow','hidden')
+  $("body").css('overflow','hidden')
   $(".home-center").css('display','flex')
   $(".scroll").css('display','block')
   scroller=1;
@@ -68,8 +68,8 @@ jQuery(document).ready(function(){
     $('.form__input.textarea textarea').on('keyup', function(e) {
         $(this).parent().toggleClass('success', $(this).val().length > 10);
     });
-  $(window).scroll(function() {
-  	var $height = $(window).scrollTop();
+  $('body').on('scroll', function() {
+  	var $height = $('body').scrollTop();
     if($height===0) scroller = 0;
     if($height!==0) scroller = 1;
     if($height >= 250) $('header').addClass('active');
@@ -80,7 +80,7 @@ jQuery(document).ready(function(){
   setTimeout(function(){
     window.addEventListener('wheel', function(e) {
       if (e.deltaY < 0 && window.location.hash==="#about" && menuStatus === false && scroller === 0) {
-        $("html").css('overflow','hidden')
+        $("body").css('overflow','hidden')
         $(".about").hide("fast")
         home();
         scroller = 0;
