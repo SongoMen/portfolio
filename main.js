@@ -31,6 +31,8 @@ function about(){
   $(".home-center").css('margin-left','100%');
   $(".home").css({ display: 'flex' });
   $("#menu-about").addClass('active');
+  $(".portfolio").css({ display: 'flex' });
+  $(".contact").css({ display: 'flex' });
   scrollabout = setTimeout(()=>{
       $(".home-center").css('display','none')
       $(".scroll").css('display','none')
@@ -65,6 +67,9 @@ jQuery(document).ready(function(){
         $(this).parent().toggleClass('success', $(this).val().length > 2);
     });
 
+    $('.form__input.textarea textarea').on('keyup', function(e) {
+        $(this).parent().toggleClass('success', $(this).val().length > 10);
+    });
   $(window).scroll(function() {
   	var $height = $(window).scrollTop();
     if($height===0) scroller = 0;

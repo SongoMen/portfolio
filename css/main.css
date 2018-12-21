@@ -51,6 +51,10 @@ h2{
   font-size: calc(30px + (50 - 30) * ((100vw - 300px) / (1920 - 300)));
 }
 
+h3{
+  font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1920 - 300)));
+}
+
 h2,h3,h4{
   animation: show2 1.2s cubic-bezier(1,-0.17,.68,.84);
 }
@@ -201,6 +205,7 @@ header{
     position: fixed;
     top:0px;
     z-index: 500;
+    animation: show .5s;
 }
 
 header.active{
@@ -211,6 +216,7 @@ header h3{
     text-align: center;
     letter-spacing: 15px;
     font-family: Raleway;
+    animation:show .5s;
 }
 
 header .hamburger h3{
@@ -531,9 +537,9 @@ li span{
   #########################*/
 
 .portfolio{
+  display: none;
   width:100%;
   position: absolute;
-  display: flex;
   justify-content: center;
   flex-wrap: wrap;
   height: 20%;
@@ -590,13 +596,14 @@ li span{
   font-size: 17px;
   font-weight: 600;
   color: white;
-  font-family: "Open Sans";
+  font-family: NexaBold;
   text-transform: uppercase;
   -moz-transition-duration: 1s;
   -o-transition-duration: 1s;
   -webkit-transition-duration: 1s;
   transition-duration: 1s;
   opacity: 0;
+  animation: none;
 }
 .portfolio__item .infos p {
   position: absolute;
@@ -606,7 +613,7 @@ li span{
   width: 90%;
   color: white;
   font-size: 12px;
-  font-family: "Open Sans";
+  font-family: NexaLight;
   -moz-transition-duration: 1s;
   -o-transition-duration: 1s;
   -webkit-transition-duration: 1s;
@@ -638,7 +645,7 @@ li span{
   top:121.5%;
   padding:100px;
   position: absolute;
-  display: flex;
+  display: none;
 }
 
 .contact__info span{
@@ -648,11 +655,10 @@ li span{
   position: absolute;
   left: 0;
   z-index: -1;
-  top:120px;
 }
 
 .contact__info h2{
-  top:70px;
+  margin-top:20px;
   margin-bottom:100px;
 }
 
@@ -664,8 +670,12 @@ li span{
 }
 
 .contact__form{
-  align-items: flex-end;
-  margin-top:100px;
+  margin-top:50px;
+  animation:show .5s;
+}
+
+.contact__form h2{
+  margin: 10px 20px;
 }
 
 .contact__info svg{
@@ -692,9 +702,13 @@ li span{
   margin:10px 20px;
 }
 
-textarea{
-  transition: all .2s;
-  resize:none;
+.form__input.textarea{
+  max-width:none;
+  padding-right:40px;
+}
+
+.form__input.textarea svg{
+  right:50px;
 }
 
 .form__input input, .form__input textarea {
@@ -702,25 +716,26 @@ textarea{
   min-width: 200px;
   font-size: 16px;
   border: 0;
-    width: 100%;
+  width: 100%;
   border-radius: 4px;
   line-height: 24px;
   padding: 8px 36px 8px 14px;
   box-shadow: 0 4px 12px -2px rgba(107, 117, 161, 0.16);
   color: #797C86;
+  resize: none;
 }
 
 
-.form__input input::-webkit-input-placeholder {
+.form__input input::-webkit-input-placeholder,.form__input textarea::-webkit-input-placeholder {
   color: #C7C8CC;
 }
-.form__input input:-moz-placeholder {
+.form__input input:-moz-placeholder, .form__input textarea:-moz-placeholder  {
   color: #C7C8CC;
 }
-.form__input input::-moz-placeholder {
+.form__input input::-moz-placeholder, .form__input textarea::-moz-placeholder  {
   color: #C7C8CC;
 }
-.form__input input:-ms-input-placeholder {
+.form__input input:-ms-input-placeholder, .form__input textarea:-ms-input-placeholder {
   color: #C7C8CC;
 }
 .form__input svg {
@@ -753,15 +768,16 @@ textarea{
 }
 .email.success svg polyline,
 .email.success svg path,.name.success svg polyline,
-.name.success svg path {
+.name.success svg path,.textarea.success svg polyline,
+.textarea.success svg path {
   stroke: #69DD95;
 }
-.email.success svg path, .name.success svg path {
+.email.success svg path, .name.success svg path,.textarea.success svg path {
   stroke-dasharray: 46;
   stroke-dashoffset: 150;
   transition: stroke-dasharray .6s ease 0s, stroke-dashoffset .8s ease .3s, stroke .3s ease .6s;
 }
-.email.success svg polyline, .name.success svg polyline  {
+.email.success svg polyline, .name.success svg polyline,.textarea.success svg polyline  {
   stroke-dashoffset: 0;
   transition: stroke-dashoffset .5s ease .6s, stroke .3s ease .6s;
 }
@@ -861,6 +877,24 @@ footer a{
 
 
 @media only screen and (max-width: 450px){
+  .about{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .about__name{
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .about__skills{
+    width:100%;
+  }
+  .about__skills svg{
+    width:40px;
+    height: 40px;
+  }
+
   header{
     padding:10px;
   }
@@ -876,6 +910,44 @@ footer a{
   }
   #menu-contact .menu-line{
     right:42%!important;
+  }
+
+  .portfolio{
+    height: 40%;
+  }
+
+  .portfolio__item{
+    height: 50%;
+  }
+
+  .contact{
+    flex-direction: column;
+    padding:10px;
+    margin-top:70%;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact__info,.contact__form{
+    width:100%;
+  }
+  .form__line{
+    flex-direction: column;
+  }
+
+  .contact__info{
+    height: 50%;
+  }
+
+  .contact__form{
+    margin-top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form__input.textarea{
+      margin:10px 0;
+      padding:0;
   }
 }
 
@@ -901,7 +973,7 @@ footer a{
   }
 }
 
-@media only screen and (max-width: 800px) and (min-width: 400px) {
+@media only screen and (max-width: 800px) and (min-width: 450px) {
 
   .about{
     flex-direction: column;
@@ -916,15 +988,14 @@ footer a{
   .about__icons{
     min-width:250px;
   }
-  .about__skills svg{
-    width:60px;
-    height: 60px;
+
+  .about__skills{
+    width:100%;
   }
 
-  .contact{
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  .about__skills svg{
+    width:50px;
+    height: 50px;
   }
 
   #menu-home .menu-line{
@@ -936,6 +1007,19 @@ footer a{
   #menu-contact .menu-line{
     right:45%!important;
   }
+  .contact{
+    flex-direction: column;
+    padding:10px;
+    justify-content: center;
+    align-items: center;
+    margin-top:35%;
+  }
+
+  .contact__form{
+    justify-content: center;
+    align-items: center;
+  }
+
 }
 
 @media only screen and (max-width: 1000px)  and (min-width: 800px) {
@@ -948,6 +1032,11 @@ footer a{
   }
   #menu-contact .menu-line{
     right:46%!important;
+  }
+  .contact{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
