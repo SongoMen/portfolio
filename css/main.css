@@ -273,6 +273,7 @@ header .hamburger h3{
    position: fixed;
    transition: all 1.3s;
    white-space: nowrap;
+   flex-direction: column;
  }
 
  ul{
@@ -510,7 +511,6 @@ li span{
 
 .portfolio__item {
   width: calc(880px / 3);
-  height: 30%;
   margin: 10px;
   cursor: pointer;
   float: left;
@@ -742,7 +742,7 @@ li span{
 }
 
 .form__button{
-  box-shadow: rgb(15, 188, 249,.5) 0px 0.4rem 1.5rem 0px;
+  box-shadow: rgb(15, 188, 249,.8) 0px 0.4rem 1.5rem 0px;
   background-color: #0fbcf9;
   border-radius: 0.6rem;
   padding: 0px 2.2rem;
@@ -895,7 +895,6 @@ footer a{
   .contact{
     flex-direction: column;
     padding:10px;
-    margin-top:70%;
   }
   .contact__info,.contact__form{
     width:100%;
@@ -921,6 +920,10 @@ footer a{
       margin:10px 0;
       padding:0;
   }
+
+  .form__input.textarea svg{
+    right:10px;
+  }
 }
 
 
@@ -944,7 +947,9 @@ footer a{
   .about__icons{
     min-width:250px;
   }
-
+  .portfolio{
+    flex-direction: row;
+  }
 }
 
 @media only screen and (max-width: 800px) and (min-width: 450px) {
@@ -980,6 +985,9 @@ footer a{
   }
   #menu-contact .menu-line{
     right:45%!important;
+  }
+  .portfolio{
+    flex-direction: row;
   }
   .contact{
     flex-direction: column;

@@ -39,6 +39,7 @@ function about() {
     $(".contact").css({
         display: 'flex'
     });
+    $('body').scrollTop(0);
     scrollabout = setTimeout(() => {
         $(".home-center").css('display', 'none')
         $(".scroll").css('display', 'none')
@@ -74,7 +75,7 @@ jQuery(document).ready(function() {
         return check;
     };
     if (check) {
-        $('.scroll h5').html("Swipe Down");
+        $('#scroll__text').html("Swipe Down");
     }
 
     //*******************************************************
@@ -111,7 +112,7 @@ jQuery(document).ready(function() {
         if ($height < 250) $('header').removeClass('active');
         if ($height < 700 && $height > 1) window.location.hash = "about";
         if ($height >= 820) window.location.hash = "portfolio";
-        if ($height >= 1720) window.location.hash = "contact";
+        if ($height >= 1520) window.location.hash = "contact";
     });
     setTimeout(function() {
         window.addEventListener('wheel', function(e) {
@@ -146,7 +147,6 @@ jQuery(document).ready(function() {
         about();
         $('body').scrollTop(840);
         $('.scroll').css('display', 'none')
-        window.location.hash = "portfolio"
     } else if (window.location.hash === '#contact') {
         about();
         window.location.hash = "contact"
@@ -194,6 +194,7 @@ jQuery(document).ready(function() {
     $('#menu-about').on('click', function() {
         if (window.location.hash !== '#about') {
             about();
+            window.location.hash='about';
             setTimeout(function() {
                 closeMenu();
             }, 800)
