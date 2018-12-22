@@ -208,21 +208,4 @@ jQuery(document).ready(function() {
             closeMenu();
         }
     })
-    $(function(){
-      $('.form__button').click(()=>{
-        var data = {
-          name: $('.form__input.name').val(),
-          email: $('.form__input.email').val(),
-          email: $('.form__input.textareax').val()
-        }
-        $.ajax({
-          type:"POST",
-          url:"email.php",
-          data: data,
-          success:function(){
-            console.log("success")
-          }
-        })
-      })
-    })
 })
