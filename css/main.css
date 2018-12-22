@@ -27,6 +27,8 @@
   background: #555;
 }
 
+button:focus {outline:0;}
+
 html,body{
     background-color:#1e272e;
     width:100%;
@@ -608,7 +610,7 @@ li span{
 
 .contact__info h2{
   margin-top:20px;
-  margin-bottom:100px;
+  margin-bottom:50px;
 }
 
 .contact__info,.contact__form{
