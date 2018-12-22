@@ -75,7 +75,8 @@ jQuery(document).ready(function(){
     if($height >= 250) $('header').addClass('active');
     if($height<250) $('header').removeClass('active');
     if($height < 700 && $height>1) window.location.hash="about";
-    if($height >= 720) window.location.hash="portfolio";
+    if($height >= 820) window.location.hash="portfolio";
+    if($height >= 1720) window.location.hash="contact";
   });
   setTimeout(function(){
     window.addEventListener('wheel', function(e) {
@@ -95,12 +96,20 @@ jQuery(document).ready(function(){
       $("#menu-home").toggleClass('active');
   } else if (window.location.hash === '#about') {
       $(".home-left").css('animation','leftSide2 1s')
+            $('.scroll').css('display','none')
       about();
   }
     else if (window.location.hash === '#portfolio') {
       $(".home-left").css('animation','leftSide2 .5s')
       about();
-      $(window).scrollTop(720);
+      $('body').scrollTop(840);
+            $('.scroll').css('display','none')
+    }
+    else if (window.location.hash === '#contact') {
+      $(".home-left").css('animation','leftSide2 .5s')
+      about();
+      $('.scroll').css('display','none')
+      $('body').scrollTop(1820);
     }
   $(window).on('hashchange', function() {
     if (window.location.hash === "") {
