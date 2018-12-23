@@ -832,21 +832,30 @@ footer a{
         Media Queries
   #########################*/
 
-@media only screen and (max-width: 600px) {
-  header h3 {
-    letter-spacing: 10px;
-  }
-  #menu-home .menu-line{
-    right:53%!important;
-  }
-  #menu-portfolio .menu-line{
-    right:39%!important;
-  }
-  #menu-contact .menu-line{
-    right:44%!important;
-  }
-}
+@media only screen and (max-width: 400px)  {
 
+    .about{
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding:5px;
+    }
+    .about__name{
+      align-items: center;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .about__skills svg{
+      width:40px;
+      height: 40px;
+    }
+    .about__icons{
+      min-width:250px;
+    }
+    .portfolio{
+      flex-direction: row;
+    }
+}
 
 @media only screen and (max-width: 450px){
   .about{
@@ -875,13 +884,20 @@ footer a{
     font-size:15px;
   }
   #menu-home .menu-line{
-    right:54%!important;
+    right:52%!important;
+  }
+  #menu-about .menu-line{
+    right:48%!important;
   }
   #menu-portfolio .menu-line{
-    right:33%!important;
+    right:27%!important;
   }
   #menu-contact .menu-line{
-    right:42%!important;
+    right:37%!important;
+  }
+
+  li p{
+    margin-left: 20px;
   }
 
   .portfolio{
@@ -926,29 +942,18 @@ footer a{
   }
 }
 
-
-@media only screen and (max-width: 400px)  {
-
-  .about{
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding:5px;
+@media only screen and (max-width: 600px) and (min-width: 400px){
+  header h3 {
+    letter-spacing: 10px;
   }
-  .about__name{
-    align-items: center;
-    text-align: center;
-    white-space: nowrap;
+  #menu-home .menu-line{
+    right:53%!important;
   }
-  .about__skills svg{
-    width:40px;
-    height: 40px;
+  #menu-portfolio .menu-line{
+    right:39%!important;
   }
-  .about__icons{
-    min-width:250px;
-  }
-  .portfolio{
-    flex-direction: row;
+  #menu-contact .menu-line{
+    right:44%!important;
   }
 }
 
@@ -1041,4 +1046,11 @@ footer a{
   #menu-portfolio .menu-line{
     right:44%!important;
   }
+}
+
+@media only screen and (max-height: 750px) {
+  .contact{
+    margin-top:200px;
+  }
+
 }
