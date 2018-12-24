@@ -122,6 +122,7 @@ jQuery(document).ready(function() {
                 scroller = 0;
             } else if (e.deltaY > 0 && window.location.hash === "" && menuStatus === false) {
                 about();
+                window.location.hash="about"
             }
         }, {
             passive: true
