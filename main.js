@@ -63,7 +63,7 @@ function home() {
 jQuery(document).ready(function() {
 
     //*******************************************************
-    //***                   DETECT PHONE                  ***
+    //***           DETECT PHONE - NOT WORKING            ***
     //*******************************************************
 
     var check = false;
@@ -162,7 +162,6 @@ jQuery(document).ready(function() {
           $('body').scrollTop(1820);
         }
         else{
-          window.location.hash = "contact"
           $(".home-left").css('animation', 'leftSide2 .5s')
           $('.scroll').css('display', 'none')
           $('body').scrollTop(1820);
@@ -295,7 +294,7 @@ jQuery(document).ready(function() {
     };
 
     window.onload = (function(){
-      if(window.location.hash == '#contactthank-you'){
+      if(window.location.hash == '#contactthanks'){
         document.getElementById('thank-you-message').className = 'none';
       }
     })

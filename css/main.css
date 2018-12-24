@@ -1050,6 +1050,9 @@ footer a{
   #menu-portfolio .menu-line{
     right:44%!important;
   }
+  #menu-contact .menu-line{
+    right:46%!important;
+  }
 }
 
 @media only screen and (max-height: 750px) {
