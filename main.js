@@ -111,7 +111,14 @@ jQuery(document).ready(function() {
         if ($height < 250) $('header').removeClass('active');
         if ($height < 700 && $height > 1) window.location.hash = "about";
         if ($height >= 820) window.location.hash = "portfolio";
-        if ($height >= 1520) window.location.hash = "contact";
+        if ($height >= 1520) {
+          if(window.location.hash!=="#contactthanks"){
+            window.location.hash = "contact";
+          }
+          else{
+            window.location.hash="contactthanks"
+          }
+        }
     });
     setTimeout(function() {
         window.addEventListener('wheel', function(e) {
