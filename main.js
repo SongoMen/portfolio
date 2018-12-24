@@ -156,6 +156,9 @@ jQuery(document).ready(function() {
         }
         else{
           window.location.hash = "contact"
+          $(".home-left").css('animation', 'leftSide2 .5s')
+          $('.scroll').css('display', 'none')
+          $('body').scrollTop(1820);
         }
     }
     $(window).on('hashchange', function() {
