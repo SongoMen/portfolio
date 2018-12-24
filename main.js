@@ -288,7 +288,7 @@ jQuery(document).ready(function() {
     };
 
     window.onload = (function(){
-      if(window.location.hash == '#contact#thank-you'){
+      if(window.location.hash == '#contactthank-you'){
         document.getElementById('thank-you-message').className = 'none';
       }
     })
