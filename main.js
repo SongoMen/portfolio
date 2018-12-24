@@ -279,4 +279,12 @@ jQuery(document).ready(function() {
         xDown = null;
         yDown = null;
     };
+    $(".form__button").on("click", function() {
+        $.ajax({
+            url: "https://formspree.io/pat.kozlowski00@gmail.com",
+            method: "POST",
+            data: {message: "hello!"},
+            dataType: "json"
+        });
+    });
 })
