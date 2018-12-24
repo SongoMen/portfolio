@@ -45,7 +45,6 @@ function about() {
         $(".scroll").css('display', 'none')
         $("body").css('overflow-y', 'auto');
     }, 1000)
-    window.location.hash = "about";
 }
 
 function home() {
