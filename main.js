@@ -147,7 +147,7 @@ jQuery(document).ready(function() {
         about();
         $('body').scrollTop(840);
         $('.scroll').css('display', 'none')
-    } else if (window.location.hash === '#contact') {
+    } else if (window.location.hash === '#contact' || window.location.hash === '#contactthanks') {
         about();
         window.location.hash = "contact"
         $(".home-left").css('animation', 'leftSide2 .5s')
@@ -164,7 +164,7 @@ jQuery(document).ready(function() {
         } else if (window.location.hash === '#portfolio') {
             $('#menu-home, #menu-about, #menu-contact').removeClass('active')
             $("#menu-portfolio").addClass('active');
-        } else if (window.location.hash === '#contact') {
+        } else if (window.location.hash === '#contact' || window.location.hash === '#contactthanks') {
             $('#menu-home, #menu-about, #menu-portfolio').removeClass('active')
             $("#menu-contact").addClass('active');
         }
@@ -279,13 +279,10 @@ jQuery(document).ready(function() {
         xDown = null;
         yDown = null;
     };
-    $("#sendMessage").on("click", function() {
-        $.ajax({
-            url: "//formspree.io/pat.kozlowski00@gmail.com",
-            method: "POST",
-            data: {message: "hello!"},
-            dataType: "json"
-        });
-        window.location.href = 'songomen.github.io/portfolio#contact'
-    });
+
+    window.onload = (function(){
+      if(window.location.hash == '#contact#thank-you'){
+        document.getElementById('thank-you-message').className = 'none';
+      }
+    })
 })

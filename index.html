@@ -113,7 +113,8 @@
       </div>
       <div class="contact__form">
         <h2>Say Hello</h2>
-        <form method="POST">
+        <form method="POST" action="https://getsimpleform.com/messages?form_api_token=d55de506b28707f8ee113a4e3e6c1539">
+          <input type='hidden' name='redirect_to' value='https://songomen.github.io/portfolio/#contact#thanks' />
           <div class="form__line">
             <label for="name"></label>
             <div class="form__input name">
@@ -139,9 +140,11 @@
                   <polyline points="5 8.375 7.59090909 11 14.5 4" transform='translate(0 -0.5)'></polyline>
               </svg>
           </div>
-          <input type="hidden" name="_next" value="songomen.github.io/portfolio#contact"></input>
           <button type="submit" class="form__button" name="submit" >SUBMIT</button>
         </form>
+        <p id="thank-you-message" class="hidden" style="color:green;">
+          Thank you for contacting us we'll get back to you, as soon as we can.
+        </p>
       </div>
     </section>
     <footer>
