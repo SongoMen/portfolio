@@ -149,10 +149,14 @@ jQuery(document).ready(function() {
         $('.scroll').css('display', 'none')
     } else if (window.location.hash === '#contact' || window.location.hash === '#contactthanks') {
         about();
-        window.location.hash = "contact"
-        $(".home-left").css('animation', 'leftSide2 .5s')
-        $('.scroll').css('display', 'none')
-        $('body').scrollTop(1820);
+        if(window.location.hash === '#contactthanks'){
+          $(".home-left").css('animation', 'leftSide2 .5s')
+          $('.scroll').css('display', 'none')
+          $('body').scrollTop(1820);
+        }
+        else{
+          window.location.hash = "contact"
+        }
     }
     $(window).on('hashchange', function() {
         if (window.location.hash === "") {
