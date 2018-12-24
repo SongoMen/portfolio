@@ -286,5 +286,6 @@ jQuery(document).ready(function() {
             data: {message: "hello!"},
             dataType: "json"
         });
+        window.location.href = 'songomen.github.io/portfolio#contact'
     });
 })
