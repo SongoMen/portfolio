@@ -81,6 +81,9 @@ jQuery(document).ready(function() {
     //***                     FORM                        ***
     //*******************************************************
 
+    var nameval = false, emailval = false, textval = false,thanks=false;
+    document.getElementById('form').action = "";
+
     var regex = new RegExp(
         '^(([^<>()[\\]\\\\.,;:\\s@\\"]+(\\.[^<>()[\\]\\\\.,;:\\s@\\"]+)*)|' +
         '(\\".+\\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])' +
@@ -89,16 +92,60 @@ jQuery(document).ready(function() {
 
     $('.form__input.email input').on('keyup', function(e) {
         $(this).parent().toggleClass('success', regex.test($(this).val()));
+        if(regex.test($(".form__input.email input").val())){
+          emailval=true
+        }
+        else{
+          emailval=false;
+        }
     });
 
     $('.form__input.name input').on('keyup', function(e) {
         $(this).parent().toggleClass('success', $(this).val().length > 2);
+        if($(".form__input.name input").val().length > 2){
+          nameval=true
+        }
+        else{
+          nameval=false;
+        }
     });
 
     $('.form__input.textarea textarea').on('keyup', function(e) {
         $(this).parent().toggleClass('success', $(this).val().length > 10);
+        if($(".form__input.textarea textarea").val().length > 10){
+          textval=true
+        }
+        else{
+          textval=false;
+        }
     });
 
+    $('#form').submit(function(){
+      if(emailval === false){
+        $(".form__input.email input").css('border','1px solid red')
+      }
+      else {
+        $(".form__input.email input").css('border','none')
+      }
+      if(nameval === false){
+        $(".form__input.name input").css('border','1px solid red')
+      }
+      else{
+        $(".form__input.name input").css('border','none')
+      }
+      if(textval === false){
+        $(".form__input.textarea textarea").css('border','1px solid red')
+      }
+      else{
+        $(".form__input.textarea textarea").css('border','none')
+      }
+      if(nameval === true && emailval === true && textval===true){
+        document.getElementById('form').action = "https://getsimpleform.com/messages?form_api_token=d55de506b28707f8ee113a4e3e6c1539";
+        return true;
+        thanks=true;
+      }
+      return false;
+    })
     //*******************************************************
     //***                     SCROLLING                   ***
     //*******************************************************
@@ -110,9 +157,9 @@ jQuery(document).ready(function() {
         if ($height >= 250) $('header').addClass('active');
         if ($height < 250) $('header').removeClass('active');
         if ($height < 700 && $height > 1) window.location.hash = "about";
-        if ($height >= 820) window.location.hash = "portfolio";
+        if ($height >= 820 && $height< 1500) window.location.hash = "portfolio";
         if ($height >= 1520) {
-          if(window.location.hash!=="#contactthanks"){
+          if(window.location.hash!=="#contactthanks" && thanks === false){
             window.location.hash = "contact";
           }
           else{
