@@ -62,10 +62,11 @@ h3{
 }
 
 h2,h3,h4{
-  animation: show2 1.2s cubic-bezier(1,-0.17,.68,.84);
+  animation: show2 .8s cubic-bezier(1,-0.17,.68,.84);
 }
 
 p{
+  animation: show2 1s;
   font-family: NexaLight
 }
 
@@ -501,7 +502,7 @@ li span{
   width:100%;
   justify-content: center;
   flex-wrap: wrap;
-  height: 100%;
+  height: 115%;
   flex-direction: column;
   align-items: center;
 }
@@ -510,8 +511,51 @@ li span{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
+.portfolio__row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin:20px 50px;
+}
+
+.portfolio__side{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left:70px;
+  padding-right:50px;
+  width:400px;
+  height: 220px;
+  margin-left:-20px;
+  background-color:#0fbcf9;
+  text-align: center;
+}
+
+.portfolio__buttons{
+  margin-top:10px;
+}
+
+.portfolio__side a{
+  color:#0fbcf9;
+  background-color:white;
+  height: 10px;
+  font-size:13px;
+  padding:10px 30px;
+  min-height: 40px;
+  box-shadow: 0px 0px 53px 0px rgba(0,0,0,0.4);
+  margin:10px;
+}
+
+.portfolio__side  a:hover{
+  box-shadow: 0px 0px 53px 0px rgba(0,0,0,0.4);
+  background-color:#0fbcf9;
+  color:white;
+}
 
 .portfolio__item {
   width: calc(880px / 3);
@@ -520,6 +564,7 @@ li span{
   float: left;
   position: relative;
   overflow: hidden;
+  transform: scale(1.2);
 }
 .portfolio__item:hover .infos {
   opacity: 1;
@@ -904,10 +949,6 @@ footer a{
     margin-left: 20px;
   }
 
-  .portfolio{
-    height: 40%;
-  }
-
   .portfolio__item{
     height: 50%;
   }
@@ -943,6 +984,9 @@ footer a{
 
   .form__input.textarea svg{
     right:10px;
+  }
+  .portfolio{
+    flex-direction: row;
   }
 }
 
@@ -1018,6 +1062,18 @@ footer a{
 
 }
 
+@media only screen and (max-width: 850px){
+  .portfolio__row{
+    flex-direction: column;
+  }
+  .portfolio__side{
+    width:300px;
+    padding:10px;
+    margin-top:20px;
+    margin-left:0;
+  }
+}
+
 @media only screen and (max-width: 1000px)  and (min-width: 800px) {
 
   #menu-home .menu-line{
@@ -1058,6 +1114,9 @@ footer a{
 @media only screen and (max-height: 750px) {
   .contact{
     margin-top:200px;
+  }
+  .contact__info{
+    margin-bottom:350px;
   }
 
 }
