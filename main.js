@@ -141,8 +141,8 @@ jQuery(document).ready(function() {
       }
       if(nameval === true && emailval === true && textval===true){
         document.getElementById('form').action = "https://getsimpleform.com/messages?form_api_token=d55de506b28707f8ee113a4e3e6c1539";
-        return true;
         thanks=true;
+        return true;
       }
       return false;
     })
