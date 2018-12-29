@@ -481,7 +481,7 @@ li span{
     width:70px;
     height: 70px;
     fill:white;
-    margin:15px;
+    margin:5px;
     animation:show 1s;
     transition: .5s;
   }
@@ -495,6 +495,17 @@ li span{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+  }
+
+  .about__desc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .about__desc p{
+    margin:10px;
   }
 
  /*#########################
@@ -551,12 +562,12 @@ li span{
   font-size:13px;
   padding:10px 30px;
   min-height: 40px;
-  box-shadow: 0px 0px 53px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.2);
   margin:10px;
 }
 
 .portfolio__side  a:hover{
-  box-shadow: 0px 0px 53px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.2);
   background-color:#0fbcf9;
   color:white;
 }
