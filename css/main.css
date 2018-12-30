@@ -58,7 +58,6 @@ body {
 	box-sizing: border-box;
 	font-family: 'NexaBold';
 	color: white;
-	transition: all 1s;
 }
 
 h1 {
@@ -76,7 +75,7 @@ h3 {
 
 h2,
 h3,
-h4 {
+h4, button {
 	animation: show2 .8s cubic-bezier(1, -0.17, .68, .84);
 }
 
@@ -739,6 +738,17 @@ svg:hover {
 	width: 50%;
 }
 
+.contact__info button{
+		align-self: flex-start;
+		background-color: white;
+		color:#1e272e;
+		box-shadow: rgb(255,255,255, .8) 0px 0.4rem 1.5rem 0px;
+}
+
+.contact__info button:hover{
+	box-shadow: rgb(255,255,255, .8) 0px 0rem 1.5rem 0px;
+}
+
 .contact__form {
 	animation: show 1s;
 }
@@ -895,12 +905,12 @@ svg:hover {
 	align-self: flex-end;
 	transition: all .5s;
 	margin-top: 20px;
-	margin-left: 20px;
+	white-space: nowrap;
 	cursor: pointer;
 }
 
 .form__button:hover {
-	box-shadow: rgb(15, 188, 249, .5) 0px 0rem 1.5rem 0px;
+	box-shadow: rgb(15, 188, 249, .8) 0px 0rem 1.5rem 0px;
 }
 
 
@@ -1113,7 +1123,7 @@ footer a {
 	}
 }
 
-@media only screen and (max-width:850px) {
+@media only screen and (max-width:1000px) {
 	.portfolio__row {
 		flex-direction: column;
 	}
@@ -1161,12 +1171,19 @@ footer a {
 	.contact__form {
 		justify-content: center;
 		align-items: center;
+		margin-top:200px;
 	}
   .contact {
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
+	.contact__info button{
+		align-self:center;
+	}
+	.contact__element{
+			margin-bottom: 50px;
+	}
 }
 
 
@@ -1230,5 +1247,15 @@ footer a {
 
 	.contact__info {
 		margin-bottom: 350px;
+	}
+	.home-left{
+		height: 120%;
+	}
+	.portfolio{
+		margin-top:100px;
+		height: 200%;
+	}
+	.contact__info{
+		margin-bottom: 200px;
 	}
 }
