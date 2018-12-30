@@ -1,10 +1,12 @@
 @font-face {
 	font-family: "NexaBold";
+	font-display: auto;
 	src: url('../fonts/Nexa-Bold.ttf')
 }
 
 @font-face {
 	font-family: "NexaLight";
+	font-display: auto;
 	src: url('../fonts/Nexa-Light.ttf')
 }
 
