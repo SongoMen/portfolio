@@ -154,7 +154,7 @@ jQuery(document).ready(function() {
         var $height = $('body').scrollTop();
         if ($height === 0) scroller = 0;
         if ($height !== 0) scroller = 1;
-        if ($height >= 250) $('header').addClass('active');
+        if ($height >= 200) $('header').addClass('active');
         if ($height < 250) $('header').removeClass('active');
         if ($height < 700 && $height > 1) window.location.hash = "about";
         if ($height >= 820 && $height< 1500) window.location.hash = "portfolio";
