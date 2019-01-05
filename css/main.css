@@ -460,10 +460,14 @@ li span {
 	margin-left: 20px;
 	animation: arrow 1.3s infinite;
 	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .scroll h5 {
 	margin-left: 10px
+	margin-bottom:20px;
 }
 
 
