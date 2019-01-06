@@ -1266,3 +1266,17 @@ footer a {
 		margin-bottom: 200px;
 	}
 }
+@media only screen and (max-height: 450px) {
+	.contact {
+		margin-top: 600px;
+	}
+	.home-left{
+		height: 220%;
+	}
+	.portfolio{
+		margin-top:400px;
+	}
+	.scroll h5	{
+		margin-bottom:30px;
+	}
+}
