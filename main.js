@@ -24,9 +24,6 @@ function openMenu() {
 }
 
 function about() {
-    $(".about").css({
-        display: 'flex'
-    });
     $(".home-left").css('width', '100%');
     $(".home-center").css('margin-left', '100%');
     $(".home").css({
@@ -44,7 +41,8 @@ function about() {
         $(".home-center").css('display', 'none')
         $(".scroll").css('display', 'none')
         $("body").css('overflow-y', 'auto');
-    }, 1000)
+        $(".about").css('display', 'flex');
+""    }, 1000)
 }
 
 function home() {

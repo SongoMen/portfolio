@@ -185,6 +185,7 @@ header {
 	top: 0px;
 	z-index: 500;
 	animation: show .5s;
+	transition: all .5s
 }
 
 header.active {
