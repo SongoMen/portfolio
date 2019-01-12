@@ -5,7 +5,7 @@ function closeMenu() {
     $(".top-menu").css('margin-top', '-270%')
     menuStatus = false
     $('.menu-toggle').toggleClass('active');
-    if (window.location.hash === '#about' || window.location.hash === "#portfolio") {
+    if (window.location.hash === '#about' || window.location.hash === "#portfolio" || window.location.hash === "#contact") {
         $("body").css('overflow-y', 'auto')
     }
     setTimeout(() => {
