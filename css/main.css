@@ -1177,12 +1177,12 @@ footer a {
 	}
 	.portfolio {
 		flex-direction: row;
-		height: 190%;
 	}
 	.contact__info {
 		height: 50%;
 		align-items: center;
 		justify-content: center;
+		margin-top:1200px;
 	}
 	.contact__form {
 		justify-content: center;
@@ -1204,7 +1204,6 @@ footer a {
 }
 
 
-}
 @media only screen and (max-width: 800px) and (min-width: 450px) {
 	#menu-home .menu-line {
 		right: 53%!important;
