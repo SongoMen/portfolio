@@ -1071,6 +1071,9 @@ footer a {
 		width: 30px;
 		height: 30px;
 	}
+	.portfolio{
+		height: 180%;
+	}
 }
 
 @media only screen and (max-width: 450px) and (min-width:400px) {
@@ -1117,6 +1120,9 @@ footer a {
 }
 
 @media only screen and (max-width: 600px) and (min-width: 400px) {
+	.portfolio{
+		height: 180%;
+	}
 	header h3 {
 		letter-spacing: 10px;
 	}
@@ -1145,11 +1151,12 @@ footer a {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-    padding:5px;
+    	padding:5px;
 	}
-  .home-left{
-    padding:0px;
-  }
+
+  	.home-left{
+    	padding:0px;
+  	}
 	.about__name {
 		align-items: center;
 		text-align: center;
@@ -1162,15 +1169,16 @@ footer a {
 	.about__skills {
 		width: 100%;
 	}
-  .about p{
-    white-space: normal;
-  }
-  .portfolio__item {
-    height: 50%;
-  }
-  .portfolio {
-    flex-direction: row;
-  }
+	.about p{
+		white-space: normal;
+	}
+	.portfolio__item {
+		height: 50%;
+	}
+	.portfolio {
+		flex-direction: row;
+		height: 190%;
+	}
 	.contact__info {
 		height: 50%;
 		align-items: center;
@@ -1179,18 +1187,19 @@ footer a {
 	.contact__form {
 		justify-content: center;
 		align-items: center;
-		margin-top:200px;
+		margin-top:50px;
 	}
-  .contact {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+	.contact {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-top:100px;
+	}
 	.contact__info button{
 		align-self:center;
 	}
 	.contact__element{
-			margin-bottom: 50px;
+		margin-bottom: 50px;
 	}
 }
 
@@ -1250,26 +1259,26 @@ footer a {
 }
 @media only screen and (max-height: 750px) {
 	.contact {
-		margin-top: 200px;
+		margin-top: 600px;
 	}
 
 	.contact__info {
-		margin-bottom: 350px;
+		margin-bottom: 100px;
 	}
 	.home-left{
-		height: 120%;
+		height: 110%;
 	}
 	.portfolio{
 		margin-top:100px;
-		height: 200%;
-	}
-	.contact__info{
-		margin-bottom: 200px;
+		height: 190%;
 	}
 }
-@media only screen and (max-height: 450px) {
+@media only screen and (max-height: 550px) {
+	.home{
+		height: 60%;
+	}
 	.contact {
-		margin-top: 600px;
+		margin-top: 900px;
 	}
 	.home-left{
 		height: 220%;
@@ -1279,5 +1288,8 @@ footer a {
 	}
 	.scroll h5	{
 		margin-bottom:30px;
+	}
+	.contact__form{
+		margin-top:200px;
 	}
 }
