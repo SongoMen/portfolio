@@ -1029,9 +1029,25 @@ footer a {
 		transform: scale(.8);
 		margin: 0 25px;
 	}
+	#menu-home .menu-line {
+		right: 52%!important;
+	}
+	#menu-about .menu-line {
+		right: 48%!important;
+	}
+	#menu-portfolio .menu-line {
+		right: 34%!important;
+	}
+	#menu-contact .menu-line {
+		right: 41%!important;
+	}
 }
 
+
 @media only screen and (max-width:450px) {
+	ul{
+		font-size:25px!important;
+	}
 	.contact {
 		flex-direction: column;
 		padding: 10px;
@@ -1109,17 +1125,17 @@ footer a {
 		right: 48%!important;
 	}
 	#menu-portfolio .menu-line {
-		right: 27%!important;
+		right: 34%!important;
 	}
 	#menu-contact .menu-line {
-		right: 37%!important;
+		right: 41%!important;
 	}
 	li p {
-		margin-left: 20px;
+		margin-left: 50px;
 	}
 }
 
-@media only screen and (max-width: 600px) and (min-width: 400px) {
+@media only screen and (max-width: 600px) and (min-width: 500px) {
 	.portfolio{
 		height: 180%;
 	}
@@ -1193,6 +1209,7 @@ footer a {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		padding:20px;
 	}
 	.contact__info button{
 		align-self:center;
@@ -1297,7 +1314,7 @@ footer a {
 
 @media only screen and (max-height: 800px) and (min-height:680px) {
 	.home{
-		height: 80%;
+		height: 55%;
 	}
 	.contact {
 		margin-top: 0;

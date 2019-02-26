@@ -192,19 +192,19 @@ jQuery(document).ready(function() {
     } else if (window.location.hash === '#portfolio') {
         $(".home-left").css('animation', 'leftSide2 .5s')
         about();
-        $('body').scrollTop(840);
+        $('#portfoliosection')[0].scrollIntoView( true );
         $('.scroll').css('display', 'none')
     } else if (window.location.hash === '#contact' || window.location.hash === '#contactthanks') {
         about();
         if(window.location.hash === '#contactthanks'){
           $(".home-left").css('animation', 'leftSide2 .5s')
           $('.scroll').css('display', 'none')
-          $('body').scrollTop(1820);
+          $('#contactsection')[0].scrollIntoView( true );
         }
         else{
           $(".home-left").css('animation', 'leftSide2 .5s')
           $('.scroll').css('display', 'none')
-          $('body').scrollTop(1820);
+          $('#contactsection')[0].scrollIntoView( true );
         }
     }
     $(window).on('hashchange', function() {
@@ -258,7 +258,7 @@ jQuery(document).ready(function() {
     $('#menu-portfolio').on('click', function() {
         if (window.location.hash !== '#portfolio') {
             about();
-            $('body').scrollTop(840);
+            $('#portfoliosection')[0].scrollIntoView( true );
             setTimeout(function() {
                 closeMenu();
             }, 800)
@@ -269,7 +269,7 @@ jQuery(document).ready(function() {
     $('#menu-contact').on('click', function() {
         if (window.location.hash !== '#contact') {
             about();
-            $('body').scrollTop(1820);
+            $('#contactsection')[0].scrollIntoView( true );
             setTimeout(function() {
                 closeMenu();
             }, 800)
