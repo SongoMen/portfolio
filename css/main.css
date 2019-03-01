@@ -1286,9 +1286,7 @@ footer a {
 	.home{
 		height: 60%;
 	}
-	.home-left{
-		height: 220%;
-	}
+
 	.portfolio{
 		margin-top:400px;
 	}
@@ -1296,7 +1294,7 @@ footer a {
 		margin-bottom:30px;
 	}
 	.contact__form{
-		margin-top:400px;
+		margin-top:50px;
 	}
 }
 
@@ -1304,9 +1302,7 @@ footer a {
 	.home{
 		height: 80%;
 	}
-	.home-left{
-		height: 220%;
-	}
+
 	.portfolio{
 		margin-top:500px;
 	}
@@ -1314,10 +1310,7 @@ footer a {
 		margin-bottom:30px;
 	}
 	.contact__form{
-		margin-top:400px;
-	}
-	.contact{
-		margin-top:200px;
+		margin-top:50px;
 	}
 }
 
@@ -1328,9 +1321,7 @@ footer a {
 	.contact {
 		margin-top: 0;
 	}
-	.home-left{
-		height: 220%;
-	}
+
 	.portfolio{
 		margin-top:500px;
 	}
@@ -1351,14 +1342,13 @@ footer a {
 	.contact__info {
 		margin-bottom: 50px;
 	}
-	.home-left{
-		height: 110%;
+	.home{
+		height: 200%;
 	}
 	.portfolio{
 		margin-top:100px;
 		height: 220%;
 	}
-
 	.portfolio{
 		height: 420%!important;
 	}
