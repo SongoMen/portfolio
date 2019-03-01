@@ -1315,15 +1315,8 @@ footer a {
 }
 
 @media only screen and (max-height: 800px) and (min-height:680px) {
-	.home{
-		height: 55%;
-	}
 	.contact {
 		margin-top: 0;
-	}
-
-	.portfolio{
-		margin-top:500px;
 	}
 	.scroll h5	{
 		margin-bottom:30px;
