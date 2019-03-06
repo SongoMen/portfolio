@@ -568,6 +568,7 @@ svg:hover {
 	width: 100%;
 	justify-content: center;
 	flex-wrap: wrap;
+	flex-direction: column;
 	align-items: center;
 }
 
@@ -576,7 +577,6 @@ svg:hover {
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	margin-top:-150px;
 }
 
 .portfolio__row {
@@ -727,6 +727,7 @@ svg:hover {
 
 .contact {
 	width: 100%;
+	height: 90%;
 	padding: 100px;
 	display: none;
 }
@@ -1085,9 +1086,6 @@ footer a {
 		width: 30px;
 		height: 30px;
 	}
-	.portfolio__collection{
-		margin-top:0;
-	}
 }
 
 @media only screen and (max-width: 450px) and (min-width:400px) {
@@ -1196,6 +1194,7 @@ footer a {
 		height: 50%;
 		align-items: center;
 		justify-content: center;
+		margin-top:100px;
 	}
 	.contact__form {
 		justify-content: center;
@@ -1216,11 +1215,7 @@ footer a {
 	}
 }
 
-@media only screen and (max-height: 1600px){
-	.portfolio__collection{
-		margin-top:0;
-	}
-}
+
 @media only screen and (max-width: 800px) and (min-width: 450px) {
 	#menu-home .menu-line {
 		right: 53%!important;
@@ -1234,14 +1229,6 @@ footer a {
 		right: 45%!important;
 	}
 }
-
-@media only screen and (max-width:1050px) and (min-width: 1000px){
-	.form__input.textarea{
-		padding:0;
-		margin-left:0;
-	}
-}
-
 @media only screen and (max-width: 1000px) and (min-width: 800px) {
 	#menu-home .menu-line {
 		right: 51%!important;
@@ -1284,48 +1271,59 @@ footer a {
 
 @media only screen and (max-height: 550px) {
 	.home{
-		height: 60%;
+		height: 130%;
 	}
-
 	.portfolio{
-		margin-top:400px;
+		margin-top:50px;
 	}
 	.scroll h5	{
 		margin-bottom:30px;
 	}
 	.contact__form{
-		margin-top:50px;
+		margin-top:400px;
 	}
 }
 
 @media only screen and (max-height: 480px) {
 	.home{
-		height: 80%;
+		height: 150%;
 	}
-
 	.portfolio{
-		margin-top:500px;
+		margin-top:50px;
 	}
 	.scroll h5	{
 		margin-bottom:30px;
 	}
 	.contact__form{
-		margin-top:50px;
+		margin-top:400px;
+	}
+	.contact{
+		margin-top:200px;
 	}
 }
 
 @media only screen and (max-height: 800px) and (min-height:680px) {
+
 	.contact {
 		margin-top: 0;
+	}
+	.home{
+		height: 120%;
+	}
+	.portfolio{
+		margin-top:50px;
 	}
 	.scroll h5	{
 		margin-bottom:30px;
 	}
 	.contact__info{
-		margin-bottom: 50px;
+		margin-bottom: 300px;
 	}
 	.contact__form{
 		margin-top:0;
+	}
+	.portfolio{
+		height: 220%!important;
 	}
 
 }
@@ -1336,21 +1334,20 @@ footer a {
 		margin-bottom: 50px;
 	}
 	.home{
-		height: 200%;
+		height: 110%;
 	}
 	.portfolio{
 		margin-top:100px;
-		height: 220%;
+		height: 250%;
 	}
+
 	.portfolio{
 		height: 420%!important;
 	}
 }
 @media only screen and (max-height: 600px)  and (min-height:550px){
 	.contact__form{
-		margin-top:50px;
+		margin-top:400px;
 	}
-	.home{
-		height: 150%;
-	}
+
 }

@@ -51,7 +51,7 @@ function home() {
     $(".home-center").css('margin-left', '0%')
     $("body").css('overflow', 'hidden')
     $(".home-center").css('display', 'flex')
-    $(".scroll").css('display', 'block')
+    $(".scroll").css('display', 'flex')
     $(".about").css('display', 'none')
     $('body').scrollTop(0);
     scroller = 1;
