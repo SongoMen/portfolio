@@ -270,6 +270,7 @@ header {
 	padding: 10px 25px;
 	display: -webkit-box;
 	display: -ms-flexbox;
+	user-select: none;
 	display: flex;
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
@@ -494,7 +495,7 @@ li {
 }
 
 li:hover {
-	color: #0fbcf9 !important;
+	color: #D44D5C !important;
 }
 
 li p {
@@ -508,7 +509,7 @@ li p {
 }
 
 li.active {
-	color: #0fbcf9;
+	color: #D44D5C;
 }
 
 li.active:hover {
@@ -518,7 +519,7 @@ li.active:hover {
 li span {
 	visibility: hidden;
 	opacity: 0;
-	border-left: 2px solid #0fbcf9;
+	border-left: 2px solid #D44D5C;
 	height: 25px;
 	position: absolute;
 	right: 50%;
@@ -630,7 +631,7 @@ li span {
 	-webkit-transition: all 1s;
 	-o-transition: all 1s;
 	transition: all 1s;
-	background-color: #0fbcf9;
+	background-color: #D44D5C;
 	-webkit-animation: leftSide 1s;
 	        animation: leftSide 1s;
 }
@@ -852,7 +853,7 @@ svg:hover {
 	        align-items: center;
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
-	margin: 20px 50px;
+	margin: 20px 30px;
 }
 
 .portfolio__side {
@@ -874,7 +875,7 @@ svg:hover {
 	width: 400px;
 	height: 220px;
 	margin-left: -20px;
-	background-color: #0fbcf9;
+	background-color: #D44D5C;
 	text-align: center;
 }
 
@@ -883,7 +884,7 @@ svg:hover {
 }
 
 .portfolio__side a {
-	color: #0fbcf9;
+	color: #D44D5C;
 	background-color: white;
 	height: 10px;
 	font-size: 13px;
@@ -897,7 +898,7 @@ svg:hover {
 .portfolio__side a:hover {
 	-webkit-box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.2);
 	        box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.2);
-	background-color: #0fbcf9;
+	background-color: #D44D5C;
 	color: white;
 }
 
@@ -1210,9 +1211,9 @@ svg:hover {
 }
 
 .form__button {
-	-webkit-box-shadow: rgb(15, 188, 249, .8) 0px 0.4rem 1.5rem 0px;
-	        box-shadow: rgb(15, 188, 249, .8) 0px 0.4rem 1.5rem 0px;
-	background-color: #0fbcf9;
+	-webkit-box-shadow: rgba(212,77,92,.8) 0px 0.4rem 1.5rem 0px;
+	        box-shadow: rgba(212,77,92,.8) 0px 0.4rem 1.5rem 0px;
+	background-color: #D44D5C;
 	border-radius: 0.6rem;
 	padding: 0px 2.2rem;
 	min-height: 3rem;
@@ -1230,8 +1231,8 @@ svg:hover {
 }
 
 .form__button:hover {
-	-webkit-box-shadow: rgb(15, 188, 249, .8) 0px 0rem 1.5rem 0px;
-	        box-shadow: rgb(15, 188, 249, .8) 0px 0rem 1.5rem 0px;
+	-webkit-box-shadow: rgba(212,77,92,.8) 0px 0rem 1.5rem 0px;
+	        box-shadow: rgba(212,77,92,.8) 0px 0rem 1.5rem 0px;
 }
 
 
@@ -1315,7 +1316,7 @@ footer a {
 
 .footer__twitter:hover svg path,
 .footer__github:hover svg path {
-	fill: #0fbcf9;
+	fill: #D44D5C;
 }
 
 .footer__github:hover .github__circle {
@@ -1701,6 +1702,13 @@ footer a {
 	#menu-contact .menu-line {
 		right: 43%!important;
 	}
+}
+
+@media only screen and (max-width: 1300px) {
+.portfolio__side{
+	padding-left: 30px;
+	padding-right: 10px;
+}
 }
 
 @media only screen and (max-height: 550px) {
