@@ -284,9 +284,9 @@ header {
 	z-index: 500;
 	-webkit-animation: show .5s;
 	        animation: show .5s;
-	-webkit-transition: all .5s;
-	-o-transition: all .5s;
-	transition: all .5s
+	-webkit-transition: background-color .5s;
+	-o-transition: background-color .5s;
+	transition: background-color .5s
 }
 
 header.active {

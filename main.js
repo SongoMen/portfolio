@@ -151,7 +151,7 @@ jQuery(document).ready(function() {
         if ($height < 250) $('header').removeClass('active');
         if ($height < 700 && $height > 1) window.location.hash = "about";
         if ($height >= 820 && $height< 1500) window.location.hash = "portfolio";
-        if ($height >= 1520) {
+        if ($height >= document.getElementById("contactsection").offsetTop - 200) {
           if(window.location.hash!=="#contactthanks" && thanks === false){
             window.location.hash = "contact";
           }
