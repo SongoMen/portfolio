@@ -297,7 +297,7 @@ jQuery(document).ready(function() {
         const firstTouch = getTouches(evt)[0];
         xDown = firstTouch.clientX;
         yDown = firstTouch.clientY;
-    };
+    }
 
     function handleTouchMove(evt) {
         if (!xDown || !yDown) {
@@ -331,7 +331,7 @@ jQuery(document).ready(function() {
         /* reset values */
         xDown = null;
         yDown = null;
-    };
+    }
 
     window.onload = (function(){
       if(window.location.hash == '#contactthanks'){
