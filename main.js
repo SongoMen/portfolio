@@ -83,7 +83,7 @@ jQuery(document).ready(function() {
         '|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$'
     );
 
-    $('.form__input.email input').on('keyup', function(e) {
+    $('.form__input.email input').on('keyup', function() {
         $(this).parent().toggleClass('success', regex.test($(this).val()));
         if(regex.test($(".form__input.email input").val())){
           emailval=true
@@ -93,7 +93,7 @@ jQuery(document).ready(function() {
         }
     });
 
-    $('.form__input.name input').on('keyup', function(e) {
+    $('.form__input.name input').on('keyup', function() {
         $(this).parent().toggleClass('success', $(this).val().length > 2);
         if($(".form__input.name input").val().length > 2){
           nameval=true
@@ -103,7 +103,7 @@ jQuery(document).ready(function() {
         }
     });
 
-    $('.form__input.textarea textarea').on('keyup', function(e) {
+    $('.form__input.textarea textarea').on('keyup', function() {
         $(this).parent().toggleClass('success', $(this).val().length > 10);
         if($(".form__input.textarea textarea").val().length > 10){
           textval=true
@@ -322,7 +322,9 @@ jQuery(document).ready(function() {
                 /* right swipe */
             }
         } else {
-            if (yDiff > 0) {} else {
+            if (yDiff > 0) {
+                console.log("")
+            } else {
                 if (window.location.hash === "" && menuStatus === false) {
                     about();
                 }
