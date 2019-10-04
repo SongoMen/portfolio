@@ -1,5 +1,6 @@
 var menuStatus = false;
 var scroller = 0;
+let scrollabout;
 
 function closeMenu() {
     $(".top-menu").css("margin-top", "-270%");
@@ -43,7 +44,7 @@ function about() {
         $(".scroll").css("display", "none");
         $("body").css("overflow-y", "auto");
         $(".about").css("display", "flex");
-""    }, 1000)
+   }, 1000);
 }
 
 function home() {
@@ -55,7 +56,7 @@ function home() {
     $(".about").css("display", "none");
     $("body").scrollTop(0);
     scroller = 1;
-    window.location.hash = ""
+    window.location.hash = "";
     clearTimeout(scrollabout);
 }
 
@@ -145,12 +146,12 @@ jQuery(document).ready(function() {
 
     $("body").on("scroll", function() {
         var $height = $("body").scrollTop();
-        if ($height === 0) scroller = 0;
-        if ($height !== 0) scroller = 1;
-        if ($height >= 200) $("header").addClass("active");
-        if ($height < 250) $("header").removeClass("active");
-        if ($height < 700 && $height > 1) window.location.hash = "about";
-        if ($height >= 820 && $height< 1500) window.location.hash = "portfolio";
+        if ($height === 0) {scroller = 0;}
+        if ($height !== 0) {scroller = 1;}
+        if ($height >= 200) {$("header").addClass("active");}
+        if ($height < 250) {$("header").removeClass("active");}
+        if ($height < 700 && $height > 1) {window.location.hash = "about";}
+        if ($height >= 820 && $height< 1500){ window.location.hash = "portfolio";}
         if ($height >= document.getElementById("contactsection").offsetTop - 200) {
           if(window.location.hash!=="#contactthanks" && thanks === false){
             window.location.hash = "contact";
@@ -174,7 +175,7 @@ jQuery(document).ready(function() {
         }, {
             passive: true
         });
-    }, 1500)
+    }, 1500);
 
     //*******************************************************
     //***                     HASH                        ***
@@ -238,7 +239,7 @@ jQuery(document).ready(function() {
             home();
             setTimeout(function() {
                 closeMenu();
-            }, 300)
+            }, 300);
         } else {
             closeMenu();
         }
@@ -272,7 +273,7 @@ jQuery(document).ready(function() {
             $("#contactsection")[0].scrollIntoView( true );
             setTimeout(function() {
                 closeMenu();
-            }, 800)
+            }, 800);
         } else {
             closeMenu();
         }
@@ -334,8 +335,8 @@ jQuery(document).ready(function() {
     }
 
     window.onload = (function(){
-      if(window.location.hash == "#contactthanks"){
+      if(window.location.hash === "#contactthanks"){
         document.getElementById("thank-you-message").className = "none";
       }
-    })
-})
+    });
+});
