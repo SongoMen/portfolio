@@ -2,58 +2,58 @@ var menuStatus = false;
 var scroller = 0;
 
 function closeMenu() {
-    $(".top-menu").css('margin-top', '-270%')
+    $(".top-menu").css("margin-top", "-270%")
     menuStatus = false
-    $('.menu-toggle').toggleClass('active');
-    if (window.location.hash === '#about' || window.location.hash === "#portfolio" || window.location.hash === "#contact"
+    $(".menu-toggle").toggleClass("active");
+    if (window.location.hash === "#about" || window.location.hash === "#portfolio" || window.location.hash === "#contact"
     || window.location.hash === "#contactthanks") {
-        $("body").css('overflow-y', 'auto')
+        $("body").css("overflow-y", "auto")
     }
     setTimeout(() => {
-        $("footer").css('position', 'fixed')
+        $("footer").css("position", "fixed")
     }, 800)
 }
 
 function openMenu() {
-    $(".top-menu").css('display', 'flex')
-    $(".top-menu").css('animation', 'topMenu 1s')
-    $(".top-menu").css('margin-top', '0%')
+    $(".top-menu").css("display", "flex")
+    $(".top-menu").css("animation", "topMenu 1s")
+    $(".top-menu").css("margin-top", "0%")
     menuStatus = true
-    $('.menu-toggle').toggleClass('active');
-    $("body").css('overflow', 'hidden')
-    $("footer").css('position', 'absolute')
+    $(".menu-toggle").toggleClass("active");
+    $("body").css("overflow", "hidden")
+    $("footer").css("position", "absolute")
 }
 
 function about() {
-    $(".home-left").css('width', '100%');
-    $(".home-center").css('margin-left', '100%');
+    $(".home-left").css("width", "100%");
+    $(".home-center").css("margin-left", "100%");
     $(".home").css({
-        display: 'flex'
+        display: "flex"
     });
-    $("#menu-about").addClass('active');
+    $("#menu-about").addClass("active");
     $(".portfolio").css({
-        display: 'flex'
+        display: "flex"
     });
     $(".contact").css({
-        display: 'flex'
+        display: "flex"
     });
-    $('body').scrollTop(0);
+    $("body").scrollTop(0);
     scrollabout = setTimeout(() => {
-        $(".home-center").css('display', 'none')
-        $(".scroll").css('display', 'none')
-        $("body").css('overflow-y', 'auto');
-        $(".about").css('display', 'flex');
+        $(".home-center").css("display", "none")
+        $(".scroll").css("display", "none")
+        $("body").css("overflow-y", "auto");
+        $(".about").css("display", "flex");
 ""    }, 1000)
 }
 
 function home() {
-    $(".home-left").css('width', '50%')
-    $(".home-center").css('margin-left', '0%')
-    $("body").css('overflow', 'hidden')
-    $(".home-center").css('display', 'flex')
-    $(".scroll").css('display', 'flex')
-    $(".about").css('display', 'none')
-    $('body').scrollTop(0);
+    $(".home-left").css("width", "50%")
+    $(".home-center").css("margin-left", "0%")
+    $("body").css("overflow", "hidden")
+    $(".home-center").css("display", "flex")
+    $(".scroll").css("display", "flex")
+    $(".about").css("display", "none")
+    $("body").scrollTop(0);
     scroller = 1;
     window.location.hash = ""
     clearTimeout(scrollabout)
@@ -66,7 +66,7 @@ jQuery(document).ready(function() {
     //*******************************************************
 
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-      $('#scroll__text').html("Swipe Down");
+      $("#scroll__text").html("Swipe Down");
     }
 
 
@@ -75,7 +75,7 @@ jQuery(document).ready(function() {
     //*******************************************************
 
     var nameval = false, emailval = false, textval = false,thanks=false;
-    document.getElementById('form').action = "";
+    document.getElementById("form").action = "";
 
     var regex = new RegExp(
         '^(([^<>()[\\]\\\\.,;:\\s@\\"]+(\\.[^<>()[\\]\\\\.,;:\\s@\\"]+)*)|' +
@@ -83,8 +83,8 @@ jQuery(document).ready(function() {
         '|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$'
     );
 
-    $('.form__input.email input').on('keyup', function() {
-        $(this).parent().toggleClass('success', regex.test($(this).val()));
+    $(".form__input.email input").on("keyup", function() {
+        $(this).parent().toggleClass("success", regex.test($(this).val()));
         if(regex.test($(".form__input.email input").val())){
           emailval=true
         }
@@ -93,8 +93,8 @@ jQuery(document).ready(function() {
         }
     });
 
-    $('.form__input.name input').on('keyup', function() {
-        $(this).parent().toggleClass('success', $(this).val().length > 2);
+    $(".form__input.name input").on("keyup", function() {
+        $(this).parent().toggleClass("success", $(this).val().length > 2);
         if($(".form__input.name input").val().length > 2){
           nameval=true
         }
@@ -103,8 +103,8 @@ jQuery(document).ready(function() {
         }
     });
 
-    $('.form__input.textarea textarea').on('keyup', function() {
-        $(this).parent().toggleClass('success', $(this).val().length > 10);
+    $(".form__input.textarea textarea").on("keyup", function() {
+        $(this).parent().toggleClass("success", $(this).val().length > 10);
         if($(".form__input.textarea textarea").val().length > 10){
           textval=true
         }
@@ -113,27 +113,27 @@ jQuery(document).ready(function() {
         }
     });
 
-    $('#form').submit(function(){
+    $("#form").submit(function(){
       if(emailval === false){
-        $(".form__input.email input").css('border','1px solid red')
+        $(".form__input.email input").css("border","1px solid red")
       }
       else {
-        $(".form__input.email input").css('border','none')
+        $(".form__input.email input").css("border","none")
       }
       if(nameval === false){
-        $(".form__input.name input").css('border','1px solid red')
+        $(".form__input.name input").css("border","1px solid red")
       }
       else{
-        $(".form__input.name input").css('border','none')
+        $(".form__input.name input").css("border","none")
       }
       if(textval === false){
-        $(".form__input.textarea textarea").css('border','1px solid red')
+        $(".form__input.textarea textarea").css("border","1px solid red")
       }
       else{
-        $(".form__input.textarea textarea").css('border','none')
+        $(".form__input.textarea textarea").css("border","none")
       }
       if(nameval === true && emailval === true && textval===true){
-        document.getElementById('form').action = "https://getsimpleform.com/messages?form_api_token=d55de506b28707f8ee113a4e3e6c1539";
+        document.getElementById("form").action = "https://getsimpleform.com/messages?form_api_token=d55de506b28707f8ee113a4e3e6c1539";
         thanks=true;
         return true;
       }
@@ -143,12 +143,12 @@ jQuery(document).ready(function() {
     //***                     SCROLLING                   ***
     //*******************************************************
 
-    $('body').on('scroll', function() {
-        var $height = $('body').scrollTop();
+    $("body").on("scroll", function() {
+        var $height = $("body").scrollTop();
         if ($height === 0) scroller = 0;
         if ($height !== 0) scroller = 1;
-        if ($height >= 200) $('header').addClass('active');
-        if ($height < 250) $('header').removeClass('active');
+        if ($height >= 200) $("header").addClass("active");
+        if ($height < 250) $("header").removeClass("active");
         if ($height < 700 && $height > 1) window.location.hash = "about";
         if ($height >= 820 && $height< 1500) window.location.hash = "portfolio";
         if ($height >= document.getElementById("contactsection").offsetTop - 200) {
@@ -161,9 +161,9 @@ jQuery(document).ready(function() {
         }
     });
     setTimeout(function() {
-        window.addEventListener('wheel', function(e) {
+        window.addEventListener("wheel", function(e) {
             if (e.deltaY < 0 && window.location.hash === "#about" && menuStatus === false && scroller === 0) {
-                $("body").css('overflow', 'hidden')
+                $("body").css("overflow", "hidden")
                 $(".about").hide("fast")
                 home();
                 scroller = 0;
@@ -182,59 +182,59 @@ jQuery(document).ready(function() {
 
     if (window.location.hash === "") {
         $(".home").css({
-            display: 'flex'
+            display: "flex"
         })
-        $("#menu-home").toggleClass('active');
-    } else if (window.location.hash === '#about') {
-        $(".home-left").css('animation', 'leftSide2 1s')
-        $('.scroll').css('display', 'none')
+        $("#menu-home").toggleClass("active");
+    } else if (window.location.hash === "#about") {
+        $(".home-left").css("animation", "leftSide2 1s")
+        $(".scroll").css("display", "none")
         about();
-    } else if (window.location.hash === '#portfolio') {
-        $(".home-left").css('animation', 'leftSide2 .5s')
+    } else if (window.location.hash === "#portfolio") {
+        $(".home-left").css("animation", "leftSide2 .5s")
         about();
-        $('#portfoliosection')[0].scrollIntoView( true );
-        $('.scroll').css('display', 'none')
-    } else if (window.location.hash === '#contact' || window.location.hash === '#contactthanks') {
+        $("#portfoliosection")[0].scrollIntoView( true );
+        $(".scroll").css("display", "none")
+    } else if (window.location.hash === "#contact" || window.location.hash === "#contactthanks") {
         about();
-        if(window.location.hash === '#contactthanks'){
-          $(".home-left").css('animation', 'leftSide2 .5s')
-          $('.scroll').css('display', 'none')
-          $('#contactsection')[0].scrollIntoView( true );
+        if(window.location.hash === "#contactthanks"){
+          $(".home-left").css("animation", "leftSide2 .5s")
+          $(".scroll").css("display", "none")
+          $("#contactsection")[0].scrollIntoView( true );
         }
         else{
-          $(".home-left").css('animation', 'leftSide2 .5s')
-          $('.scroll').css('display', 'none')
-          $('#contactsection')[0].scrollIntoView( true );
+          $(".home-left").css("animation", "leftSide2 .5s")
+          $(".scroll").css("display", "none")
+          $("#contactsection")[0].scrollIntoView( true );
         }
     }
-    $(window).on('hashchange', function() {
+    $(window).on("hashchange", function() {
         if (window.location.hash === "") {
-            $("#menu-home").toggleClass('active');
-            $('#menu-about, #menu-portfolio, #menu-contact').removeClass('active')
-        } else if (window.location.hash === '#about') {
-            $('#menu-home, #menu-portfolio, #menu-contact').removeClass('active')
-            $("#menu-about").addClass('active');
-        } else if (window.location.hash === '#portfolio') {
-            $('#menu-home, #menu-about, #menu-contact').removeClass('active')
-            $("#menu-portfolio").addClass('active');
-        } else if (window.location.hash === '#contact' || window.location.hash === '#contactthanks') {
-            $('#menu-home, #menu-about, #menu-portfolio').removeClass('active')
-            $("#menu-contact").addClass('active');
+            $("#menu-home").toggleClass("active");
+            $("#menu-about, #menu-portfolio, #menu-contact").removeClass("active")
+        } else if (window.location.hash === "#about") {
+            $("#menu-home, #menu-portfolio, #menu-contact").removeClass("active")
+            $("#menu-about").addClass("active");
+        } else if (window.location.hash === "#portfolio") {
+            $("#menu-home, #menu-about, #menu-contact").removeClass("active")
+            $("#menu-portfolio").addClass("active");
+        } else if (window.location.hash === "#contact" || window.location.hash === "#contactthanks") {
+            $("#menu-home, #menu-about, #menu-portfolio").removeClass("active")
+            $("#menu-contact").addClass("active");
         }
     })
 
     //*******************************************************
     //***                     MENU                        ***
     //*******************************************************
-    $('.menu-toggle').on('click', function() {
-        if ($('.menu-toggle').hasClass('active')) {
+    $(".menu-toggle").on("click", function() {
+        if ($(".menu-toggle").hasClass("active")) {
             closeMenu();
         } else {
             openMenu();
         }
     });
-    $('#menu-home').on('click', function() {
-        if (window.location.hash !== '#home') {
+    $("#menu-home").on("click", function() {
+        if (window.location.hash !== "#home") {
             home();
             setTimeout(function() {
                 closeMenu();
@@ -244,10 +244,10 @@ jQuery(document).ready(function() {
         }
     })
 
-    $('#menu-about').on('click', function() {
-        if (window.location.hash !== '#about') {
+    $("#menu-about").on("click", function() {
+        if (window.location.hash !== "#about") {
             about();
-            window.location.hash='about';
+            window.location.hash="about";
             setTimeout(function() {
                 closeMenu();
             }, 800)
@@ -255,10 +255,10 @@ jQuery(document).ready(function() {
             closeMenu();
         }
     })
-    $('#menu-portfolio').on('click', function() {
-        if (window.location.hash !== '#portfolio') {
+    $("#menu-portfolio").on("click", function() {
+        if (window.location.hash !== "#portfolio") {
             about();
-            $('#portfoliosection')[0].scrollIntoView( true );
+            $("#portfoliosection")[0].scrollIntoView( true );
             setTimeout(function() {
                 closeMenu();
             }, 800)
@@ -266,10 +266,10 @@ jQuery(document).ready(function() {
             closeMenu();
         }
     })
-    $('#menu-contact').on('click', function() {
-        if (window.location.hash !== '#contact') {
+    $("#menu-contact").on("click", function() {
+        if (window.location.hash !== "#contact") {
             about();
-            $('#contactsection')[0].scrollIntoView( true );
+            $("#contactsection")[0].scrollIntoView( true );
             setTimeout(function() {
                 closeMenu();
             }, 800)
@@ -282,8 +282,8 @@ jQuery(document).ready(function() {
     //***                    SWIPE SUPPORT                ***
     //*******************************************************
 
-    document.addEventListener('touchstart', handleTouchStart, false);
-    document.addEventListener('touchmove', handleTouchMove, false);
+    document.addEventListener("touchstart", handleTouchStart, false);
+    document.addEventListener("touchmove", handleTouchMove, false);
 
     var xDown = null;
     var yDown = null;
@@ -313,7 +313,7 @@ jQuery(document).ready(function() {
         if (Math.abs(xDiff) > Math.abs(yDiff)) {
             if (xDiff > 0) {
                 if (window.location.hash === "#about" && menuStatus === false && scroller === 0) {
-                    $("body").css('overflow', 'hidden')
+                    $("body").css("overflow", "hidden")
                     $(".about").hide("fast")
                     home();
                     scroller = 0;
@@ -336,8 +336,8 @@ jQuery(document).ready(function() {
     }
 
     window.onload = (function(){
-      if(window.location.hash == '#contactthanks'){
-        document.getElementById('thank-you-message').className = 'none';
+      if(window.location.hash == "#contactthanks"){
+        document.getElementById("thank-you-message").className = "none";
       }
     })
 })
