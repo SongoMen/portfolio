@@ -19,7 +19,7 @@ function openMenu() {
     $(".top-menu").css("display", "flex");
     $(".top-menu").css("animation", "topMenu 1s");
     $(".top-menu").css("margin-top", "0%");
-    menuStatus = true
+    menuStatus = true;
     $(".menu-toggle").toggleClass("active");
     $("body").css("overflow", "hidden");
     $("footer").css("position", "absolute");
@@ -262,7 +262,7 @@ jQuery(document).ready(function() {
             $("#portfoliosection")[0].scrollIntoView( true );
             setTimeout(function() {
                 closeMenu();
-            }, 800)
+            }, 800);
         } else {
             closeMenu();
         }
