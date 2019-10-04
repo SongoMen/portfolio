@@ -2,26 +2,26 @@ var menuStatus = false;
 var scroller = 0;
 
 function closeMenu() {
-    $(".top-menu").css("margin-top", "-270%")
-    menuStatus = false
+    $(".top-menu").css("margin-top", "-270%");
+    menuStatus = false;
     $(".menu-toggle").toggleClass("active");
     if (window.location.hash === "#about" || window.location.hash === "#portfolio" || window.location.hash === "#contact"
     || window.location.hash === "#contactthanks") {
-        $("body").css("overflow-y", "auto")
+        $("body").css("overflow-y", "auto");
     }
     setTimeout(() => {
-        $("footer").css("position", "fixed")
+        $("footer").css("position", "fixed");
     }, 800)
 }
 
 function openMenu() {
-    $(".top-menu").css("display", "flex")
-    $(".top-menu").css("animation", "topMenu 1s")
-    $(".top-menu").css("margin-top", "0%")
+    $(".top-menu").css("display", "flex");
+    $(".top-menu").css("animation", "topMenu 1s");
+    $(".top-menu").css("margin-top", "0%");
     menuStatus = true
     $(".menu-toggle").toggleClass("active");
-    $("body").css("overflow", "hidden")
-    $("footer").css("position", "absolute")
+    $("body").css("overflow", "hidden");
+    $("footer").css("position", "absolute");
 }
 
 function about() {
@@ -39,24 +39,24 @@ function about() {
     });
     $("body").scrollTop(0);
     scrollabout = setTimeout(() => {
-        $(".home-center").css("display", "none")
-        $(".scroll").css("display", "none")
+        $(".home-center").css("display", "none");
+        $(".scroll").css("display", "none");
         $("body").css("overflow-y", "auto");
         $(".about").css("display", "flex");
 ""    }, 1000)
 }
 
 function home() {
-    $(".home-left").css("width", "50%")
-    $(".home-center").css("margin-left", "0%")
-    $("body").css("overflow", "hidden")
-    $(".home-center").css("display", "flex")
-    $(".scroll").css("display", "flex")
-    $(".about").css("display", "none")
+    $(".home-left").css("width", "50%");
+    $(".home-center").css("margin-left", "0%");
+    $("body").css("overflow", "hidden");
+    $(".home-center").css("display", "flex");
+    $(".scroll").css("display", "flex");
+    $(".about").css("display", "none");
     $("body").scrollTop(0);
     scroller = 1;
     window.location.hash = ""
-    clearTimeout(scrollabout)
+    clearTimeout(scrollabout);
 }
 
 jQuery(document).ready(function() {
@@ -86,7 +86,7 @@ jQuery(document).ready(function() {
     $(".form__input.email input").on("keyup", function() {
         $(this).parent().toggleClass("success", regex.test($(this).val()));
         if(regex.test($(".form__input.email input").val())){
-          emailval=true
+          emailval=true;
         }
         else{
           emailval=false;
@@ -96,7 +96,7 @@ jQuery(document).ready(function() {
     $(".form__input.name input").on("keyup", function() {
         $(this).parent().toggleClass("success", $(this).val().length > 2);
         if($(".form__input.name input").val().length > 2){
-          nameval=true
+          nameval=true;
         }
         else{
           nameval=false;
@@ -106,7 +106,7 @@ jQuery(document).ready(function() {
     $(".form__input.textarea textarea").on("keyup", function() {
         $(this).parent().toggleClass("success", $(this).val().length > 10);
         if($(".form__input.textarea textarea").val().length > 10){
-          textval=true
+          textval=true;
         }
         else{
           textval=false;
@@ -115,22 +115,22 @@ jQuery(document).ready(function() {
 
     $("#form").submit(function(){
       if(emailval === false){
-        $(".form__input.email input").css("border","1px solid red")
+        $(".form__input.email input").css("border","1px solid red");
       }
       else {
-        $(".form__input.email input").css("border","none")
+        $(".form__input.email input").css("border","none");
       }
       if(nameval === false){
-        $(".form__input.name input").css("border","1px solid red")
+        $(".form__input.name input").css("border","1px solid red");
       }
       else{
-        $(".form__input.name input").css("border","none")
+        $(".form__input.name input").css("border","none");
       }
       if(textval === false){
-        $(".form__input.textarea textarea").css("border","1px solid red")
+        $(".form__input.textarea textarea").css("border","1px solid red");
       }
       else{
-        $(".form__input.textarea textarea").css("border","none")
+        $(".form__input.textarea textarea").css("border","none");
       }
       if(nameval === true && emailval === true && textval===true){
         document.getElementById("form").action = "https://getsimpleform.com/messages?form_api_token=d55de506b28707f8ee113a4e3e6c1539";
@@ -156,20 +156,20 @@ jQuery(document).ready(function() {
             window.location.hash = "contact";
           }
           else{
-            window.location.hash="contactthanks"
+            window.location.hash="contactthanks";
           }
         }
     });
     setTimeout(function() {
         window.addEventListener("wheel", function(e) {
             if (e.deltaY < 0 && window.location.hash === "#about" && menuStatus === false && scroller === 0) {
-                $("body").css("overflow", "hidden")
-                $(".about").hide("fast")
+                $("body").css("overflow", "hidden");
+                $(".about").hide("fast");
                 home();
                 scroller = 0;
             } else if (e.deltaY > 0 && window.location.hash === "" && menuStatus === false) {
                 about();
-                window.location.hash="about"
+                window.location.hash="about";
             }
         }, {
             passive: true
@@ -186,39 +186,39 @@ jQuery(document).ready(function() {
         })
         $("#menu-home").toggleClass("active");
     } else if (window.location.hash === "#about") {
-        $(".home-left").css("animation", "leftSide2 1s")
-        $(".scroll").css("display", "none")
+        $(".home-left").css("animation", "leftSide2 1s");
+        $(".scroll").css("display", "none");
         about();
     } else if (window.location.hash === "#portfolio") {
-        $(".home-left").css("animation", "leftSide2 .5s")
+        $(".home-left").css("animation", "leftSide2 .5s");
         about();
         $("#portfoliosection")[0].scrollIntoView( true );
-        $(".scroll").css("display", "none")
+        $(".scroll").css("display", "none");
     } else if (window.location.hash === "#contact" || window.location.hash === "#contactthanks") {
         about();
         if(window.location.hash === "#contactthanks"){
-          $(".home-left").css("animation", "leftSide2 .5s")
-          $(".scroll").css("display", "none")
+          $(".home-left").css("animation", "leftSide2 .5s");
+          $(".scroll").css("display", "none");
           $("#contactsection")[0].scrollIntoView( true );
         }
         else{
-          $(".home-left").css("animation", "leftSide2 .5s")
-          $(".scroll").css("display", "none")
+          $(".home-left").css("animation", "leftSide2 .5s");
+          $(".scroll").css("display", "none");
           $("#contactsection")[0].scrollIntoView( true );
         }
     }
     $(window).on("hashchange", function() {
         if (window.location.hash === "") {
             $("#menu-home").toggleClass("active");
-            $("#menu-about, #menu-portfolio, #menu-contact").removeClass("active")
+            $("#menu-about, #menu-portfolio, #menu-contact").removeClass("active");
         } else if (window.location.hash === "#about") {
-            $("#menu-home, #menu-portfolio, #menu-contact").removeClass("active")
+            $("#menu-home, #menu-portfolio, #menu-contact").removeClass("active");
             $("#menu-about").addClass("active");
         } else if (window.location.hash === "#portfolio") {
-            $("#menu-home, #menu-about, #menu-contact").removeClass("active")
+            $("#menu-home, #menu-about, #menu-contact").removeClass("active");
             $("#menu-portfolio").addClass("active");
         } else if (window.location.hash === "#contact" || window.location.hash === "#contactthanks") {
-            $("#menu-home, #menu-about, #menu-portfolio").removeClass("active")
+            $("#menu-home, #menu-about, #menu-portfolio").removeClass("active");
             $("#menu-contact").addClass("active");
         }
     })
@@ -289,7 +289,7 @@ jQuery(document).ready(function() {
     var yDown = null;
 
     function getTouches(evt) {
-        return evt.touches || // browser API
+        return evt.touches || 
             evt.originalEvent.touches;
     }
 
@@ -313,17 +313,15 @@ jQuery(document).ready(function() {
         if (Math.abs(xDiff) > Math.abs(yDiff)) {
             if (xDiff > 0) {
                 if (window.location.hash === "#about" && menuStatus === false && scroller === 0) {
-                    $("body").css("overflow", "hidden")
-                    $(".about").hide("fast")
+                    $("body").css("overflow", "hidden");
+                    $(".about").hide("fast");
                     home();
                     scroller = 0;
                 }
-            } else {
-                /* right swipe */
             }
         } else {
             if (yDiff > 0) {
-                console.log("")
+                console.log("");
             } else {
                 if (window.location.hash === "" && menuStatus === false) {
                     about();
