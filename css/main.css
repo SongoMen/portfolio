@@ -1392,6 +1392,11 @@ footer a {
 	}
 }
 
+@media only screen and (max-width:850px) {
+	.about__desc{
+		width: 33%;
+	}
+}
 
 @media only screen and (max-width:450px) {
 	ul{
@@ -1447,6 +1452,9 @@ footer a {
 }
 
 @media screen and (max-width:500px) {
+	.about__desc{
+		width: 50%;
+	}
   .about p{
     font-size: 12px;
   }
@@ -1752,7 +1760,7 @@ footer a {
 		margin-top: 0;
 	}
 	.home{
-		height: 120%;
+		height: 115%;
 	}
 	.portfolio{
 		margin-top:50px;
