@@ -705,6 +705,9 @@ li span {
 .about h3 {
 	font-family: NexaLight
 }
+.about p {
+	font-size: 20px
+}
 
 .about__line {
 	height: 2px;
