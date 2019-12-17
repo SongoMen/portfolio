@@ -1235,6 +1235,11 @@ svg:hover {
 	-webkit-box-shadow: rgba(89, 145, 238,.8) 0px 0rem 1.5rem 0px;
 	        box-shadow: rgba(89, 145, 238,.8) 0px 0rem 1.5rem 0px;
 }
+.form__bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 /*#########################
