@@ -591,7 +591,7 @@ li span {
 	top: 0;
 }
 
-.home-center {
+.home__center {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -613,7 +613,7 @@ li span {
 	        transform: translate(-50%, -50%);
 }
 
-.home-left {
+.home__left {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -634,7 +634,7 @@ li span {
 	        animation: leftSide 1s;
 }
 
-.home-right {
+.home__right {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -879,6 +879,10 @@ svg:hover {
 	margin-left: -20px;
 	background-color: #5991EE;
 	text-align: center;
+}
+
+.portfolio__side h3{
+    margin-top: 0
 }
 
 .portfolio__buttons {
@@ -1566,7 +1570,7 @@ footer a {
     	padding:5px;
 	}
 
-  	.home-left{
+  	.home__left{
     	padding:0px;
   	}
 	.about__name {

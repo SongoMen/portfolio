@@ -26,8 +26,8 @@ function openMenu() {
 }
 
 function about() {
-    $(".home-left").css("width", "100%");
-    $(".home-center").css("margin-left", "100%");
+    $(".home__left").css("width", "100%");
+    $(".home__center").css("margin-left", "100%");
     $(".home").css({
         display: "flex"
     });
@@ -40,7 +40,7 @@ function about() {
     });
     $("body").scrollTop(0);
     scrollabout = setTimeout(() => {
-        $(".home-center").css("display", "none");
+        $(".home__center").css("display", "none");
         $(".scroll").css("display", "none");
         $("body").css("overflow-y", "auto");
         $(".about").css("display", "flex");
@@ -48,10 +48,10 @@ function about() {
 }
 
 function home() {
-    $(".home-left").css("width", "50%");
-    $(".home-center").css("margin-left", "0%");
+    $(".home__left").css("width", "50%");
+    $(".home__center").css("margin-left", "0%");
     $("body").css("overflow", "hidden");
-    $(".home-center").css("display", "flex");
+    $(".home__center").css("display", "flex");
     $(".scroll").css("display", "flex");
     $(".about").css("display", "none");
     $("body").scrollTop(0);
@@ -187,26 +187,33 @@ jQuery(document).ready(function() {
         })
         $("#menu-home").toggleClass("active");
     } else if (window.location.hash === "#about") {
-        $(".home-left").css("animation", "leftSide2 1s");
+        $(".home__left").css("animation", "leftSide2 1s");
         $(".scroll").css("display", "none");
         about();
     } else if (window.location.hash === "#portfolio") {
-        $(".home-left").css("animation", "leftSide2 .5s");
+        $(".home__left").css("animation", "leftSide2 .5s");
         about();
         $("#portfoliosection")[0].scrollIntoView( true );
         $(".scroll").css("display", "none");
     } else if (window.location.hash === "#contact" || window.location.hash === "#contactthanks") {
         about();
         if(window.location.hash === "#contactthanks"){
-          $(".home-left").css("animation", "leftSide2 .5s");
+          $(".home__left").css("animation", "leftSide2 .5s");
           $(".scroll").css("display", "none");
           $("#contactsection")[0].scrollIntoView( true );
         }
         else{
-          $(".home-left").css("animation", "leftSide2 .5s");
+          $(".home__left").css("animation", "leftSide2 .5s");
           $(".scroll").css("display", "none");
           $("#contactsection")[0].scrollIntoView( true );
         }
+    }
+    else{
+        $(".home").css({
+            display: "flex"
+        })
+        $("#menu-home").toggleClass("active");
+        window.location.hash="";
     }
     $(window).on("hashchange", function() {
         if (window.location.hash === "") {
