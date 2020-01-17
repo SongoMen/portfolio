@@ -967,9 +967,9 @@ svg:hover {
 	color: white;
 	font-family: NexaBold;
 	text-transform: uppercase;
-	-o-transition-duration: 1s;
-	-webkit-transition-duration: 1s;
-	transition-duration: 1s;
+	-o-transition-duration: .5s;
+	-webkit-transition-duration: .5s;
+	transition-duration: .5s;
 	opacity: 0;
 	-webkit-animation: none;
 	        animation: none;
@@ -984,9 +984,9 @@ svg:hover {
 	color: white;
 	font-size: 15px;
 	font-family: NexaLight;
-	-o-transition-duration: 1s;
-	-webkit-transition-duration: 1s;
-	transition-duration: 1s;
+	-o-transition-duration: .5s;
+	-webkit-transition-duration: .5s;
+	transition-duration: .5s;
 	opacity: 0;
 }
 
