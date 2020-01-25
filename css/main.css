@@ -74,9 +74,12 @@ h2 {
 }
 
 h3 {
-	font-size: calc(12px + (20 - 12) * ((100vw - 300px) / (1920 - 300)));
+	font-size: calc(15px + (20 - 12) * ((100vw - 300px) / (1920 - 300)));
 }
 
+h4{
+	font-size: calc(14px + (17 - 12) * ((100vw - 300px) / (1920 - 300)));
+}
 h2,
 h3,
 h4, button {
@@ -591,6 +594,10 @@ li span {
 	top: 0;
 }
 
+.home.active{
+    height: 100%
+}
+
 .home__center {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -714,7 +721,7 @@ li span {
 	background: white;
 	margin-top: -20px;
 	left: 0;
-	width: 50px;
+	width: 70px;
 	-webkit-animation: line2 1.2s forwards cubic-bezier(1, -0.17, .68, .84);
 	        animation: line2 1.2s forwards cubic-bezier(1, -0.17, .68, .84);
 }
@@ -731,6 +738,13 @@ li span {
 	    -ms-flex-direction: column;
 	        flex-direction: column;
 	width: 30%
+}
+
+.about__name h4{
+    white-space: normal;
+    font-family: 'NexaLight'!important;
+    animation: show 1s;
+    font-weight: 400
 }
 
 .about__skills {
@@ -754,8 +768,8 @@ li span {
 }
 
 .about__skills svg {
-	width: 50px;
-	height: 50px;
+	width: 70px;
+	height: 70px;
 	fill: white;
 	margin: 5px;
 	-webkit-animation: show 1s;
@@ -789,6 +803,7 @@ svg:hover {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+    margin: 0 20px;
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
@@ -950,9 +965,9 @@ svg:hover {
 	z-index: 2;
 	text-align: center;
 	opacity: 0;
-	-o-transition-duration: 200ms;
-	-webkit-transition-duration: 200ms;
-	transition-duration: 200ms;
+	-o-transition-duration: 100ms;
+	-webkit-transition-duration: 100ms;
+	transition-duration: 100ms;
 }
 
 .portfolio__item .infos h3 {
@@ -967,9 +982,9 @@ svg:hover {
 	color: white;
 	font-family: NexaBold;
 	text-transform: uppercase;
-	-o-transition-duration: 1s;
-	-webkit-transition-duration: 1s;
-	transition-duration: 1s;
+	-o-transition-duration: .7s;
+	-webkit-transition-duration: .7s;
+	transition-duration: .7s;
 	opacity: 0;
 	-webkit-animation: none;
 	        animation: none;
@@ -1363,7 +1378,6 @@ footer a {
 		    -ms-flex-align: center;
 		        align-items: center;
 		text-align: center;
-		white-space: nowrap;
 	}
 	.about__skills {
 		width: 100%;
@@ -1404,11 +1418,6 @@ footer a {
 	}
 }
 
-@media only screen and (max-width:850px) {
-	.about__desc{
-		width: 33%;
-	}
-}
 
 @media only screen and (max-width:450px) {
 	ul{
@@ -1464,15 +1473,12 @@ footer a {
 }
 
 @media screen and (max-width:500px) {
-	.about__desc{
-		width: 50%;
-	}
   .about p{
     font-size: 12px;
   }
   .about__skills svg {
-		width: 25px;
-		height: 25px;
+		width: 35px;
+		height: 35px;
 	}
 }
 
@@ -1553,7 +1559,6 @@ footer a {
 	.portfolio__side {
 		width: 300px;
 		padding: 10px;
-		margin-top: 20px;
 		margin-left: 0;
 	}
 	.about {
@@ -1614,7 +1619,6 @@ footer a {
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
 		        align-items: center;
-		margin-top:-100px;
 	}
 	.contact {
 		-webkit-box-orient: vertical;
@@ -1719,7 +1723,7 @@ footer a {
 	}
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1300px) and (min-width: 1000px) {
 .portfolio__side{
 	padding-left: 30px;
 	padding-right: 10px;
@@ -1749,30 +1753,21 @@ footer a {
 }
 
 @media only screen and (max-height: 480px) {
-	.home{
-		height: 150%;
-	}
 	.portfolio{
 		margin-top:50px;
 	}
 	.scroll h5	{
 		margin-bottom:30px;
 	}
-	.contact__form{
-		margin-top:400px;
-	}
 	.contact{
 		margin-top:200px;
 	}
 }
 
-@media only screen and (max-height: 800px) and (min-height:680px) {
+@media only screen and (max-height: 800px) and (min-height:630px) {
 
 	.contact {
 		margin-top: 0;
-	}
-	.home{
-		height: 115%;
 	}
 	.portfolio{
 		margin-top:50px;
@@ -1783,6 +1778,16 @@ footer a {
 	.contact__form{
 		margin-top:0;
 	}
+
+}
+
+@media only screen and (max-height:765px){
+    .home{
+        height: auto;
+    }
+    .home__left{
+        padding-top: 50px
+    }
 
 }
 
@@ -1803,9 +1808,6 @@ footer a {
 	.contact__info {
 		margin-bottom: 50px;
 	}
-	.home{
-		height: 110%;
-	}
 	.portfolio{
 		margin-top:100px;
 	}
@@ -1813,10 +1815,4 @@ footer a {
 	.portfolio{
 		height: 420%;
 	}
-}
-@media only screen and (max-height: 600px)  and (min-height:550px){
-	.contact__form{
-		margin-top:400px;
-	}
-
 }

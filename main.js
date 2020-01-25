@@ -40,6 +40,7 @@ function about() {
     });
     $("body").scrollTop(0);
     scrollabout = setTimeout(() => {
+    $(".home").removeClass("active");
         $(".home__center").css("display", "none");
         $(".scroll").css("display", "none");
         $("body").css("overflow-y", "auto");
@@ -49,6 +50,7 @@ function about() {
 
 function home() {
     $(".home__left").css("width", "50%");
+    $(".home").addClass("active");
     $(".home__center").css("margin-left", "0%");
     $("body").css("overflow", "hidden");
     $(".home__center").css("display", "flex");
@@ -182,11 +184,13 @@ jQuery(document).ready(function() {
     //*******************************************************
 
     if (window.location.hash === "") {
+        $(".home").addClass("active");
         $(".home").css({
             display: "flex"
         })
         $("#menu-home").toggleClass("active");
     } else if (window.location.hash === "#about") {
+        $(".home").addClass("active");
         $(".home__left").css("animation", "leftSide2 1s");
         $(".scroll").css("display", "none");
         about();
