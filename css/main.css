@@ -1117,19 +1117,18 @@ svg:hover {
 }
 
 .contact__info svg {
-  width: 70px;
-  height: 70px;
-  fill: white;
   -webkit-transition: 0.5s all;
   -o-transition: 0.5s all;
   transition: 0.5s all;
 }
 
 .contact__element {
-  -webkit-animation: show2 2s;
+  -webkit-animation: show2 1s;
   animation: show2 2s;
   display: -webkit-box;
   display: -ms-flexbox;
+  justify-content: flex-start;
+  align-items: center;
   display: flex;
   letter-spacing: 2px;
 }
