@@ -26,8 +26,8 @@
   <body>
     <header class="header">
       <h3 class="header__logo">PA<br/>TRYK.</h3>
-      <div class="header__menu" style="display:flex;justify-content:center;align-items:center;">
-        <h3 style="letter-spacing:1px;margin-right:20px;">MENU</h3>
+      <div class="header__menu">
+        <h3>MENU</h3>
         <div class="menu-toggle">
           <div class="hamburger">
             <span></span>
@@ -238,10 +238,10 @@
         </section>
       </div>
       <div class="home__right">
-        <div class="scroll">
-          <h5 id="scroll__text" style="transform:rotate(-90deg)">Scroll</h5>
+        <div class="home__scroll">
+          <h5 id="scroll__text">Scroll</h5>
           <svg
-            style="width:50px;height:50px;transform:rotate(90deg)"
+            class="home__arrow"
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
             x="0px"
@@ -263,7 +263,7 @@
         </div>
       </div>
       <div class="home__center">
-        <h1 style="transition: all 2s;user-select: none;">
+        <h1>
           hello<dot style="user-select: none;color:#5991EE">.</dot>
         </h1>
       </div>
@@ -613,7 +613,6 @@
           </div>
           <div class="form__bottom">
             <button
-              style="margin-bottom:20px;"
               type="submit"
               class="form__button"
               name="submit"
@@ -623,7 +622,6 @@
             <p
               id="thank-you-message"
               class="hidden"
-              style="margin:10px;color:green;"
             >
               Thank you for contacting me. I will answer as soon as possible.
             </p>

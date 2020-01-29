@@ -49,6 +49,8 @@ function about() {
 }
 
 function home() {
+
+    $(".home__scroll").css("display","flex")
     $(".home__left").css("width", "50%");
     $(".home").addClass("active");
     $(".home__center").css("margin-left", "0%");
@@ -201,6 +203,8 @@ jQuery(document).ready(function() {
         $(".scroll").css("display", "none");
     } else if (window.location.hash === "#contact" || window.location.hash === "#contactthanks") {
         about();
+
+    $(".home__scroll").css("display","none")
         if(window.location.hash === "#contactthanks"){
           $(".home__left").css("animation", "leftSide2 .5s");
           $(".scroll").css("display", "none");
