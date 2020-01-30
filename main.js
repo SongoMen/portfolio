@@ -47,7 +47,7 @@ function about() {
     $(".home").removeClass("active");
     $(".home__center").css("display", "none");
     $(".scroll").css("display", "none");
-    $("body").css("overflow", "auto");
+    $("body").css("overflow-y", "auto");
     $(".about").css("display","flex");
   }, 800);
 }
