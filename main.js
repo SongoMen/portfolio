@@ -21,7 +21,7 @@ function closeMenu() {
 
 function openMenu() {
   $(".top-menu").css("display", "flex");
-  $(".top-menu").css("animation", "topMenu 1s");
+  $(".top-menu").css("animation", "topMenu .7s");
   $(".top-menu").css("margin-top", "0%");
   menuStatus = true;
   $(".menu-toggle").toggleClass("active");
@@ -49,7 +49,7 @@ function about() {
     $(".scroll").css("display", "none");
     $("body").css("overflow-y", "auto");
     $(".about").css("display", "flex");
-  }, 1000);
+  }, 800);
 }
 
 function home() {
@@ -131,17 +131,17 @@ jQuery(document).ready(function() {
 
   $("#form").submit(function() {
     if (emailval === false) {
-      $(".form__input.email input").css("border", "1px solid red");
+      $(".form__input.email input").css("border", "1px solid #fa3620");
     } else {
       $(".form__input.email input").css("border", "none");
     }
     if (nameval === false) {
-      $(".form__input.name input").css("border", "1px solid red");
+      $(".form__input.name input").css("border", "1px solid #fa3620");
     } else {
       $(".form__input.name input").css("border", "none");
     }
     if (textval === false) {
-      $(".form__input.textarea textarea").css("border", "1px solid red");
+      $(".form__input.textarea textarea").css("border", "1px solid #fa3620");
     } else {
       $(".form__input.textarea textarea").css("border", "none");
     }
@@ -212,7 +212,7 @@ jQuery(document).ready(function() {
         passive: true,
       },
     );
-  }, 1500);
+  }, 1200);
 
   //*******************************************************
   //***                     HASH                        ***
@@ -230,6 +230,7 @@ jQuery(document).ready(function() {
     $(".scroll").css("display", "none");
     about();
   } else if (window.location.hash === "#portfolio") {
+    $(".home__scroll").css("display", "none");
     $(".home__left").css("animation", "leftSide2 .5s");
     about();
     $("#portfoliosection")[0].scrollIntoView(true);
@@ -239,7 +240,6 @@ jQuery(document).ready(function() {
     window.location.hash === "#contactthanks"
   ) {
     about();
-
     $(".home__scroll").css("display", "none");
     if (window.location.hash === "#contactthanks") {
       $(".home__left").css("animation", "leftSide2 .5s");

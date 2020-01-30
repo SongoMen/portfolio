@@ -270,9 +270,9 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
@@ -310,11 +310,11 @@ p {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 .header__menu h3 {
   letter-spacing: 1px;
@@ -638,9 +638,9 @@ li span {
   -o-transition: all 2s;
   transition: all 2s;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .home__left {
   display: -webkit-box;
@@ -698,16 +698,16 @@ li span {
 
 #scroll__text {
   -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 
 .home__arrow {
   width: 50px;
   height: 50px;
   -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 .home__scroll h5 {
   margin-left: 10px;
@@ -740,7 +740,7 @@ li span {
   margin-top: -100px;
   position: absolute;
   -webkit-animation: show 1s;
-          animation: show 1s;
+  animation: show 1s;
   background-repeat: no-repeat;
 }
 .about h2,
@@ -788,7 +788,7 @@ li span {
   white-space: normal;
   font-family: "NexaLight" !important;
   -webkit-animation: show 1s;
-          animation: show 1s;
+  animation: show 1s;
   font-weight: 400;
 }
 
@@ -1159,6 +1159,7 @@ svg:hover {
 
 .form__input input,
 .form__input textarea {
+  border: 1px solid #1e272e;
   outline: none;
   min-width: 200px;
   background-color: #485460;
@@ -1223,8 +1224,10 @@ svg:hover {
     stroke-dashoffset 0.8s ease 0.5s;
   -o-transition: stroke-dasharray 0.8s ease 0.8s,
     stroke-dashoffset 0.8s ease 0.5s;
-  -webkit-transition: stroke-dasharray 0.8s ease 0.8s, stroke-dashoffset 0.8s ease 0.5s;
-  -o-transition: stroke-dasharray 0.8s ease 0.8s, stroke-dashoffset 0.8s ease 0.5s;
+  -webkit-transition: stroke-dasharray 0.8s ease 0.8s,
+    stroke-dashoffset 0.8s ease 0.5s;
+  -o-transition: stroke-dasharray 0.8s ease 0.8s,
+    stroke-dashoffset 0.8s ease 0.5s;
   transition: stroke-dasharray 0.8s ease 0.8s, stroke-dashoffset 0.8s ease 0.5s;
 }
 
@@ -1254,8 +1257,8 @@ svg:hover {
     stroke-dashoffset 0.8s ease 0.3s, stroke 0.3s ease 0.6s;
   -o-transition: stroke-dasharray 0.6s ease 0s, stroke-dashoffset 0.8s ease 0.3s,
     stroke 0.3s ease 0.6s;
-  -webkit-transition: stroke-dasharray 0.6s ease 0s, stroke-dashoffset 0.8s ease 0.3s,
-    stroke 0.3s ease 0.6s;
+  -webkit-transition: stroke-dasharray 0.6s ease 0s,
+    stroke-dashoffset 0.8s ease 0.3s, stroke 0.3s ease 0.6s;
   transition: stroke-dasharray 0.6s ease 0s, stroke-dashoffset 0.8s ease 0.3s,
     stroke 0.3s ease 0.6s;
 }
@@ -1318,11 +1321,11 @@ svg:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 /*#########################
