@@ -165,7 +165,7 @@ jQuery(document).ready(function() {
     if ($height !== 0) {
       scroller = 1;
     }
-    if ($height >= 200) {
+    if ($height >= 100) {
       $("header").addClass("active");
     }
     if ($height < 250) {
