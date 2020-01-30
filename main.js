@@ -42,7 +42,7 @@ function about() {
   $(".contact").css({
     display: "flex",
   });
-  if (window.location.hash === "about") $("body").scrollTop(0);
+  $("body").scrollTop(0);
   scrollabout = setTimeout(() => {
     $(".home").removeClass("active");
     $(".home__center").css("display", "none");
@@ -61,7 +61,7 @@ function home() {
   $(".home__center").css("display", "flex");
   $(".scroll").css("display", "flex");
   $(".about").css("display", "none");
-  if (window.location.hash === "home") $("body").scrollTop(0);
+  $("body").scrollTop(0);
   scroller = 1;
   window.location.hash = "";
   clearTimeout(scrollabout);
