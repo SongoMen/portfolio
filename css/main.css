@@ -318,7 +318,7 @@ p {
 }
 .header__menu h3 {
   letter-spacing: 1px;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 .header .hamburger h3 {
@@ -495,7 +495,8 @@ ul {
   text-align: center;
 }
 
-li {
+.top-menu__list li {
+  justify-content: space-between;
   padding: 10px 20px;
   cursor: pointer;
   -webkit-transition: all 1s;
@@ -514,11 +515,10 @@ li:hover {
   color: #5991ee;
 }
 
-li p {
+.top-menu__list li p {
   visibility: hidden;
   opacity: 0;
   font-size: 12px;
-  margin-left: 45px;
   -webkit-transition: all 1s;
   -o-transition: all 1s;
   transition: all 1s;
@@ -532,13 +532,12 @@ li.active:hover {
   color: white;
 }
 
-li span {
+.top-menu__list span {
   visibility: hidden;
   opacity: 0;
   border-left: 2px solid #5991ee;
   height: 25px;
-  position: absolute;
-  right: 50%;
+  margin: 0 10px;
 }
 
 #menu-home:hover .home-p {
@@ -548,7 +547,7 @@ li span {
   animation: show2 0.5s;
 }
 
-#menu-home:hover .menu-line {
+#menu-home:hover .top-menu__line {
   visibility: visible;
   opacity: 1;
   -webkit-animation: line 0.5s;
@@ -562,7 +561,7 @@ li span {
   animation: show2 0.5s;
 }
 
-#menu-about:hover .menu-line {
+#menu-about:hover .top-menu__line {
   visibility: visible;
   opacity: 1;
   -webkit-animation: line 0.5s;
@@ -576,7 +575,7 @@ li span {
   animation: show2 0.5s;
 }
 
-#menu-portfolio:hover .menu-line {
+#menu-portfolio:hover .top-menu__line {
   visibility: visible;
   opacity: 1;
   -webkit-animation: line 0.5s;
@@ -590,7 +589,7 @@ li span {
   animation: show2 0.5s;
 }
 
-#menu-contact:hover .menu-line {
+#menu-contact:hover .top-menu__line {
   visibility: visible;
   opacity: 1;
   -webkit-animation: line 0.5s;
@@ -1425,7 +1424,7 @@ footer a {
         Media Queries
   #########################*/
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
   .about {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1438,6 +1437,7 @@ footer a {
     -ms-flex-pack: center;
     justify-content: center;
     padding: 5px;
+    padding-top: 100px;
   }
   .about__name {
     -webkit-box-align: center;
@@ -1468,18 +1468,6 @@ footer a {
     -ms-transform: scale(0.8);
     transform: scale(0.8);
     margin: 0 25px;
-  }
-  #menu-home .menu-line {
-    right: 52%;
-  }
-  #menu-about .menu-line {
-    right: 48%;
-  }
-  #menu-portfolio .menu-line {
-    right: 34%;
-  }
-  #menu-contact .menu-line {
-    right: 41%;
   }
 }
 
@@ -1546,7 +1534,7 @@ footer a {
   }
 }
 
-@media only screen and (max-width: 500px) and (min-width: 400px) {
+@media only screen and (max-width: 550px) and (min-width: 400px) {
   .about {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1580,33 +1568,6 @@ footer a {
   .header h3 {
     font-size: 15px;
   }
-  #menu-home .menu-line {
-    right: 52%;
-  }
-  #menu-about .menu-line {
-    right: 48%;
-  }
-  #menu-portfolio .menu-line {
-    right: 34%;
-  }
-  #menu-contact .menu-line {
-    right: 41%;
-  }
-  li p {
-    margin-left: 50px;
-  }
-}
-
-@media only screen and (max-width: 600px) and (min-width: 500px) {
-  #menu-home .menu-line {
-    right: 53%;
-  }
-  #menu-portfolio .menu-line {
-    right: 39%;
-  }
-  #menu-contact .menu-line {
-    right: 44%;
-  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -1632,7 +1593,6 @@ footer a {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    padding: 5px;
   }
 
   .home__left {
@@ -1700,32 +1660,7 @@ footer a {
   }
 }
 
-@media only screen and (max-width: 800px) and (min-width: 450px) {
-  #menu-home .menu-line {
-    right: 53%;
-  }
-
-  #menu-portfolio .menu-line {
-    right: 40%;
-  }
-
-  #menu-contact .menu-line {
-    right: 45%;
-  }
-}
 @media only screen and (max-width: 1000px) and (min-width: 800px) {
-  #menu-home .menu-line {
-    right: 51%;
-  }
-
-  #menu-portfolio .menu-line {
-    right: 43%;
-  }
-
-  #menu-contact .menu-line {
-    right: 46%;
-  }
-
   .contact {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1755,29 +1690,6 @@ footer a {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-  }
-}
-@media only screen and (max-width: 1200px) and (min-width: 1000px) {
-  #menu-portfolio .menu-line {
-    right: 44%;
-  }
-
-  #menu-contact .menu-line {
-    right: 46%;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  #menu-home .menu-line {
-    right: 51%;
-  }
-
-  #menu-portfolio .menu-line {
-    right: 35%;
-  }
-
-  #menu-contact .menu-line {
-    right: 43%;
   }
 }
 
