@@ -720,6 +720,7 @@ li.active:hover {
  #########################*/
 
 .about {
+    min-width: 100%;
   display: none;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -1571,7 +1572,6 @@ footer a {
     width: 40px;
     height: 40px;
   }
-
   .header {
     padding: 10px;
   }
@@ -1723,12 +1723,6 @@ footer a {
   .contact__info {
     height: auto;
   }
-  .contact__form {
-    margin-top: 80px;
-  }
-  .contact {
-    margin-top: 150px;
-  }
 }
 
 @media only screen and (max-height: 480px) {
@@ -1737,9 +1731,6 @@ footer a {
   }
   .home__scroll h5 {
     margin-bottom: 30px;
-  }
-  .contact {
-    margin-top: 200px;
   }
 }
 
@@ -1780,14 +1771,7 @@ footer a {
 }
 
 @media only screen and (max-height: 400px) {
-  .contact__info {
-    margin-bottom: 50px;
-  }
   .portfolio {
     margin-top: 100px;
-  }
-
-  .portfolio {
-    height: 420%;
   }
 }

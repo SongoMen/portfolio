@@ -1,9 +1,9 @@
-var menuStatus = false;
-var scroller = 0;
+let scroller = 0;
+let menuStatus = false;
 let scrollabout;
 
 function closeMenu() {
-  $(".top-menu").css("margin-top", "-270%");
+  $(".top-menu").css("margin-top", "-300%");
   menuStatus = false;
   $(".menu-toggle").toggleClass("active");
   if (
@@ -42,13 +42,13 @@ function about() {
   $(".contact").css({
     display: "flex",
   });
-  $("body").scrollTop(0);
+  if (window.location.hash === "about") $("body").scrollTop(0);
   scrollabout = setTimeout(() => {
     $(".home").removeClass("active");
     $(".home__center").css("display", "none");
     $(".scroll").css("display", "none");
-    $("body").css("overflow-y", "auto");
-    $(".about").css("display", "flex");
+    $("body").css("overflow", "auto");
+    $(".about").css("display","flex");
   }, 800);
 }
 
@@ -61,7 +61,7 @@ function home() {
   $(".home__center").css("display", "flex");
   $(".scroll").css("display", "flex");
   $(".about").css("display", "none");
-  $("body").scrollTop(0);
+  if (window.location.hash === "home") $("body").scrollTop(0);
   scroller = 1;
   window.location.hash = "";
   clearTimeout(scrollabout);
@@ -171,10 +171,10 @@ jQuery(document).ready(function() {
     if ($height < 250) {
       $("header").removeClass("active");
     }
-    if ($height < 700 && $height > 1) {
+    if ($height < document.getElementById("aboutsection").offsetTop && $height > 1) {
       window.location.hash = "about";
     }
-    if ($height >= 820 && $height < 1500) {
+    if ($height >= document.getElementById("portfoliosection").offsetTop) {
       window.location.hash = "portfolio";
     }
     if ($height >= document.getElementById("contactsection").offsetTop - 200) {
