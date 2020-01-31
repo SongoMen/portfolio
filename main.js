@@ -129,7 +129,7 @@ jQuery(document).ready(function() {
     }
   });
 
-  $("#form").submit(function(e) {
+  $("#form").submit(function() {
     if (emailval === false) {
       $(".form__input.email input").css("border", "1px solid #fa3620");
     } else {
@@ -174,11 +174,11 @@ jQuery(document).ready(function() {
     if ($height < document.getElementById("aboutsection").offsetTop && $height > 1) {
       window.location.hash = "about";
     }
-    if ($height >= document.getElementById("portfoliosection").offsetTop) {
+    else if ($height >= document.getElementById("portfoliosection").offsetTop && $height <= document.getElementById("contactsection").offsetTop - 200) {
       window.location.hash = "portfolio";
     }
-    if ($height >= document.getElementById("contactsection").offsetTop - 200) {
-      if (window.location.hash !== "#contactthanks") {
+    else if ($height >= document.getElementById("contactsection").offsetTop - 200) {
+      if (window.location.hash !== "#contactthanks" && thanks === false) {
         window.location.hash = "contact";
       } else {
         window.location.hash = "contactthanks";

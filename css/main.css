@@ -1172,7 +1172,6 @@ svg:hover {
   min-width: 200px;
   background-color: #485460;
   font-size: 16px;
-  border: 0;
   width: 100%;
   border-radius: 4px;
   line-height: 24px;
@@ -1325,7 +1324,7 @@ svg:hover {
 #thank-you-message {
   margin: 10px;
   margin-top: 20px;
-  color: green;
+  color: #69dd95;
 }
 .form__button:hover {
   -webkit-box-shadow: rgba(89, 145, 238, 0.8) 0px 0rem 1.5rem 0px;
