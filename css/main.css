@@ -1324,6 +1324,7 @@ svg:hover {
 
 #thank-you-message {
   margin: 10px;
+  margin-top: 20px;
   color: green;
 }
 .form__button:hover {

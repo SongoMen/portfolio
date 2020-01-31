@@ -129,7 +129,7 @@ jQuery(document).ready(function() {
     }
   });
 
-  $("#form").submit(function() {
+  $("#form").submit(function(e) {
     if (emailval === false) {
       $(".form__input.email input").css("border", "1px solid #fa3620");
     } else {
@@ -178,7 +178,7 @@ jQuery(document).ready(function() {
       window.location.hash = "portfolio";
     }
     if ($height >= document.getElementById("contactsection").offsetTop - 200) {
-      if (window.location.hash !== "#contactthanks" && thanks === false) {
+      if (window.location.hash !== "#contactthanks") {
         window.location.hash = "contact";
       } else {
         window.location.hash = "contactthanks";
