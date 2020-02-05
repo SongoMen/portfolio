@@ -2,72 +2,87 @@ let scroller = 0;
 let menuStatus = false;
 let scrollabout;
 
+let topMenu = document.querySelector(".top-menu");
+let menuToggle = document.querySelector(".menu-toggle");
+let footer = document.querySelector(".footer");
+let homeLeft = document.querySelector(".home__left");
+let menuHome = document.querySelector("#menu-home");
+let menuAbout = document.querySelector("#menu-about");
+let menuPortfolio = document.querySelector("#menu-portfolio");
+let menuContact = document.querySelector("#menu-contact");
+let homeCenter = document.querySelector(".home__center");
+let homeScroll = document.querySelector(".home__scroll");
+
+let homeSelector = document.querySelector(".home");
+let portfolio = document.querySelector(".portfolio");
+let contact = document.querySelector(".contact");
+let aboutSelector = document.querySelector(".about");
+let scroll = document.querySelector(".scroll");
+
+let body = document.querySelector("body");
+
+function r(f) {
+  /in/.test(document.readyState) ? setTimeout("r(" + f + ")", 9) : f();
+}
+
 function closeMenu() {
-  $(".top-menu").css("margin-top", "-300%");
+  topMenu.style.marginTop = "-300%";
   menuStatus = false;
-  $(".menu-toggle").toggleClass("active");
+  menuToggle.classList.toggle("active");
   if (
     window.location.hash === "#about" ||
     window.location.hash === "#portfolio" ||
     window.location.hash === "#contact" ||
     window.location.hash === "#contactthanks"
   ) {
-    $("body").css("overflow-y", "auto");
+    body.style.overflowY = "auto";
   }
   setTimeout(() => {
-    $("footer").css("position", "fixed");
+    footer.style.position = "fixed";
   }, 800);
 }
 
 function openMenu() {
-  $(".top-menu").css("display", "flex");
-  $(".top-menu").css("animation", "topMenu .7s");
-  $(".top-menu").css("margin-top", "0%");
+  topMenu.style.display = "flex";
+  topMenu.style.animation = "topMenu .7s";
+  topMenu.style.marginTop = "0%";
   menuStatus = true;
-  $(".menu-toggle").toggleClass("active");
-  $("body").css("overflow", "hidden");
-  $("footer").css("position", "absolute");
+  menuToggle.classList.toggle("active");
+  body.style.overflow = "hidden";
+  footer.style.position = "absolute";
 }
 
 function about() {
-  $(".home__left").css("width", "100%");
-  $(".home__center").css("margin-left", "100%");
-  $(".home").css({
-    display: "flex",
-  });
-  $("#menu-about").addClass("active");
-  $(".portfolio").css({
-    display: "flex",
-  });
-  $(".contact").css({
-    display: "flex",
-  });
-  $("body").scrollTop(0);
+  homeLeft.style.width = "100%";
+  homeCenter.style.marginLeft = "100%";
+  homeSelector.style.display = "flex";
+  portfolio.style.display = "flex";
+  contact.style.display = "flex";
+  body.scrollTop = 0;
   scrollabout = setTimeout(() => {
-    $(".home").removeClass("active");
-    $(".home__center").css("display", "none");
-    $(".scroll").css("display", "none");
-    $("body").css("overflow-y", "auto");
-    $(".about").css("display","flex");
+    homeSelector.classList.remove("active");
+    homeCenter.style.display = "none";
+    homeScroll.style.display = "none";
+    body.style.overflowY = "auto";
+    aboutSelector.style.display = "flex";
   }, 800);
 }
 
 function home() {
-  $(".home__scroll").css("display", "flex");
-  $(".home__left").css("width", "50%");
-  $(".home").addClass("active");
-  $(".home__center").css("margin-left", "0%");
-  $("body").css("overflow", "hidden");
-  $(".home__center").css("display", "flex");
-  $(".scroll").css("display", "flex");
-  $(".about").css("display", "none");
-  $("body").scrollTop(0);
+  homeScroll.style.display = "flex";
+  homeLeft.style.width = "50%";
+  homeSelector.classList.add("active");
+  homeCenter.style.marginLeft = "0%";
+  body.style.overflow = "hidden";
+  homeCenter.style.display = "flex";
+  homeScroll.style.display = "flex";
+  aboutSelector.style.display = "none";
+  body.scrollTop = 0;
   scroller = 1;
   window.location.hash = "";
   clearTimeout(scrollabout);
 }
-
-jQuery(document).ready(function() {
+r(function() {
   //*******************************************************
   //***                   DETECT PHONE                  ***
   //*******************************************************
@@ -77,7 +92,7 @@ jQuery(document).ready(function() {
       navigator.userAgent,
     )
   ) {
-    $("#scroll__text").html("Swipe Down");
+    document.querySelector("#scroll__text").html("Swipe Down");
   }
 
   //*******************************************************
@@ -96,54 +111,66 @@ jQuery(document).ready(function() {
       "|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$",
   );
 
-  $(".form__input.email input").on("keyup", function() {
-    $(this)
-      .parent()
-      .toggleClass("success", regex.test($(this).val()));
-    if (regex.test($(".form__input.email input").val())) {
-      emailval = true;
-    } else {
-      emailval = false;
-    }
-  });
+  document
+    .querySelector(".form__input.email input")
+    .addEventListener("keyup", function() {
+      this.parentElement.classList.toggle("success", regex.test(this.value));
+      if (
+        regex.test(document.querySelector(".form__input.email input").value)
+      ) {
+        emailval = true;
+      } else {
+        emailval = false;
+      }
+    });
 
-  $(".form__input.name input").on("keyup", function() {
-    $(this)
-      .parent()
-      .toggleClass("success", $(this).val().length > 2);
-    if ($(".form__input.name input").val().length > 2) {
-      nameval = true;
-    } else {
-      nameval = false;
-    }
-  });
+  document
+    .querySelector(".form__input.name input")
+    .addEventListener("keyup", function() {
+      this.parentElement.classList.toggle("success", this.value.length > 2);
+      if (document.querySelector(".form__input.name input").value.length > 2) {
+        nameval = true;
+      } else {
+        nameval = false;
+      }
+    });
 
-  $(".form__input.textarea textarea").on("keyup", function() {
-    $(this)
-      .parent()
-      .toggleClass("success", $(this).val().length > 10);
-    if ($(".form__input.textarea textarea").val().length > 10) {
-      textval = true;
-    } else {
-      textval = false;
-    }
-  });
+  document
+    .querySelector(".form__input.textarea textarea")
+    .addEventListener("keyup", function() {
+      this.parentElement.classList.toggle("success", this.value.length > 10);
+      if (
+        document.querySelector(".form__input.textarea textarea").value.length >
+        10
+      ) {
+        textval = true;
+      } else {
+        textval = false;
+      }
+    });
 
-  $("#form").submit(function() {
+  document.querySelector("#form").addEventListener("submit", function(e) {
+    if (emailval === false || nameval === false || textval === false) {
+      e.preventDefault();
+    }
     if (emailval === false) {
-      $(".form__input.email input").css("border", "1px solid #fa3620");
+      document.querySelector(".form__input.email input").style.border =
+        "1px solid #fa3620";
     } else {
-      $(".form__input.email input").css("border", "none");
+      document.querySelector(".form__input.email input").style.border = "none";
     }
     if (nameval === false) {
-      $(".form__input.name input").css("border", "1px solid #fa3620");
+      document.querySelector(".form__input.name input").style.border =
+        "1px solid #fa3620";
     } else {
-      $(".form__input.name input").css("border", "none");
+      document.querySelector(".form__input.name input").style.border = "none";
     }
     if (textval === false) {
-      $(".form__input.textarea textarea").css("border", "1px solid #fa3620");
+      document.querySelector(".form__input.textarea textarea").style.border =
+        "1px solid #fa3620";
     } else {
-      $(".form__input.textarea textarea").css("border", "none");
+      document.querySelector(".form__input.textarea textarea").style.border =
+        "none";
     }
     if (nameval === true && emailval === true && textval === true) {
       document.getElementById("form").action =
@@ -157,8 +184,8 @@ jQuery(document).ready(function() {
   //***                     SCROLLING                   ***
   //*******************************************************
 
-  $("body").on("scroll", function() {
-    var $height = $("body").scrollTop();
+  document.querySelector("body").addEventListener("scroll", function() {
+    var $height = body.scrollTop;
     if ($height === 0) {
       scroller = 0;
     }
@@ -166,18 +193,25 @@ jQuery(document).ready(function() {
       scroller = 1;
     }
     if ($height >= 100) {
-      $("header").addClass("active");
+      document.querySelector(".header").classList.add("active");
     }
     if ($height < 250) {
-      $("header").removeClass("active");
+      document.querySelector(".header").classList.remove("active");
     }
-    if ($height < document.getElementById("aboutsection").offsetTop && $height > 1) {
+    if (
+      $height < document.getElementById("aboutsection").offsetTop &&
+      $height > 1
+    ) {
       window.location.hash = "about";
-    }
-    else if ($height >= document.getElementById("portfoliosection").offsetTop && $height <= document.getElementById("contactsection").offsetTop - 200) {
+    } else if (
+      $height >= document.getElementById("portfoliosection").offsetTop &&
+      $height <= document.getElementById("contactsection").offsetTop - 200
+    ) {
       window.location.hash = "portfolio";
-    }
-    else if ($height >= document.getElementById("contactsection").offsetTop - 200) {
+    } else if (
+      $height >=
+      document.getElementById("contactsection").offsetTop - 200
+    ) {
       if (window.location.hash !== "#contactthanks" && thanks === false) {
         window.location.hash = "contact";
       } else {
@@ -195,8 +229,8 @@ jQuery(document).ready(function() {
           menuStatus === false &&
           scroller === 0
         ) {
-          $("body").css("overflow", "hidden");
-          $(".about").hide("fast");
+          body.style.overflow = "hidden";
+          aboutSelector.style.display = "none";
           home();
           scroller = 0;
         } else if (
@@ -219,74 +253,76 @@ jQuery(document).ready(function() {
   //*******************************************************
 
   if (window.location.hash === "") {
-    $(".home").addClass("active");
-    $(".home").css({
-      display: "flex",
-    });
-    $("#menu-home").toggleClass("active");
+    homeSelector.classList.add("active");
+    (homeSelector.style.display = "flex"), menuHome.classList.toggle("active");
   } else if (window.location.hash === "#about") {
-    $(".home").addClass("active");
-    $(".home__left").css("animation", "leftSide2 1s");
-    $(".scroll").css("display", "none");
+    homeSelector.classList.add("active");
+    homeLeft.style.animation = "leftSide2 1s";
+    homeScroll.style.display = "none";
     about();
   } else if (window.location.hash === "#portfolio") {
-    $(".home__scroll").css("display", "none");
-    $(".home__left").css("animation", "leftSide2 .5s");
+    homeScroll.style.display = "none";
+    homeLeft.style.animation = "leftSide2 .5s";
     about();
-    $("#portfoliosection")[0].scrollIntoView(true);
-    $(".scroll").css("display", "none");
+    document.querySelector("#portfoliosection").scrollIntoView(true);
+    homeScroll.style.display = "none";
   } else if (
     window.location.hash === "#contact" ||
     window.location.hash === "#contactthanks"
   ) {
     about();
-    $(".home__scroll").css("display", "none");
+    homeScroll.style.display = "none";
     if (window.location.hash === "#contactthanks") {
-      $(".home__left").css("animation", "leftSide2 .5s");
-      $(".scroll").css("display", "none");
-      $("#contactsection")[0].scrollIntoView(true);
+      homeLeft.style.animation = "leftSide2 .5s";
+      homeScroll.style.display = "none";
+      document.querySelector("#contactsection").scrollIntoView(true);
     } else {
-      $(".home__left").css("animation", "leftSide2 .5s");
-      $(".scroll").css("display", "none");
-      $("#contactsection")[0].scrollIntoView(true);
+      homeLeft.style.animation = "leftSide2 .5s";
+      homeScroll.style.display = "none";
+      document.querySelector("#contactsection").scrollIntoView(true);
     }
   } else {
-    $(".home").css({
-      display: "flex",
-    });
-    $("#menu-home").toggleClass("active");
+    (homeSelector.style.display = "flex"), menuHome.classList.toggle("active");
     window.location.hash = "";
   }
-  $(window).on("hashchange", function() {
+  window.addEventListener("hashchange", function() {
     if (window.location.hash === "") {
-      $("#menu-home").toggleClass("active");
-      $("#menu-about, #menu-portfolio, #menu-contact").removeClass("active");
+      menuHome.classList.toggle("active");
+        menuPortfolio.classList.remove("active");
+        menuAbout.classList.remove("active");
+        menuContact.classList.remove("active");
     } else if (window.location.hash === "#about") {
-      $("#menu-home, #menu-portfolio, #menu-contact").removeClass("active");
-      $("#menu-about").addClass("active");
+        menuPortfolio.classList.remove("active");
+        menuHome.classList.remove("active");
+        menuContact.classList.remove("active");
+      menuAbout.classList.add("active");
     } else if (window.location.hash === "#portfolio") {
-      $("#menu-home, #menu-about, #menu-contact").removeClass("active");
-      $("#menu-portfolio").addClass("active");
+        menuHome.classList.remove("active");
+        menuAbout.classList.remove("active");
+        menuContact.classList.remove("active");
+      menuPortfolio.classList.add("active");
     } else if (
       window.location.hash === "#contact" ||
       window.location.hash === "#contactthanks"
     ) {
-      $("#menu-home, #menu-about, #menu-portfolio").removeClass("active");
-      $("#menu-contact").addClass("active");
+        menuPortfolio.classList.remove("active");
+        menuAbout.classList.remove("active");
+        menuContact.classList.remove("active");
+      menuContact.classList.add("active");
     }
   });
 
   //*******************************************************
   //***                     MENU                        ***
   //*******************************************************
-  $(".menu-toggle").on("click", function() {
-    if ($(".menu-toggle").hasClass("active")) {
+  menuToggle.addEventListener("click", function() {
+    if (menuToggle.classList.contains("active")) {
       closeMenu();
     } else {
       openMenu();
     }
   });
-  $("#menu-home").on("click", function() {
+  menuHome.addEventListener("click", function() {
     if (window.location.hash !== "#home") {
       home();
       setTimeout(function() {
@@ -297,7 +333,7 @@ jQuery(document).ready(function() {
     }
   });
 
-  $("#menu-about").on("click", function() {
+  menuAbout.addEventListener("click", function() {
     if (window.location.hash !== "#about") {
       about();
       window.location.hash = "about";
@@ -308,10 +344,10 @@ jQuery(document).ready(function() {
       closeMenu();
     }
   });
-  $("#menu-portfolio").on("click", function() {
+  menuPortfolio.addEventListener("click", function() {
     if (window.location.hash !== "#portfolio") {
       about();
-      $("#portfoliosection")[0].scrollIntoView(true);
+      document.querySelector("#portfoliosection").scrollIntoView(true);
       setTimeout(function() {
         closeMenu();
       }, 800);
@@ -319,10 +355,10 @@ jQuery(document).ready(function() {
       closeMenu();
     }
   });
-  $("#menu-contact").on("click", function() {
+  menuContact.addEventListener("click", function() {
     if (window.location.hash !== "#contact") {
       about();
-      $("#contactsection")[0].scrollIntoView(true);
+      document.querySelector("#contactsection").scrollIntoView(true);
       setTimeout(function() {
         closeMenu();
       }, 800);
@@ -369,8 +405,8 @@ jQuery(document).ready(function() {
           menuStatus === false &&
           scroller === 0
         ) {
-          $("body").css("overflow", "hidden");
-          $(".about").hide("fast");
+          body.style.overflow = "hidden";
+          aboutSelector.style.display = "none";
           home();
           scroller = 0;
         }
