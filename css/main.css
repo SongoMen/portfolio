@@ -1484,9 +1484,7 @@ footer a {
     transform: scale(0.8);
     margin: 0 25px;
   }
-}
 
-@media only screen and (max-width: 450px) {
   ul {
     font-size: 25px;
   }
@@ -1539,6 +1537,7 @@ footer a {
   }
 }
 
+
 @media screen and (max-width: 500px) {
   .about p {
     font-size: 12px;
@@ -1590,6 +1589,7 @@ footer a {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    margin: 10px 30px;
   }
   .portfolio__side {
     width: 300px;
