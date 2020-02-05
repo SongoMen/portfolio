@@ -56,6 +56,7 @@ function about() {
   homeLeft.style.width = "100%";
   homeCenter.style.marginLeft = "100%";
   homeSelector.style.display = "flex";
+  menuAbout.classList.add("active");
   portfolio.style.display = "flex";
   contact.style.display = "flex";
   body.scrollTop = 0;
@@ -264,6 +265,8 @@ r(function() {
     homeScroll.style.display = "none";
     homeLeft.style.animation = "leftSide2 .5s";
     about();
+    menuPortfolio.classList.toggle("active");
+    menuAbout.classList.remove("active");
     document.querySelector("#portfoliosection").scrollIntoView(true);
     homeScroll.style.display = "none";
   } else if (
@@ -272,6 +275,8 @@ r(function() {
   ) {
     about();
     homeScroll.style.display = "none";
+    menuContact.classList.toggle("active");
+    menuAbout.classList.remove("active");
     if (window.location.hash === "#contactthanks") {
       homeLeft.style.animation = "leftSide2 .5s";
       homeScroll.style.display = "none";
@@ -288,26 +293,26 @@ r(function() {
   window.addEventListener("hashchange", function() {
     if (window.location.hash === "") {
       menuHome.classList.toggle("active");
-        menuPortfolio.classList.remove("active");
-        menuAbout.classList.remove("active");
-        menuContact.classList.remove("active");
+      menuPortfolio.classList.remove("active");
+      menuAbout.classList.remove("active");
+      menuContact.classList.remove("active");
     } else if (window.location.hash === "#about") {
-        menuPortfolio.classList.remove("active");
-        menuHome.classList.remove("active");
-        menuContact.classList.remove("active");
+      menuPortfolio.classList.remove("active");
+      menuHome.classList.remove("active");
+      menuContact.classList.remove("active");
       menuAbout.classList.add("active");
     } else if (window.location.hash === "#portfolio") {
-        menuHome.classList.remove("active");
-        menuAbout.classList.remove("active");
-        menuContact.classList.remove("active");
+      menuHome.classList.remove("active");
+      menuAbout.classList.remove("active");
+      menuContact.classList.remove("active");
       menuPortfolio.classList.add("active");
     } else if (
       window.location.hash === "#contact" ||
       window.location.hash === "#contactthanks"
     ) {
-        menuPortfolio.classList.remove("active");
-        menuAbout.classList.remove("active");
-        menuContact.classList.remove("active");
+      menuPortfolio.classList.remove("active");
+      menuAbout.classList.remove("active");
+      menuContact.classList.remove("active");
       menuContact.classList.add("active");
     }
   });
