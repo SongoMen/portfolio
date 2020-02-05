@@ -263,7 +263,7 @@ r(function() {
     about();
   } else if (window.location.hash === "#portfolio") {
     homeScroll.style.display = "none";
-    homeLeft.style.animation = "leftSide2 .5s";
+    homeLeft.style.animation = "leftSide2 .8s";
     about();
     menuPortfolio.classList.toggle("active");
     menuAbout.classList.remove("active");
@@ -278,11 +278,11 @@ r(function() {
     menuContact.classList.toggle("active");
     menuAbout.classList.remove("active");
     if (window.location.hash === "#contactthanks") {
-      homeLeft.style.animation = "leftSide2 .5s";
+      homeLeft.style.animation = "leftSide2 .8s";
       homeScroll.style.display = "none";
       document.querySelector("#contactsection").scrollIntoView(true);
     } else {
-      homeLeft.style.animation = "leftSide2 .5s";
+      homeLeft.style.animation = "leftSide2 .8s";
       homeScroll.style.display = "none";
       document.querySelector("#contactsection").scrollIntoView(true);
     }
