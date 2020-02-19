@@ -25,6 +25,10 @@ function r(f) {
   /in/.test(document.readyState) ? setTimeout("r(" + f + ")", 9) : f();
 }
 
+homeScroll.addEventListener("click", () => {
+  about();
+});
+
 function closeMenu() {
   topMenu.style.marginTop = "-300%";
   menuStatus = false;

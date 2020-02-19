@@ -270,10 +270,6 @@ p {
   padding: 10px 25px;
   display: -webkit-box;
   display: -ms-flexbox;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
@@ -640,10 +636,6 @@ li.active:hover {
   -webkit-transition: all 2s;
   -o-transition: all 2s;
   transition: all 2s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 .home__left {
   display: -webkit-box;
@@ -697,6 +689,7 @@ li.active:hover {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  cursor: pointer
 }
 
 #scroll__text {
@@ -828,10 +821,10 @@ li.active:hover {
   transition: 0.5s;
 }
 
-svg:hover {
+.home__arrow:hover {
   -webkit-transform: scale(1.15);
   -ms-transform: scale(1.15);
-  transform: scale(1.15);
+  transform: scale(1.15) rotate(90deg);
 }
 
 .about__icons {
