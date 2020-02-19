@@ -2,24 +2,24 @@ let scroller = 0;
 let menuStatus = false;
 let scrollabout;
 
-let topMenu = document.querySelector(".top-menu");
-let menuToggle = document.querySelector(".menu-toggle");
-let footer = document.querySelector(".footer");
-let homeLeft = document.querySelector(".home__left");
-let menuHome = document.querySelector("#menu-home");
-let menuAbout = document.querySelector("#menu-about");
-let menuPortfolio = document.querySelector("#menu-portfolio");
-let menuContact = document.querySelector("#menu-contact");
-let homeCenter = document.querySelector(".home__center");
-let homeScroll = document.querySelector(".home__scroll");
+const topMenu = document.querySelector(".top-menu");
+const menuToggle = document.querySelector(".menu-toggle");
+const footer = document.querySelector(".footer");
+const homeLeft = document.querySelector(".home__left");
+const menuHome = document.querySelector("#menu-home");
+const menuAbout = document.querySelector("#menu-about");
+const menuPortfolio = document.querySelector("#menu-portfolio");
+const menuContact = document.querySelector("#menu-contact");
+const homeCenter = document.querySelector(".home__center");
+const homeScroll = document.querySelector(".home__scroll");
 
-let homeSelector = document.querySelector(".home");
-let portfolio = document.querySelector(".portfolio");
-let contact = document.querySelector(".contact");
-let aboutSelector = document.querySelector(".about");
-let scroll = document.querySelector(".scroll");
+const homeSelector = document.querySelector(".home");
+const portfolio = document.querySelector(".portfolio");
+const contact = document.querySelector(".contact");
+const aboutSelector = document.querySelector(".about");
+const scroll = document.querySelector(".scroll");
 
-let body = document.querySelector("body");
+const body = document.querySelector("body");
 
 function r(f) {
   /in/.test(document.readyState) ? setTimeout("r(" + f + ")", 9) : f();
