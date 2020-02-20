@@ -1,6 +1,6 @@
-let scroller = 0;
-let menuStatus = false;
-let scrollabout;
+var scroller = 0;
+var menuStatus = false;
+var scrollabout;
 
 const topMenu = document.querySelector(".top-menu");
 const menuToggle = document.querySelector(".menu-toggle");
