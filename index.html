@@ -66,7 +66,7 @@
     <section class="home">
       <div class="home__content">
         <h1>hello</h1>
-        <button type="button" class="form__button">About me</button>
+        <button type="button" class="btn">About me</button>
       </div>
     </section>
 
@@ -245,12 +245,15 @@
       </div>
     </section>
     <section id="portfoliosection" class="portfolio">
-      <h2>Recent work</h2>
+      <div class="portfolio__heading">
+        <h2>Recent work</h2>
+        <button class="btn">All Work</button>
+      </div>
       <div class="portfolio__collection">
         <div class="portfolio__row">
           <div class="portfolio__item">
             <p class="portfolio__title">WEB APP</p>
-            <div class="infos">
+            <div class="portfolio__info">
               <h3 class="portfolio__name">Trader24</h3>
               <p>Made in React and Firebase.</p>
             </div>
@@ -271,7 +274,7 @@
           </div>
           <div class="portfolio__item">
             <p class="portfolio__title">WEB APP</p>
-            <div class="infos">
+            <div class="portfolio__info">
               <h3 class="portfolio__name">Trader24</h3>
               <p>Made in React and Firebase.</p>
             </div>
@@ -318,7 +321,7 @@
         </div>
         <button
           type="submit"
-          class="form__button"
+          class="btn"
           onclick="window.open('Patryk Kozłowski-resume.pdf')"
           name="submit"
         >
@@ -396,7 +399,7 @@
             </svg>
           </div>
           <div class="form__bottom">
-            <button type="submit" class="form__button" name="submit">
+            <button type="submit" class="btn" name="submit">
               SUBMIT
             </button>
             <p id="thank-you-message" class="hidden">

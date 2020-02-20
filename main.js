@@ -4,20 +4,15 @@ var scrollabout;
 
 const topMenu = document.querySelector(".top-menu");
 const menuToggle = document.querySelector(".menu-toggle");
-const footer = document.querySelector(".footer");
-const homeLeft = document.querySelector(".home__left");
 const menuHome = document.querySelector("#menu-home");
 const menuAbout = document.querySelector("#menu-about");
 const menuPortfolio = document.querySelector("#menu-portfolio");
 const menuContact = document.querySelector("#menu-contact");
-const homeCenter = document.querySelector(".home__center");
-const homeScroll = document.querySelector(".home__scroll");
 
 const homeSelector = document.querySelector(".home");
 const portfolio = document.querySelector(".portfolio");
 const contact = document.querySelector(".contact");
 const aboutSelector = document.querySelector(".about");
-const scroll = document.querySelector(".scroll");
 
 const body = document.querySelector("body");
 
