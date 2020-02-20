@@ -98,6 +98,7 @@ p {
   -webkit-animation: show2 1s;
   animation: show2 1s;
   font-family: NexaLight;
+  font-size: 1.1em
 }
 
 /*#########################
@@ -826,7 +827,7 @@ li.active:hover {
 }
 .portfolio__item {
   width: 35%;
-  padding: 50px;
+  padding: 40px;
   margin: 0 30px;
   position: relative;
   overflow: hidden;
@@ -834,7 +835,7 @@ li.active:hover {
   justify-content: center;
   flex-direction: column;
   transition: all 0.5s;
-  cursor: normal;
+  cursor: auto;
 }
 .portfolio__item:hover {
   transform: translate(0, -15px);
@@ -842,7 +843,7 @@ li.active:hover {
 .portfolio__item:before {
   content: "";
   display: block;
-  padding-top: 35%;
+  padding-top: 80%;
 }
 .portfolio__item:nth-child(1) {
   background-color: rgba(94, 181, 248, 0.5);
@@ -854,15 +855,21 @@ li.active:hover {
 .portfolio__title {
   opacity: 0.7;
   position: absolute;
-  top: 50px;
-  left: 50px;
+  top: 40px;
+  left: 40px;
   color: rgb(30, 39, 46) 
 }
 .portfolio__name {
   color: #1e272e;
+  margin: 10px 0;
 }
+
 .portfolio__info {
+  position: absolute;
   margin-bottom: 30px;
+}
+.portfolio__info p{
+  color: #1e272e;
 }
 .portfolio__button {
   border: 1px solid rgba(30, 39, 46, 0.3);
@@ -882,7 +889,11 @@ li.active:hover {
   margin-top: 0;
   align-self: auto
 }
-
+.portfolio img{
+  width: 300px;
+  position: absolute;
+  right: -50px;
+} 
 /*#########################
           CONTACT
  #########################*/
