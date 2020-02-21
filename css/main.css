@@ -742,7 +742,7 @@ li.active:hover {
   position: absolute;
   top: 0;
   right: 0;
-  transition: all 0.5s;
+  transition: all 1s;
   width: 100%;
 }
 
@@ -862,11 +862,11 @@ li.active:hover {
   align-self: flex-start;
   background-color: #2b2d42;
   color: #ef233c;
-  box-shadow: rgb(255, 255, 255, 0.8) 0px 0.4rem 1.5rem 0px;
+  box-shadow: #2b2d42 0px 0.4rem 1.5rem 0px;
 }
 
 .contact__info button:hover {
-  box-shadow: rgb(255, 255, 255, 0.8) 0px 0rem 1.5rem 0px;
+  box-shadow: #2b2d42 0px 0rem 1.5rem 0px;
 }
 
 .contact__form {
@@ -1309,6 +1309,9 @@ li.active:hover {
   .portfolio__item {
     width: 100%;
   }
+  .progress-bar {
+    display: none;
+  }
 }
 @media only screen and (max-width: 400px) {
   .portfolio img {
@@ -1337,8 +1340,5 @@ li.active:hover {
   }
   .about {
     padding: 30px 10px;
-  }
-  .progress-bar {
-    display: none;
   }
 }
