@@ -30,6 +30,7 @@ function getElementY(query) {
 }
 
 function doScrolling(element, duration) {
+  closeMenu();
   var startingY = window.pageYOffset;
   var elementY = getElementY(element);
   var targetY =
@@ -182,50 +183,17 @@ r(function() {
       openMenu();
     }
   });
-  menuHome.addEventListener("click", function() {
-    if (window.location.hash !== "#home") {
-      home();
-      setTimeout(function() {
-        closeMenu();
-      }, 300);
-    } else {
-      closeMenu();
-    }
-  });
 
-  menuAbout.addEventListener("click", function() {
-    if (window.location.hash !== "#about") {
-      about();
-      window.location.hash = "about";
-      setTimeout(function() {
-        closeMenu();
-      }, 800);
-    } else {
-      closeMenu();
-    }
-  });
-  menuPortfolio.addEventListener("click", function() {
-    if (window.location.hash !== "#portfolio") {
-      about();
-      document.querySelector("#portfoliosection").scrollIntoView(true);
-      setTimeout(function() {
-        closeMenu();
-      }, 800);
-    } else {
-      closeMenu();
-    }
-  });
-  menuContact.addEventListener("click", function() {
-    if (window.location.hash !== "#contact") {
-      about();
-      document.querySelector("#contactsection").scrollIntoView(true);
-      setTimeout(function() {
-        closeMenu();
-      }, 800);
-    } else {
-      closeMenu();
-    }
-  });
+  document
+    .getElementById("menu-home")
+    .addEventListener("click", doScrolling.bind(null, "#homesection", 1000));
+
+  document
+    .getElementById("menu-about")
+    .addEventListener("click", doScrolling.bind(null, "#aboutsection", 1000));
+  document
+    .getElementById("menu-contact")
+    .addEventListener("click", doScrolling.bind(null, "#contactsection", 1000));
 
   //*******************************************************
   //***                    SWIPE SUPPORT                ***
