@@ -531,6 +531,7 @@ li.active:hover {
   height: 100%;
   width: 100%;
   animation: 1s showHome;
+  text-align: center;
   background-color: #edf2f4;
   display: flex;
   justify-content: center;
@@ -803,7 +804,6 @@ li.active:hover {
 
 .contact {
   width: 100%;
-  height: 90%;
   padding: 100px;
   display: flex;
   border-top: 1px solid rgba(141, 153, 174, 0.3);
@@ -1186,5 +1186,105 @@ li.active:hover {
   .portfolio img {
     width: 230px;
     right: -60px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .about__name,
+  .about__skills {
+    width: 100%;
+  }
+  .contact__info {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact__form {
+    justify-content: center;
+    align-items: center;
+  }
+  .contact {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  .contact__info button {
+    align-self: center;
+  }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 800px) {
+  .contact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: space-between;
+  }
+
+  .contact__form {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .contact__info {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+@media only screen and (max-height: 680px) and (min-height: 550px) {
+  .contact__form {
+    margin-top: 0;
+  }
+  .contact__info h2 {
+    margin: 0;
+  }
+  .contact__element {
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .contact__form {
+    width: 100%;
+  }
+  .form__line {
+    flex-direction: column;
+  }
+  .form__input.textarea {
+    padding: 0;
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .portfolio__heading {
+    flex-direction: column;
+  }
+  .btn {
+    margin-left: 0 !important;
+  }
+  .about__skills svg {
+    width: 40px;
+    height: 40px;
+  }
+  .about__desc {
+    width: 70px;
+    height: 70px;
+  }
+  .about {
+    padding: 30px 10px;
   }
 }

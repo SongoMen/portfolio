@@ -60,10 +60,12 @@ document
   .addEventListener("click", doScrolling.bind(null, "#aboutsection", 1000));
 
 function closeMenu() {
-  menuStatus = false;
-  menuToggle.classList.toggle("active");
-  topMenu.classList.remove("active");
-  body.style.overflowY = "auto";
+  if (menuStatus) {
+    menuStatus = false;
+    menuToggle.classList.toggle("active");
+    topMenu.classList.remove("active");
+    body.style.overflowY = "auto";
+  }
 }
 
 function openMenu() {
@@ -74,18 +76,6 @@ function openMenu() {
 }
 
 r(function() {
-  //*******************************************************
-  //***                   DETECT PHONE                  ***
-  //*******************************************************
-
-  if (
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent,
-    )
-  ) {
-    document.querySelector("#scroll__text").html("Swipe Down");
-  }
-
   //*******************************************************
   //***                     FORM                        ***
   //*******************************************************
@@ -183,11 +173,9 @@ r(function() {
       openMenu();
     }
   });
-
   document
     .getElementById("menu-home")
     .addEventListener("click", doScrolling.bind(null, "#homesection", 1000));
-
   document
     .getElementById("menu-about")
     .addEventListener("click", doScrolling.bind(null, "#aboutsection", 1000));
@@ -230,7 +218,7 @@ r(function() {
       if (xDiff > 0) {
         if (
           window.location.hash === "#about" &&
-          menuStatus === false &&
+          !menuStatus &&
           scroller === 0
         ) {
           body.style.overflow = "hidden";
@@ -243,7 +231,7 @@ r(function() {
       if (yDiff > 0) {
         console.log("");
       } else {
-        if (window.location.hash === "" && menuStatus === false) {
+        if (window.location.hash === "" && !menuStatus) {
           about();
         }
       }
