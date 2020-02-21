@@ -1,6 +1,7 @@
 var scroller = 0;
 var menuStatus = false;
 var scrollabout;
+var elements = document.getElementsByClassName("portfolio__animation");
 
 const topMenu = document.querySelector(".top-menu");
 const menuToggle = document.querySelector(".menu-toggle");
@@ -20,6 +21,23 @@ const body = document.querySelector("body");
 
 function r(f) {
   /in/.test(document.readyState) ? setTimeout("r(" + f + ")", 9) : f();
+}
+
+function isElementInViewport(el) {
+  // Special bonus for those using jQuery
+
+  var rect = el.getBoundingClientRect();
+
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight ||
+        document.documentElement.clientHeight) /* or $(window).height() */ &&
+    rect.right <=
+      (window.innerWidth ||
+        document.documentElement.clientWidth) /* or $(window).width() */
+  );
 }
 
 function isScrolledIntoView(el) {
@@ -188,9 +206,29 @@ r(function() {
   }
 
   //*******************************************************
+  //***               CHECK HASH                        ***
+  //*******************************************************
+
+  if (window.location.hash === "#about") {
+    doScrolling("#aboutsection", 1000);
+  } else if (window.location.hash === "#contact") {
+    doScrolling("#contactsection", 1000);
+  }
+
+  //*******************************************************
+  //***             CHECK IF ELEMENTS VISIBLE           ***
+  //*******************************************************
+
+  for (let i = 0; i < elements.length; i++) {
+    if (isElementInViewport(elements[i])) {
+      elements[i].style.width = 0;
+    }
+  }
+
+  //*******************************************************
   //***                     MENU                        ***
   //*******************************************************
-  //
+
   menuToggle.addEventListener("click", function() {
     if (menuToggle.classList.contains("active")) {
       closeMenu();
@@ -198,7 +236,6 @@ r(function() {
       openMenu();
     }
   });
-
   document
     .getElementById("menu-home")
     .addEventListener("click", doScrolling.bind(null, "#homesection", 1000));
@@ -218,7 +255,6 @@ r(function() {
     .addEventListener("click", doScrolling.bind(null, "#contactsection", 1000));
 
   window.onscroll = function() {
-    let elements = document.getElementsByClassName("portfolio__animation");
     for (let i = 0; i < elements.length; i++) {
       if (isScrolledIntoView(elements[i])) {
         elements[i].style.width = "0";

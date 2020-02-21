@@ -431,8 +431,8 @@ p {
   opacity: 1;
 }
 
-.top-menu__list a{
-color: #edf2f4
+.top-menu__list a {
+  color: #edf2f4;
 }
 
 .top-menu__list {
@@ -736,13 +736,13 @@ li.active:hover {
   color: #2b2d42;
 }
 
-.portfolio__animation{
-  background-color: #EDF2F4;
+.portfolio__animation {
+  background-color: #edf2f4;
   height: 100%;
   position: absolute;
   top: 0;
   right: 0;
-  transition: all .5s;
+  transition: all 0.5s;
   width: 100%;
 }
 
