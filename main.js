@@ -4,10 +4,12 @@ var scrollabout;
 
 const topMenu = document.querySelector(".top-menu");
 const menuToggle = document.querySelector(".menu-toggle");
+const logo = document.querySelector(".header__logo");
 const menuHome = document.querySelector("#menu-home");
 const menuAbout = document.querySelector("#menu-about");
 const menuPortfolio = document.querySelector("#menu-portfolio");
 const menuContact = document.querySelector("#menu-contact");
+const aside = document.querySelector(".aside");
 
 const homeSelector = document.querySelector(".home");
 const portfolio = document.querySelector(".portfolio");
@@ -57,63 +59,19 @@ document
   .addEventListener("click", doScrolling.bind(null, "#aboutsection", 1000));
 
 function closeMenu() {
-  topMenu.style.marginTop = "-300%";
   menuStatus = false;
   menuToggle.classList.toggle("active");
-  if (
-    window.location.hash === "#about" ||
-    window.location.hash === "#portfolio" ||
-    window.location.hash === "#contact" ||
-    window.location.hash === "#contactthanks"
-  ) {
-    body.style.overflowY = "auto";
-  }
-  setTimeout(() => {
-    footer.style.position = "fixed";
-  }, 800);
+  topMenu.classList.remove("active");
+  body.style.overflowY = "auto";
 }
 
 function openMenu() {
-  topMenu.style.display = "flex";
-  topMenu.style.animation = "topMenu .7s";
-  topMenu.style.marginTop = "0%";
+  topMenu.classList.add("active");
   menuStatus = true;
   menuToggle.classList.toggle("active");
   body.style.overflow = "hidden";
-  footer.style.position = "absolute";
 }
 
-function about() {
-  homeLeft.style.width = "100%";
-  homeCenter.style.marginLeft = "100%";
-  homeSelector.style.display = "flex";
-  menuAbout.classList.add("active");
-  portfolio.style.display = "flex";
-  contact.style.display = "flex";
-  body.scrollTop = 0;
-  scrollabout = setTimeout(() => {
-    homeSelector.classList.remove("active");
-    homeCenter.style.display = "none";
-    homeScroll.style.display = "none";
-    body.style.overflowY = "auto";
-    aboutSelector.style.display = "flex";
-  }, 800);
-}
-
-function home() {
-  homeScroll.style.display = "flex";
-  homeLeft.style.width = "50%";
-  homeSelector.classList.add("active");
-  homeCenter.style.marginLeft = "0%";
-  body.style.overflow = "hidden";
-  homeCenter.style.display = "flex";
-  homeScroll.style.display = "flex";
-  aboutSelector.style.display = "none";
-  body.scrollTop = 0;
-  scroller = 1;
-  window.location.hash = "";
-  clearTimeout(scrollabout);
-}
 r(function() {
   //*******************************************************
   //***                   DETECT PHONE                  ***
@@ -182,24 +140,24 @@ r(function() {
     });
 
   document.querySelector("#form").addEventListener("submit", function(e) {
-    if (emailval === false || nameval === false || textval === false) {
+    if (!emailval || !nameval || !textval) {
       e.preventDefault();
     }
-    if (emailval === false) {
+    if (!emailval) {
       document.querySelector(".form__input.email input").style.border =
-        "1px solid #fa3620";
+        "1px solid #ef233c";
     } else {
       document.querySelector(".form__input.email input").style.border = "none";
     }
-    if (nameval === false) {
+    if (!nameval) {
       document.querySelector(".form__input.name input").style.border =
-        "1px solid #fa3620";
+        "1px solid #ef233c";
     } else {
       document.querySelector(".form__input.name input").style.border = "none";
     }
-    if (textval === false) {
+    if (!textval) {
       document.querySelector(".form__input.textarea textarea").style.border =
-        "1px solid #fa3620";
+        "1px solid #ef233c";
     } else {
       document.querySelector(".form__input.textarea textarea").style.border =
         "none";
