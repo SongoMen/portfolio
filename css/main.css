@@ -742,7 +742,7 @@ li.active:hover {
   position: absolute;
   top: 0;
   right: 0;
-  transition: all 1s;
+  transition: all .7s;
   width: 100%;
 }
 
@@ -1252,6 +1252,7 @@ li.active:hover {
   .contact__form {
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
   }
   .contact {
     flex-direction: column;
@@ -1309,6 +1310,9 @@ li.active:hover {
 }
 @media only screen and (max-width: 500px) {
   .contact__form {
+    width: 100%;
+  }
+  .contact__info{
     width: 100%;
   }
   .form__line {
