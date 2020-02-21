@@ -22,6 +22,15 @@ function r(f) {
   /in/.test(document.readyState) ? setTimeout("r(" + f + ")", 9) : f();
 }
 
+function Bar() {
+  var Scroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  var scrolled = (Scroll / height) * 100;
+  document.getElementById("progress-bar__fill").style.height = scrolled + "%";
+}
+
 function getElementY(query) {
   return (
     window.pageYOffset +
@@ -240,6 +249,10 @@ r(function() {
     xDown = null;
     yDown = null;
   }
+
+  window.onscroll = function() {
+    Bar();
+  };
 
   window.onload = function() {
     if (window.location.hash === "#contactthanks") {

@@ -383,6 +383,25 @@ p {
 }
 
 /*#########################
+        PROGRESS BAR 
+ #########################*/
+
+.progress-bar {
+  position: fixed;
+  width: 2px;
+  height: 90px;
+  top: 50%;
+  left: 30px;
+  border-radius: 10px;
+  background-color: #8d99ae;
+}
+.progress-bar__fill {
+  border-radius: 10px;
+  width: 2px;
+  background-color: #ef233c;
+}
+
+/*#########################
           TOP MENU
  #########################*/
 
@@ -1286,5 +1305,8 @@ li.active:hover {
   }
   .about {
     padding: 30px 10px;
+  }
+  .progress-bar {
+    display: none;
   }
 }
