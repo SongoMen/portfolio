@@ -406,6 +406,7 @@ p {
  #########################*/
 
 .top-menu {
+  visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -421,12 +422,17 @@ p {
   z-index: 8;
 }
 .top-menu.active {
+  visibility: visible;
   z-index: 10;
   height: 100%;
 }
 
 .top-menu.active .top-menu__list {
   opacity: 1;
+}
+
+.top-menu__list a{
+color: #edf2f4
 }
 
 .top-menu__list {
@@ -446,7 +452,7 @@ p {
   margin: 10px 0;
   display: flex;
   align-items: center;
-  color: white;
+  color: #edf2f4;
 }
 
 li:hover {
@@ -454,7 +460,7 @@ li:hover {
 }
 
 .top-menu__list li p {
-  color: white;
+  color: #edf2f4;
   visibility: hidden;
   opacity: 0;
   font-size: 12px;
@@ -730,6 +736,16 @@ li.active:hover {
   color: #2b2d42;
 }
 
+.portfolio__animation{
+  background-color: #EDF2F4;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all .5s;
+  width: 100%;
+}
+
 .portfolio__collection {
   display: flex;
   justify-content: center;
@@ -744,6 +760,7 @@ li.active:hover {
   justify-content: center;
   align-items: center;
   width: 100%;
+  flex-wrap: wrap;
 }
 .portfolio__item {
   width: 35%;
@@ -1179,6 +1196,7 @@ li.active:hover {
     width: 50%;
   }
   .portfolio__row {
+    flex-wrap: nowrap;
     flex-direction: column;
   }
 }
