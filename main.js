@@ -162,7 +162,7 @@ r(function() {
       document.querySelector(".form__input.textarea textarea").style.border =
         "none";
     }
-    if (nameval === true && emailval === true && textval === true) {
+    if (nameval && emailval && textval) {
       document.getElementById("form").action =
         "https://getsimpleform.com/messages?form_api_token=d55de506b28707f8ee113a4e3e6c1539";
       thanks = true;
@@ -182,6 +182,7 @@ r(function() {
       openMenu();
     }
   });
+
   document
     .getElementById("menu-home")
     .addEventListener("click", doScrolling.bind(null, "#homesection", 1000));
@@ -191,64 +192,6 @@ r(function() {
   document
     .getElementById("menu-contact")
     .addEventListener("click", doScrolling.bind(null, "#contactsection", 1000));
-
-  //*******************************************************
-  //***                    SWIPE SUPPORT                ***
-  //*******************************************************
-
-  document.addEventListener("touchstart", handleTouchStart, false);
-  document.addEventListener("touchmove", handleTouchMove, false);
-
-  var xDown = null;
-  var yDown = null;
-
-  function getTouches(evt) {
-    return evt.touches || evt.originalEvent.touches;
-  }
-
-  function handleTouchStart(evt) {
-    const firstTouch = getTouches(evt)[0];
-    xDown = firstTouch.clientX;
-    yDown = firstTouch.clientY;
-  }
-
-  function handleTouchMove(evt) {
-    if (!xDown || !yDown) {
-      return;
-    }
-
-    var xUp = evt.touches[0].clientX;
-    var yUp = evt.touches[0].clientY;
-
-    var xDiff = xDown - xUp;
-    var yDiff = yDown - yUp;
-
-    if (Math.abs(xDiff) > Math.abs(yDiff)) {
-      if (xDiff > 0) {
-        if (
-          window.location.hash === "#about" &&
-          !menuStatus &&
-          scroller === 0
-        ) {
-          body.style.overflow = "hidden";
-          aboutSelector.style.display = "none";
-          home();
-          scroller = 0;
-        }
-      }
-    } else {
-      if (yDiff > 0) {
-        console.log("");
-      } else {
-        if (window.location.hash === "" && !menuStatus) {
-          about();
-        }
-      }
-    }
-    /* reset values */
-    xDown = null;
-    yDown = null;
-  }
 
   window.onscroll = function() {
     Bar();
