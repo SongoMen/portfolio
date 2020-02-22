@@ -742,7 +742,7 @@ li.active:hover {
   position: absolute;
   top: 0;
   right: 0;
-  transition: all .7s;
+  transition: all 0.7s;
   width: 100%;
 }
 
@@ -969,7 +969,7 @@ li.active:hover {
 
 .form__input svg polyline,
 .form__input svg path {
-  stroke: #d1d7e3;
+  stroke: #8d99ae;
   stroke-width: 1.4;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -1063,19 +1063,14 @@ li.active:hover {
   letter-spacing: 1px;
   align-self: flex-end;
   transition: all 0.5s;
-  margin-top: 20px;
   white-space: nowrap;
   cursor: pointer;
 }
 
-.btn {
-  margin-top: 20px;
-}
-
 #thank-you-message {
-  margin: 10px;
-  margin-top: 20px;
-  color: #69dd95;
+  color: #2b2d42;
+  margin: 0;
+  margin-left: 20px;
 }
 .btn:hover {
   box-shadow: rgba(239, 35, 60, 1) 0px 0rem 2rem 0px;
@@ -1084,6 +1079,7 @@ li.active:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 25px;
 }
 
 /*#########################
@@ -1312,7 +1308,7 @@ li.active:hover {
   .contact__form {
     width: 100%;
   }
-  .contact__info{
+  .contact__info {
     width: 100%;
   }
   .form__line {
@@ -1321,6 +1317,9 @@ li.active:hover {
   .form__input.textarea {
     padding: 0;
     margin: 0;
+  }
+  .form__input.textarea svg {
+    right: 10px;
   }
   .portfolio__item {
     width: 100%;
