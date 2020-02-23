@@ -320,19 +320,22 @@ p {
   transition-delay: 150ms;
 }
 
-.menu-toggle:hover .hamburger span:before {
+.menu-toggle:hover .hamburger span:before,
+.menu-toggle:focus .hamburger span:before {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
 }
 
-.menu-toggle:hover .hamburger span:after {
+.menu-toggle:hover .hamburger span:after,
+.menu-toggle:focus .hamburger span:after {
   -webkit-transform: translateX(200%);
   -ms-transform: translateX(200%);
   transform: translateX(200%);
 }
 
-.menu-toggle.active .hamburger span:before {
+.menu-toggle.active .hamburger span:before,
+.menu-toggle:focus .hamburger span:before {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
@@ -454,8 +457,14 @@ p {
   align-items: center;
   color: #edf2f4;
 }
+.top-menu__list a{
+  transition: all 1s
+}
 
-li:hover {
+.top-menu__list li:hover,
+.top-menu__list li:focus,
+.top-menu__list a:hover,
+.top-menu__list a:focus {
   color: #ef233c;
 }
 
@@ -473,7 +482,8 @@ li.active {
   color: #ef233c;
 }
 
-li.active:hover {
+li.active:hover,
+li.active:focus {
   color: #edf2f4;
 }
 
@@ -485,13 +495,14 @@ li.active:hover {
   margin: 0 10px;
 }
 
-#menu-home:hover .home-p {
+#menu-home:hover .home-p,
+#menu-home:focus .home-p {
   visibility: visible;
   opacity: 1;
-  -webkit-animation: show2 0.5s;
   animation: show2 0.5s;
 }
 
+#menu-home:focus .top-menu__line,
 #menu-home:hover .top-menu__line {
   visibility: visible;
   opacity: 1;
@@ -499,6 +510,7 @@ li.active:hover {
   animation: line 0.5s;
 }
 
+#menu-about:focus .about-p,
 #menu-about:hover .about-p {
   visibility: visible;
   opacity: 1;
@@ -506,6 +518,7 @@ li.active:hover {
   animation: show2 0.5s;
 }
 
+#menu-about:focus .top-menu__line,
 #menu-about:hover .top-menu__line {
   visibility: visible;
   opacity: 1;
@@ -513,6 +526,7 @@ li.active:hover {
   animation: line 0.5s;
 }
 
+#menu-portfolio:focus .portfolio-p,
 #menu-portfolio:hover .portfolio-p {
   visibility: visible;
   opacity: 1;
@@ -520,6 +534,7 @@ li.active:hover {
   animation: show2 0.5s;
 }
 
+#menu-portfolio:focus .top-menu__line,
 #menu-portfolio:hover .top-menu__line {
   visibility: visible;
   opacity: 1;
@@ -527,6 +542,7 @@ li.active:hover {
   animation: line 0.5s;
 }
 
+#menu-contact:focus .contact-p,
 #menu-contact:hover .contact-p {
   visibility: visible;
   opacity: 1;
@@ -534,6 +550,7 @@ li.active:hover {
   animation: show2 0.5s;
 }
 
+#menu-contact:focus .top-menu__line,
 #menu-contact:hover .top-menu__line {
   visibility: visible;
   opacity: 1;
@@ -1066,7 +1083,11 @@ li.active:hover {
   white-space: nowrap;
   cursor: pointer;
 }
-
+.btn:active,
+.btn:focus {
+  transform: scale(0.9);
+  box-shadow: rgba(239, 35, 60, 1) 0px 0rem 2rem 0px;
+}
 #thank-you-message {
   color: #2b2d42;
   margin: 0;
@@ -1146,19 +1167,11 @@ li.active:hover {
 }
 
 .aside__linkedin:hover svg path,
-.aside__github:hover svg path {
+.aside__github:hover svg path,
+.aside__linkedin:focus svg path,
+.aside__github:focus svg path {
   transition: all 0.5s ease-in-out;
   fill: #ef233c;
-}
-
-.aside__github:hover .github__circle {
-  opacity: 1;
-  fill: black;
-}
-
-.aside__linkedin:hover .linkedin__circle {
-  opacity: 1;
-  fill: black;
 }
 
 /*#########################

@@ -63,7 +63,7 @@ function getElementY(query) {
 }
 
 function doScrolling(element, duration) {
-  closeMenu();
+  openCloseMenu(true)
   var startingY = window.pageYOffset;
   var elementY = getElementY(element);
   var targetY =
@@ -92,23 +92,19 @@ if (document.getElementById("home-btn")) {
     .getElementById("home-btn")
     .addEventListener("click", doScrolling.bind(null, "#aboutsection", 1000));
 }
-
-function closeMenu() {
-  if (menuStatus) {
-    menuStatus = false;
+function openCloseMenu(closedMenu) {
+  if (!menuStatus && !closedMenu) {
+    body.style.overflow = "hidden";
+    topMenu.classList.add("active");
+    menuStatus = true;
     menuToggle.classList.toggle("active");
-    topMenu.classList.remove("active");
+  } else {
     body.style.overflowY = "auto";
+    menuStatus = false;
+    menuToggle.classList.remove("active");
+    topMenu.classList.remove("active");
   }
 }
-
-function openMenu() {
-  topMenu.classList.add("active");
-  menuStatus = true;
-  menuToggle.classList.toggle("active");
-  body.style.overflow = "hidden";
-}
-
 r(function() {
   //*******************************************************
   //***                     FORM                        ***
@@ -231,11 +227,7 @@ r(function() {
   //*******************************************************
 
   menuToggle.addEventListener("click", function() {
-    if (menuToggle.classList.contains("active")) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+    openCloseMenu()
   });
   document
     .getElementById("menu-home")
