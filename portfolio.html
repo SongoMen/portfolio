@@ -34,7 +34,12 @@
       >
       <div class="header__menu">
         <h3>MENU</h3>
-        <div class="menu-toggle">
+        <div
+          class="menu-toggle"
+          tabindex="0"
+          onkeypress="openCloseMenu()"
+          aria-label="Menu"
+        >
           <div class="hamburger">
             <span></span>
             <span></span>
@@ -49,22 +54,40 @@
     </header>
     <nav class="top-menu">
       <ul class="top-menu__list">
-        <li id="menu-home">
-          <a href="index.html"> Home</a><span class="top-menu__line"></span>
+        <li
+          id="menu-home"
+          tabindex="0"
+          onkeypress="window.location.href = 'index.html';"
+          onclick="window.location.href = 'index.html';"
+        >
+          Home<span class="top-menu__line"></span>
           <p class="home-p">Start Here !</p>
         </li>
-        <li id="menu-about">
-          <a href="index.html#about"> About</a
-          ><span class="top-menu__line"></span>
+        <li
+          id="menu-about"
+          tabindex="0"
+          onkeypress="window.location.href = 'index.html#about';"
+          onclick="window.location.href = 'index.html#about';"
+        >
+          About
+          <span class="top-menu__line"></span>
           <p class="about-p">Get to know me.</p>
         </li>
-        <li id="menu-portfolio">
+        <li
+          id="menu-portfolio"
+          tabindex="0"
+          onkeypress='doScrolling("#aboutsection", 1000)'
+        >
           portfolio<span class="top-menu__line"></span>
           <p class="portfolio-p">My work.</p>
         </li>
-        <li id="menu-contact">
-          <a href="index.html#contact"> contact</a
-          ><span class="top-menu__line"></span>
+        <li
+          id="menu-contact"
+          tabindex="0"
+          onkeypress="window.location.href = 'index.html#contact';"
+          onclick="window.location.href = 'index.html#contact';"
+        >
+          contact<span class="top-menu__line"></span>
           <p class="contact-p">Say Hello.</p>
         </li>
       </ul>
