@@ -46,7 +46,7 @@ button:focus {
 
 html,
 body {
-  background-color: #edf2f4;
+  background-color: #2b2d42;
   width: 100%;
   margin: 0;
   height: 100%;
@@ -457,8 +457,8 @@ p {
   align-items: center;
   color: #edf2f4;
 }
-.top-menu__list a{
-  transition: all 1s
+.top-menu__list a {
+  transition: all 1s;
 }
 
 .top-menu__list li:hover,
@@ -1180,6 +1180,7 @@ li.active:focus {
 
 .footer {
   border-top: 1px solid rgba(141, 153, 174, 0.3);
+  background-color: #edf2f4;
   display: flex;
   justify-content: center;
   align-items: center;
