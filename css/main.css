@@ -1079,7 +1079,7 @@ li.active:focus {
   font-size: 18px;
   letter-spacing: 1px;
   align-self: flex-end;
-  transition: all 0.5s;
+  transition: all 0.2s;
   white-space: nowrap;
   cursor: pointer;
 }
