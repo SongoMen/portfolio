@@ -67,7 +67,7 @@ h1 {
 }
 
 h2 {
-  font-size: calc(25px + (40 - 25) * ((100vw - 300px) / (1920 - 300)));
+  font-size: calc(22px + (40 - 22) * ((100vw - 300px) / (1920 - 300)));
 }
 
 h3 {
@@ -75,7 +75,7 @@ h3 {
 }
 
 h4 {
-  font-size: calc(14px + (17 - 14) * ((100vw - 300px) / (1920 - 300)));
+  font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1920 - 300)));
 }
 p {
   font-size: calc(11px + (18 - 11) * ((100vw - 300px) / (1920 - 300)));
@@ -605,7 +605,7 @@ li.active:focus {
 
 .about {
   display: flex;
-  min-height: 100%;
+  min-height: 107%;
   background-color: #2b2d42;
   justify-content: center;
   flex-direction: column;
@@ -842,8 +842,17 @@ li.active:focus {
 }
 .portfolio__button {
   border: 1px solid rgba(30, 39, 46, 0.7);
-  padding: 5px 15px;
+  padding: 10px 25px;
   color: rgba(30, 39, 46, 0.7);
+  transition: all .3s;
+}
+.portfolio__button:hover,
+.portfolio__button:active,
+.portfolio__button:focus{
+  background-color: #ef233c;
+  border-color: #ef233c;
+  color: white;
+  box-shadow: 0 5px 15px rgba(239, 35, 60, 0.2) ;
 }
 .portfolio__button:nth-child(1) {
   margin-right: 20px;
@@ -1309,13 +1318,10 @@ li.active:focus {
 }
 @media only screen and (max-height: 680px) and (min-height: 550px) {
   .contact__form {
-    margin-top: 0;
+    margin-top: 30px;
   }
-  .contact__info h2 {
-    margin: 0;
-  }
-  .contact__element {
-    margin: 0;
+  .contact__employer {
+    margin-bottom: 20px;
   }
 }
 @media only screen and (max-width: 500px) {
@@ -1348,6 +1354,7 @@ li.active:focus {
   }
   .portfolio__item {
     padding: 20px;
+    align-items: center;
   }
   .portfolio__title {
     top: 20px;
