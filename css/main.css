@@ -957,7 +957,7 @@ li.active:focus {
   border-radius: 4px;
   line-height: 24px;
   padding: 8px 14px 8px 14px;
-  padding-right: 25px;
+  padding-right: 35px;
   box-shadow: 0 4px 12px -2px rgba(107, 117, 161, 0.1);
   color: #2b2d42;
   resize: none;
