@@ -67,7 +67,7 @@ h1 {
 }
 
 h2 {
-  font-size: calc(25px + (40 - 25) * ((100vw - 300px) / (1920 - 300)));
+  font-size: calc(22px + (40 - 22) * ((100vw - 300px) / (1920 - 300)));
 }
 
 h3 {
@@ -75,7 +75,7 @@ h3 {
 }
 
 h4 {
-  font-size: calc(14px + (17 - 14) * ((100vw - 300px) / (1920 - 300)));
+  font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1920 - 300)));
 }
 p {
   font-size: calc(11px + (18 - 11) * ((100vw - 300px) / (1920 - 300)));
@@ -605,7 +605,7 @@ li.active:focus {
 
 .about {
   display: flex;
-  min-height: 100%;
+  min-height: 107%;
   background-color: #2b2d42;
   justify-content: center;
   flex-direction: column;
@@ -842,8 +842,17 @@ li.active:focus {
 }
 .portfolio__button {
   border: 1px solid rgba(30, 39, 46, 0.7);
-  padding: 5px 15px;
+  padding: 10px 25px;
   color: rgba(30, 39, 46, 0.7);
+  transition: all .3s;
+}
+.portfolio__button:hover,
+.portfolio__button:active,
+.portfolio__button:focus{
+  background-color: #ef233c;
+  border-color: #ef233c;
+  color: white;
+  box-shadow: 0 5px 15px rgba(239, 35, 60, 0.2) ;
 }
 .portfolio__button:nth-child(1) {
   margin-right: 20px;
@@ -947,11 +956,13 @@ li.active:focus {
   width: 100%;
   border-radius: 4px;
   line-height: 24px;
-  padding: 8px 36px 8px 14px;
-  box-shadow: 0 4px 12px -2px rgba(107, 117, 161, 0.2);
+  padding: 8px 14px 8px 14px;
+  padding-right: 40px;
+  box-shadow: 0 4px 12px -2px rgba(107, 117, 161, 0.1);
   color: #2b2d42;
   resize: none;
 }
+
 
 .form__input input::-webkit-input-placeholder,
 .form__input textarea::-webkit-input-placeholder {
@@ -1069,7 +1080,7 @@ li.active:focus {
 }
 
 .btn {
-  box-shadow: rgba(239, 35, 60, 0.8) 0px 0.4rem 1.5rem 0px;
+  box-shadow: rgba(239, 35, 60, 0.6) 0px 0.4rem 1rem 0px;
   background-color: #ef233c;
   border-radius: 0.6rem;
   padding: 0px 2.2rem;
@@ -1079,14 +1090,14 @@ li.active:focus {
   font-size: 18px;
   letter-spacing: 1px;
   align-self: flex-end;
-  transition: all 0.5s;
+  transition: all 0.3s;
   white-space: nowrap;
   cursor: pointer;
 }
 .btn:active,
 .btn:focus {
   transform: scale(0.9);
-  box-shadow: rgba(239, 35, 60, 1) 0px 0rem 2rem 0px;
+  box-shadow: rgba(239, 35, 60, .8) 0px 0rem 1.3rem 0px;
 }
 #thank-you-message {
   color: #2b2d42;
@@ -1094,7 +1105,7 @@ li.active:focus {
   margin-left: 20px;
 }
 .btn:hover {
-  box-shadow: rgba(239, 35, 60, 1) 0px 0rem 2rem 0px;
+  box-shadow: rgba(239, 35, 60, .8) 0px 0rem 1.3rem 0px;
 }
 .form__bottom {
   display: flex;
@@ -1237,6 +1248,9 @@ li.active:focus {
     width: 230px;
     right: -60px;
   }
+  .about__line {
+    margin: 0;
+  }
 }
 
 @media only screen and (max-width: 660px) {
@@ -1309,16 +1323,13 @@ li.active:focus {
 }
 @media only screen and (max-height: 680px) and (min-height: 550px) {
   .contact__form {
-    margin-top: 0;
+    margin-top: 30px;
   }
-  .contact__info h2 {
-    margin: 0;
-  }
-  .contact__element {
-    margin: 0;
+  .contact__employer {
+    margin-bottom: 20px;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 520px) {
   .contact__form {
     width: 100%;
   }
@@ -1348,6 +1359,7 @@ li.active:focus {
   }
   .portfolio__item {
     padding: 20px;
+    align-items: center;
   }
   .portfolio__title {
     top: 20px;
